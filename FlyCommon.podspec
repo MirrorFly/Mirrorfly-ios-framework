@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage     = "in"
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.platform     = :ios, "12.1"
-  s.source       = { :git => "https://github.com/MirrorFly/Mirrorfly-ios-framework" }
+  s.source       = { :git => "https://github.com/MirrorFly/Mirrorfly-ios-framework/tree/master/FlyCommon.xcframework" }
   s.source_files  = "FlyCommon/**/*.*{swift, h, m}","FlyCommon/**/*.xib"
   s.resources = "FlyCommon/*.xcassets"
   #spec.exclude_files = [AppDelegate, ViewController, SceneDelegate]
