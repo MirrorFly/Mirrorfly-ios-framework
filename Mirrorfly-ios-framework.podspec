@@ -14,14 +14,16 @@ Pod::Spec.new do |s|
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
     s.author            = { 'Hariram' => 'hariram.c@contus.in' }
-    s.license = { :type => "MIT", :text => "MIT License" }
+    s.license      = { :type => 'Commercial', :file => 'LICENSE' }
 
     s.platform          = :ios, "12.1"
     # change the source location
-    s.source            = { :https => 'https://github.com/MirrorFly/Mirrorfly-ios-framework' } 
+    s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
 
     s.swift_version = '4.0'
     s.requires_arc = true
+
+
 
     s.dependency 'libPhoneNumber-iOS', '0.8'
     s.dependency 'Alamofire'
@@ -31,7 +33,9 @@ Pod::Spec.new do |s|
     s.dependency 'RealmSwift' , '10.20.1'
     s.dependency 'GoogleWebRTC'
 
+
     s.ios.vendored_frameworks = 'Source/FlyCommon.xcframework' , 'Source/FlyCall.xcframework' ,'Source/FlyCore.xcframework', 'Source/FlyXmpp.xcframework', 'Source/FlyDatabase.xcframework', 'Source/FlyNetwork.xcframework', 'Source/FlyTranslate.xcframework'
 
-    
+   
 end 
+
