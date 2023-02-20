@@ -56,5 +56,5 @@ Pod::Spec.new do |s|
 end
 "
 
-echo -e "$TEMPLATE" > Mirrorfly-ios-frameworks.podspec
+echo -e "$TEMPLATE" > Mirrorfly-ios-framework.podspec
 
