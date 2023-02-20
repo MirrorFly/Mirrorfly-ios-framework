@@ -1,11 +1,3 @@
-#
-#  Be sure to run `pod spec lint Test.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 
 Pod::Spec.new do |s|  
     s.name              = 'Mirrorfly-ios-framework' # Name for your pod
@@ -16,7 +8,7 @@ Pod::Spec.new do |s|
     s.author            = { 'Hariram' => 'hariram.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
 
-    s.platform          = :ios, "12.1"
+    s.platform          = :ios, 12.1
     # change the source location
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
 
@@ -37,5 +29,5 @@ Pod::Spec.new do |s|
     s.ios.vendored_frameworks = 'Source/FlyCommon.xcframework' , 'Source/FlyCall.xcframework' ,'Source/FlyCore.xcframework', 'Source/FlyXmpp.xcframework', 'Source/FlyDatabase.xcframework', 'Source/FlyNetwork.xcframework', 'Source/FlyTranslate.xcframework'
 
    
-end 
+end
 
