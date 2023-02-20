@@ -25,7 +25,7 @@ fi
 TEMPLATE="
 Pod::Spec.new do |s|  
     s.name              = 'Mirrorfly-ios-framework' # Name for your pod
-    s.version           = '0.0.3'
+    s.version           = \"$VERSION\"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
