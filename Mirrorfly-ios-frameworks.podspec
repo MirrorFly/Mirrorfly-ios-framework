@@ -1,28 +1,4 @@
-#!/bin/bash
 
-VERSION='0.0.5'
-SHA1='f'
-
-while getopts v:s: flag
-do
-    case "${flag}" in
-        v) VERSION=${OPTARG};;
-        s) SHA1=${OPTARG};;
-        *) error "Unexpected option ${flag}";;
-    esac
-done
-
-echo $VERSION
-if [ -z $VERSION ]; then
-    echo 'Version is required'
-fi
-
-echo $SHA1
-if [ -z $SHA1 ]; then
-    echo 'shasum is required'
-fi
-
-TEMPLATE="
 Pod::Spec.new do |s|  
     s.name              = 'Mirrorfly-ios-framework' # Name for your pod
     s.version           = '0.0.3'
@@ -32,7 +8,7 @@ Pod::Spec.new do |s|
     s.author            = { 'Hariram' => 'hariram.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
 
-    s.platform          = :ios, "12.1"
+    s.platform          = :ios, 12.1
     # change the source location
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
 
@@ -54,7 +30,4 @@ Pod::Spec.new do |s|
 
    
 end
-"
-
-echo -e "$TEMPLATE" > Mirrorfly-ios-frameworks.podspec
 

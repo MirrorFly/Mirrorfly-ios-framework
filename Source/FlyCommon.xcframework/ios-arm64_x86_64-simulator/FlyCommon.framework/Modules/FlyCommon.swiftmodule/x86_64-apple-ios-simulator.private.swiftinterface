@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlyCommon
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -42,11 +42,6 @@ import _StringProcessing
   @objc public var isDeletedUser: Swift.Bool
   @objc override dynamic public init()
   @objc deinit
-}
-public struct SearchMessage {
-  public init()
-  public var chatUserJid: Swift.String
-  public var messageId: Swift.String
 }
 public typealias FlyCompletionHandler = (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void
 extension Swift.Dictionary where Key == Swift.String, Value == Any {
@@ -160,11 +155,6 @@ public struct MessageReceipt {
   public var time: Swift.Double
   public var profileDetails: FlyCommon.ProfileDetails?
   public init()
-}
-public struct LinkMessage {
-  public init()
-  public var link: Swift.String
-  public var chatMessage: FlyCommon.ChatMessage
 }
 public struct LoginData : Swift.Codable {
   public init()
@@ -549,12 +539,82 @@ public enum MediaStatus : Swift.String, Swift.CustomStringConvertible {
     set
     _modify
   }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeMobileDataImage: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeMobileDataVideo: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeMobileDataAudio: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeMobileDataDocument: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeWifiImage: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeWifiVideo: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeWifiAudio: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var autoDownloadTimeWifiDocument: Swift.Double {
+    get
+    set
+    _modify
+  }
   @FlyCommon.SDKDefaults public static var appLockPassword: Swift.String {
     get
     set
     _modify
   }
+  @FlyCommon.SDKDefaults public static var appLockPasswordDate: Foundation.Date {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var pinChangeAlertShownDate: Swift.String {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var faceOrFingerAuthenticationFails: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var passwordAuthenticationAttemps: Swift.Int {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var appBackgroundTime: Foundation.Date {
+    get
+    set
+    _modify
+  }
   @FlyCommon.SDKDefaults public static var appLockenable: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @FlyCommon.SDKDefaults public static var showAppLock: Swift.Bool {
     get
     set
     _modify
@@ -717,6 +777,19 @@ public enum ContactType : Swift.String, Swift.CustomStringConvertible {
     get
   }
 }
+public struct DeliveryReceipt : Swift.Codable {
+  public init()
+  public var receiptId: Swift.String
+  public var userJid: Swift.String
+  public var messageId: Swift.String
+  public var broadcastMessageID: Swift.String
+  public var sentTime: Swift.Double
+  public var acknowledgeTime: Swift.Double
+  public var receivedTime: Swift.Double
+  public var seenTime: Swift.Double
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct BusyStatus {
   public init()
   public var id: Swift.String!
@@ -743,12 +816,6 @@ public struct ReportMessgeData : Swift.Codable {
   public var publisherId: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
-}
-public struct ChatDataModel {
-  public init()
-  public var subject: Swift.String
-  public var messageContent: Swift.String
-  public var mediaAttachmentsUrl: [Foundation.URL]
 }
 public struct MediaData {
   public init()
@@ -791,19 +858,6 @@ public struct CountryInfo : Swift.Codable {
   public var code: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
-}
-public struct DeliveryReceipt : Swift.Codable {
-  public init()
-  public var receiptId: Swift.String
-  public var userJid: Swift.String
-  public var messageId: Swift.String
-  public var broadcastMessageID: Swift.String
-  public var sentTime: Swift.Double
-  public var acknowledgeTime: Swift.Double
-  public var receivedTime: Swift.Double
-  public var seenTime: Swift.Double
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 @objc @objcMembers public class ProfileDetails : ObjectiveC.NSObject {
   @objc public var jid: Swift.String!
@@ -942,6 +996,11 @@ public enum ChatType : Swift.String, Swift.CustomStringConvertible {
     get
   }
 }
+public struct LinkMessage {
+  public init()
+  public var link: Swift.String
+  public var chatMessage: FlyCommon.ChatMessage
+}
 public enum AudioStatus : Swift.String {
   case playing
   case stoped
@@ -983,6 +1042,14 @@ public struct AvailableFeaturesModel : Swift.Codable {
   public var isContactAttachmentEnabled: Swift.Bool
   public var isLocationAttachmentEnabled: Swift.Bool
   public var isAttachmentEnabled: Swift.Bool
+  public var isStarMessageEnabled: Swift.Bool
+  public var isClearChatEnabled: Swift.Bool
+  public var isDeleteChatEnabled: Swift.Bool
+  public var isTranslationEnabled: Swift.Bool
+  public var isBlockEnabled: Swift.Bool
+  public var isReportEnabled: Swift.Bool
+  public var isDeleteMessageEnabled: Swift.Bool
+  public var isViewAllMediasEnabled: Swift.Bool
   public init()
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -1076,6 +1143,17 @@ public enum MessageType : Swift.String, Swift.CustomStringConvertible {
     get
   }
 }
+public struct SearchMessage {
+  public init()
+  public var chatUserJid: Swift.String
+  public var messageId: Swift.String
+}
+public struct ChatDataModel {
+  public init()
+  public var subject: Swift.String
+  public var messageContent: Swift.String
+  public var mediaAttachmentsUrl: [Foundation.URL]
+}
 public struct WebLoginInfo {
   public init()
   public var browser: Swift.String!
@@ -1105,6 +1183,88 @@ public enum AudioType : Swift.String {
 }
 @_hasMissingDesignatedInitializers public class FlyLog {
   public class func DLog(param1: Swift.String?, param2: Any?)
+  @objc deinit
+}
+public struct FlyProfile {
+  public let jid: Swift.String!
+  public var name: Swift.String
+  public var nickName: Swift.String
+  public var image: Swift.String
+  public var mobileNumber: Swift.String
+  public var status: Swift.String
+  public var email: Swift.String
+  public init(jid: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LocationChatMessage : ObjectiveC.NSObject {
+  @objc public var messageId: Swift.String
+  @objc public var latitude: Swift.Double
+  @objc public var longitude: Swift.Double
+  @objc public var mapLocationUrl: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ChatMessage : ObjectiveC.NSObject {
+  @objc public var messageId: Swift.String
+  @objc public var messageTextContent: Swift.String
+  @objc public var messageSentTime: Swift.Double
+  @objc public var senderUserName: Swift.String
+  @objc public var senderNickName: Swift.String
+  @objc public var senderUserJid: Swift.String
+  @objc public var chatUserJid: Swift.String
+  public var messageType: FlyCommon.MessageType
+  public var messageChatType: FlyCommon.ChatType
+  @objc public var messageStatus: FlyCommon.MessageStatus
+  @objc public var isMessageSentByMe: Swift.Bool
+  @objc public var isCarbonMessage: Swift.Bool
+  @objc public var isMessageStarred: Swift.Bool
+  @objc public var isMessageDeleted: Swift.Bool
+  @objc public var isMessageRecalled: Swift.Bool
+  @objc public var isMessageTranslated: Swift.Bool
+  @objc public var isSavedContact: Swift.Bool
+  @objc public var isReplyMessage: Swift.Bool
+  @objc public var translatedMessageTextContent: Swift.String
+  @objc public var contactChatMessage: FlyCommon.ContactChatMessage?
+  @objc public var locationChatMessage: FlyCommon.LocationChatMessage?
+  @objc public var mediaChatMessage: FlyCommon.MediaChatMessage?
+  @objc public var replyParentChatMessage: FlyCommon.ReplyParentChatMessage?
+  public var audioTrackTime: Swift.Float?
+  public var isRetryButtonDisabled: Swift.Bool?
+  public var isDeletedUser: Swift.Bool?
+  public var audioStatus: FlyCommon.AudioStatus
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Utils {
+  public class func getSaveFileUrl(fileName: Swift.String) -> Foundation.URL
+  public class func mimeTypeForPath(path: Swift.String) -> Swift.String
+  public struct HttpMethods {
+  }
+  public class func getGroupContainerID() -> Swift.String
+  public class func randomString(of length: Swift.Int) -> Swift.String
+  public class func validateNumberForSync(number: Swift.String?, getCountryCode countryCode: Swift.String?) -> Swift.String?
+  public class func checkCountries(countryCode: Swift.String) -> FlyCommon.CountryInfo?
+  public class func readLocalFile() -> Foundation.Data?
+  public class func parse(jsonData: Foundation.Data) -> [FlyCommon.CountryInfo]?
+  public struct validationMobileandCountryCode {
+    public static func validateMobileNumber(_ mobileNumber: Swift.String?) throws -> Swift.String
+    public static func validateCountryCode(_ countryCode: Swift.String?) throws -> Swift.String
+  }
+  public enum validationError : Foundation.LocalizedError {
+    case invalidMobileNumber
+    case invalidCountryCode
+    case mobileNumberTooLong
+    case countryCodeTooLong
+    case mobileNumberTooShort
+    case countryCodeTooShort
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: FlyCommon.Utils.validationError, b: FlyCommon.Utils.validationError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
   @objc deinit
 }
 public struct BackupRestoreModels : Swift.Codable {
@@ -1209,88 +1369,6 @@ public struct BackupRecentChat : Swift.Codable {
   public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
-}
-public struct FlyProfile {
-  public let jid: Swift.String!
-  public var name: Swift.String
-  public var nickName: Swift.String
-  public var image: Swift.String
-  public var mobileNumber: Swift.String
-  public var status: Swift.String
-  public var email: Swift.String
-  public init(jid: Swift.String)
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class LocationChatMessage : ObjectiveC.NSObject {
-  @objc public var messageId: Swift.String
-  @objc public var latitude: Swift.Double
-  @objc public var longitude: Swift.Double
-  @objc public var mapLocationUrl: Swift.String
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class ChatMessage : ObjectiveC.NSObject {
-  @objc public var messageId: Swift.String
-  @objc public var messageTextContent: Swift.String
-  @objc public var messageSentTime: Swift.Double
-  @objc public var senderUserName: Swift.String
-  @objc public var senderNickName: Swift.String
-  @objc public var senderUserJid: Swift.String
-  @objc public var chatUserJid: Swift.String
-  public var messageType: FlyCommon.MessageType
-  public var messageChatType: FlyCommon.ChatType
-  @objc public var messageStatus: FlyCommon.MessageStatus
-  @objc public var isMessageSentByMe: Swift.Bool
-  @objc public var isCarbonMessage: Swift.Bool
-  @objc public var isMessageStarred: Swift.Bool
-  @objc public var isMessageDeleted: Swift.Bool
-  @objc public var isMessageRecalled: Swift.Bool
-  @objc public var isMessageTranslated: Swift.Bool
-  @objc public var isSavedContact: Swift.Bool
-  @objc public var isReplyMessage: Swift.Bool
-  @objc public var translatedMessageTextContent: Swift.String
-  @objc public var contactChatMessage: FlyCommon.ContactChatMessage?
-  @objc public var locationChatMessage: FlyCommon.LocationChatMessage?
-  @objc public var mediaChatMessage: FlyCommon.MediaChatMessage?
-  @objc public var replyParentChatMessage: FlyCommon.ReplyParentChatMessage?
-  public var audioTrackTime: Swift.Float?
-  public var isRetryButtonDisabled: Swift.Bool?
-  public var isDeletedUser: Swift.Bool?
-  public var audioStatus: FlyCommon.AudioStatus
-  @objc override dynamic public init()
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class Utils {
-  public class func getSaveFileUrl(fileName: Swift.String) -> Foundation.URL
-  public class func mimeTypeForPath(path: Swift.String) -> Swift.String
-  public struct HttpMethods {
-  }
-  public class func getGroupContainerID() -> Swift.String
-  public class func randomString(of length: Swift.Int) -> Swift.String
-  public class func validateNumberForSync(number: Swift.String?, getCountryCode countryCode: Swift.String?) -> Swift.String?
-  public class func checkCountries(countryCode: Swift.String) -> FlyCommon.CountryInfo?
-  public class func readLocalFile() -> Foundation.Data?
-  public class func parse(jsonData: Foundation.Data) -> [FlyCommon.CountryInfo]?
-  public struct validationMobileandCountryCode {
-    public static func validateMobileNumber(_ mobileNumber: Swift.String?) throws -> Swift.String
-    public static func validateCountryCode(_ countryCode: Swift.String?) throws -> Swift.String
-  }
-  public enum validationError : Foundation.LocalizedError {
-    case invalidMobileNumber
-    case invalidCountryCode
-    case mobileNumberTooLong
-    case countryCodeTooLong
-    case mobileNumberTooShort
-    case countryCodeTooShort
-    public var errorDescription: Swift.String? {
-      get
-    }
-    public static func == (a: FlyCommon.Utils.validationError, b: FlyCommon.Utils.validationError) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  @objc deinit
 }
 public enum FileType : Swift.String {
   case pdf
@@ -1633,13 +1711,27 @@ public struct FlyConstants {
   public static let autoDownloadMobile: Swift.String
   public static let autoDownloadWifi: Swift.String
   public static let autoDownloadLastEnabledTime: Swift.String
+  public static let autoDownloadTimeMobileDataImage: Swift.String
+  public static let autoDownloadTimeMobileDataVideo: Swift.String
+  public static let autoDownloadTimeMobileDataAudio: Swift.String
+  public static let autoDownloadTimeMobileDataDocument: Swift.String
+  public static let autoDownloadTimeWifiImage: Swift.String
+  public static let autoDownloadTimeWifiVideo: Swift.String
+  public static let autoDownloadTimeWifiAudio: Swift.String
+  public static let autoDownloadTimeWifiDocument: Swift.String
   public static let targetLanguageCode: Swift.String
   public static let selectedLanguage: Swift.String
   public static let appLockenable: Swift.String
+  public static let showAppLock: Swift.String
   public static let appFingerprintenable: Swift.String
   public static let localPush: Swift.String
   public static let remotePush: Swift.String
   public static let appLockPassword: Swift.String
+  public static let appLockPasswordDate: Swift.String
+  public static let pinChangeAlertShownDate: Swift.String
+  public static let faceOrFingerAuthenticationFails: Swift.String
+  public static let passwordAuthenticationAttemps: Swift.String
+  public static let appBackgroundTime: Swift.String
   public static let isBlockedByAdmin: Swift.String
   public static let isContactPermissionSkipped: Swift.String
   public static let isArchivedChatEnabled: Swift.String
