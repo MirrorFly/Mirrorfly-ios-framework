@@ -17,13 +17,13 @@ Pod::Spec.new do |s|
 
 
 
-    s.dependency 'libPhoneNumber-iOS', '0.8'
-    s.dependency 'Alamofire'
-    s.dependency 'SocketRocket'
-    s.dependency 'Socket.IO-Client-Swift', '15.2.0'
-    s.dependency 'XMPPFramework/Swift'
-    s.dependency 'RealmSwift' , '10.20.1'
-    s.dependency 'GoogleWebRTC'
+    #s.dependency 'libPhoneNumber-iOS', '0.8'
+    #s.dependency 'Alamofire'
+    #s.dependency 'SocketRocket'
+    #s.dependency 'Socket.IO-Client-Swift', '15.2.0'
+    #s.dependency 'XMPPFramework/Swift'
+    #s.dependency 'RealmSwift' , '10.20.1'
+    #s.dependency 'GoogleWebRTC'
 
 
     s.ios.vendored_frameworks = 'Source/FlyCommon.xcframework' , 'Source/FlyCall.xcframework' ,'Source/FlyCore.xcframework', 'Source/FlyXmpp.xcframework', 'Source/FlyDatabase.xcframework', 'Source/FlyNetwork.xcframework', 'Source/FlyTranslate.xcframework'
