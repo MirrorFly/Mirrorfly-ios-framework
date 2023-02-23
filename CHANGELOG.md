@@ -47,3 +47,6 @@ BugFixs:
 • Update Profile Image
 
  Response does not match with Android Response.
+
+## 0.0.5 (Feb 23, 2023)
+sdk 5.6.2
