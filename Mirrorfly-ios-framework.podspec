@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     s.dependency 'RealmSwift' , '10.20.1'
     s.dependency 'GoogleWebRTC'
 
-    s.ios.vendored_frameworks = 'Source/FlyCommon.xcframework' , 'Source/FlyCall.xcframework' ,'Source/FlyCore.xcframework', 'Source/FlyXmpp.xcframework', 'Source/FlyDatabase.xcframework', 'Source/FlyNetwork.xcframework', 'Source/FlyTranslate.xcframework'
+    s.ios.vendored_frameworks = 'SDK/FlyCommon.xcframework' , 'SDK/FlyCall.xcframework' ,'SDK/FlyCore.xcframework', 'SDK/FlyXmpp.xcframework', 'SDK/FlyDatabase.xcframework', 'SDK/FlyNetwork.xcframework', 'SDK/FlyTranslate.xcframework'
 
    
 end
