@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/FlyCall-Swift.h</key>
 		<data>
-		tMYsjOayASmCyZABNx2v4jh8Oio=
+		Z7S8Al3LZ8HTrEIwDXGTJ8tLoj8=
 		</data>
 		<key>Headers/FlyCall.h</key>
 		<data>
@@ -38,27 +38,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pd+vZw6envawPFCxarIsZ8OkNpg=
+		RGIILkGYHnVGQCJZKPuE2fl05jU=
 		</data>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		SInsaZP558Q83GIN5moo9RwZvDw=
+		cqnQylr6RG9JRIEyI6tWRZFOgWk=
 		</data>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2dy3i+T1imFBQre0yWMJKoHIX4o=
+		gTc02OBV5d52PAghxDf8xqSE0Lo=
 		</data>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Io7pCnbN8Pd5FRUPFFIaGEylPmQ=
+		9dZIfM3fQ9ZqklAgPvgqHU/+k40=
 		</data>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2dy3i+T1imFBQre0yWMJKoHIX4o=
+		gTc02OBV5d52PAghxDf8xqSE0Lo=
 		</data>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qBAZkgDRruTwH7UaClJWIC/sxQw=
+		bYLluTs/O/9WmjaGB7GoR3xWJDw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yzxN5Khuts18rGgR/StzbdFeowLPrt0K89zF2aPajsU=
+			a6pdFApm1HI751/8jV6/PspHxQ4PhKqRFExbFAkyTHY=
 			</data>
 		</dict>
 		<key>Headers/FlyCall.h</key>
@@ -127,35 +127,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oI6ZMH7CjL884qYr/NFnGJqjJfM4ILSi1tFoaC20C/M=
+			oi6Ly1Mhr4KrhfFjiCQSs9Y5CPsXFCzBss46EZu0nUw=
 			</data>
 		</dict>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mTK6I1C57I2LGOVSB1FF64XeeYwZsgPYJ7j54qIkDow=
+			lmFNDrgY8LhH3chrmacrobHbG2vV6Ipzv+9pdLf3x5c=
 			</data>
 		</dict>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KDmOb8Yny1DxiNeRT+IpFUXqLEiLeiw93+EW25RAqew=
+			rWWlXzcc1Qa0yV0+xk+e92AGrcTGkJTM5Va085Y502Y=
 			</data>
 		</dict>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mTK6I1C57I2LGOVSB1FF64XeeYwZsgPYJ7j54qIkDow=
+			lmFNDrgY8LhH3chrmacrobHbG2vV6Ipzv+9pdLf3x5c=
 			</data>
 		</dict>
 		<key>Modules/FlyCall.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/V2zKBlN2IxEdm+V1ndcs2Ut+njK0RRIBkruigS9bs0=
+			FBNJRKAGab4zR/VqaB9a4EmtQWY37j4oS2Qs4YwXbuE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

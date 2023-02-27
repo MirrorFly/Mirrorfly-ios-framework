@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/FlyTranslate-Swift.h</key>
 		<data>
-		FZMH3xTpvddUueEG3+5FSva/0jI=
+		NAcyrh3EAL6gTDGBumHokpX+EVU=
 		</data>
 		<key>Headers/FlyTranslate.h</key>
 		<data>
@@ -14,59 +14,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kiLLOH8FkecxF1Ebm3fHyCVWLA0=
+		LmjuMHd6OpkaudOoa+9cOj4s3GE=
+		</data>
+		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		6eFoBisDGn5EGDBpvAr02BCIoO8=
+		</data>
+		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		NIfzDFADSzYYB2jOd90wRIbw4/U=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UbdxsgXTJL1tzOb9qY+xlGM48V8=
+		xKOjJqzvlk5qVzGtaxB31m1/rA8=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		SOrMps0w1peu8dar5zaxTrVr2Mk=
+		NIfzDFADSzYYB2jOd90wRIbw4/U=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		K4cgmVwVaoFOxgfPtzuTrGG7JBE=
+		B6MxEpceeHLLD+RnJ9Ev7rAtttQ=
 		</data>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		UbdxsgXTJL1tzOb9qY+xlGM48V8=
+		6eFoBisDGn5EGDBpvAr02BCIoO8=
 		</data>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		SOrMps0w1peu8dar5zaxTrVr2Mk=
-		</data>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		K4cgmVwVaoFOxgfPtzuTrGG7JBE=
+		zSWhH5KaaoTEOlVevvN3pXc/HrA=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rl5nZxJdakpzYdnU2M3v0PWskbo=
+		VwkA4ZRmW3UJTCXrKxpJfWL3K2s=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZKunvtzkHFY1UI++fWmG4hXTsUA=
+		zSWhH5KaaoTEOlVevvN3pXc/HrA=
 		</data>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OAdivVUQ7Emge6KIl3bxHjj9iHs=
-		</data>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		rl5nZxJdakpzYdnU2M3v0PWskbo=
-		</data>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		ZKunvtzkHFY1UI++fWmG4hXTsUA=
-		</data>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		OAdivVUQ7Emge6KIl3bxHjj9iHs=
+		RYUjkRHvEivhPk0e56NcJgCXWpk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		JLhV8rQF1O8nqfO2NxQ6aGOTX2M=
+		d1tYs/Qzbn9go8HkZjRUu27Aj/U=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -75,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vHW2vDvu4kmix7zUpfwBt37/Ln6OVczDBFbIbqniysA=
+			sD/rdzeiyrjpdrxozKXMZ6tfmeVNFv5+c4oc3w7Y25E=
 			</data>
 		</dict>
 		<key>Headers/FlyTranslate.h</key>
@@ -85,95 +77,81 @@
 			u/zlW3qqkYgom4m+b4UYugJcGevTnJryOSQ2s8qJLQk=
 			</data>
 		</dict>
+		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			axPeE4IFty72TqSsWrYZbcXQ7oHqBChclYX4tfM6fDQ=
+			</data>
+		</dict>
+		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5bNk/DH0+HyEvA4wRitkpCAa3fwU10MyyVhXSVIDByg=
+			</data>
+		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R6owTkDbxtyZ+rRr+aQ1Z37/rg6W0ALCMTR+Snm7+p8=
+			OUAGL8sH8WdaZi9oPMjjAc2rK1j7oC1v4RSx+Z/HjwM=
 			</data>
 		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qwsHuiXpJcZJxOuG5z1b8jzoirrIz3GPTtSQLUwcGN8=
+			5bNk/DH0+HyEvA4wRitkpCAa3fwU10MyyVhXSVIDByg=
 			</data>
 		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W0m8YZ4Nt9p5UzpLRTFoD57J3rSlVh8AQV9RLHvvfpg=
+			wUnq/gLpwoGP25WCPzsnxmpuApnpIz+1FfmDzPtAryg=
 			</data>
 		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R6owTkDbxtyZ+rRr+aQ1Z37/rg6W0ALCMTR+Snm7+p8=
+			axPeE4IFty72TqSsWrYZbcXQ7oHqBChclYX4tfM6fDQ=
 			</data>
 		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qwsHuiXpJcZJxOuG5z1b8jzoirrIz3GPTtSQLUwcGN8=
-			</data>
-		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			W0m8YZ4Nt9p5UzpLRTFoD57J3rSlVh8AQV9RLHvvfpg=
+			wHyj+xHs7xxplAGKzBRNMyx0aS/GmhBdDWzmvf1yqQo=
 			</data>
 		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eIPTUyl2nYbaKjRqIa5oM0IeJkaMloiiqHCJqiwlsXY=
+			AfYuG1KmhSYOeXhWK1/epoWzLeo5jdfxu7KGrlPwE/o=
 			</data>
 		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			J2zlpFoSKmudBPncFgi/hKRkF6IYlr8iqJM9fOrkGNU=
+			wHyj+xHs7xxplAGKzBRNMyx0aS/GmhBdDWzmvf1yqQo=
 			</data>
 		</dict>
 		<key>Modules/FlyTranslate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p+g92MvK5DF/u2uFGkHXPB78JEWNTG3P87llUzXhWco=
-			</data>
-		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			eIPTUyl2nYbaKjRqIa5oM0IeJkaMloiiqHCJqiwlsXY=
-			</data>
-		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			J2zlpFoSKmudBPncFgi/hKRkF6IYlr8iqJM9fOrkGNU=
-			</data>
-		</dict>
-		<key>Modules/FlyTranslate.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			p+g92MvK5DF/u2uFGkHXPB78JEWNTG3P87llUzXhWco=
+			3733cQSlzn9t63EHuJ2tRnLki0bUToUIxKn6zeqH5c8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mr8xZIHfFlKN3RWEFGimHpFxmfnJ52db6QvlP0pFGbI=
+			W7wnwLnrwuKGxaimtp6eXsxCQ/jwSDOo/qMGWKlfOYw=
 			</data>
 		</dict>
 	</dict>

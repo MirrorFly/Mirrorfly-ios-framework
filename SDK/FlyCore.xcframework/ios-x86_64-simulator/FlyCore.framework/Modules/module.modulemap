@@ -4,3 +4,8 @@ framework module FlyCore {
   export *
   module * { export * }
 }
+
+module FlyCore.Swift {
+  header "FlyCore-Swift.h"
+  requires objc
+}
