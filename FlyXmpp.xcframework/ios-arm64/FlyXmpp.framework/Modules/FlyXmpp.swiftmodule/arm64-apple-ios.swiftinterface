@@ -21,12 +21,11 @@ public protocol XMPPMessageDelegate : ObjectiveC.NSObjectProtocol {
   func didReceivedSingleChatMessage(messageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String) -> Swift.String
   func didReceiveGroupChatMessage(messageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
   func onSentMessageStatusUpdated(from: Swift.String, messageId: Swift.String, updateType: FlyCommon.MessageStatus, time: Swift.String?)
-  func onReceivedMessageStatusUpdated(toJid: Swift.String, messageId: Swift.String, updateType: FlyCommon.MessageStatus, fromJid: Swift.String)
+  func onReceivedMessageStatusUpdated(toJid: Swift.String, messageId: Swift.String, updateType: FlyCommon.MessageStatus)
   func onMessagesCleared(toJid: Swift.String?, favourite: Swift.String?, deleteType: Swift.String?)
   func onMessagesClearedOrDeleted(messageIds: Swift.Array<Swift.String>)
   func onMessagesDeletedforEveryone(messageIds: Swift.Array<Swift.String>)
   func setOrUpdateFavourite(messageId: Swift.String, favourite: Swift.Bool, removeAllFavourite: Swift.Bool)
-  func clearAllConversationForSyncedDevice()
 }
 @_inheritsConvenienceInitializers @objc public class NotificationMessageSupport : ObjectiveC.NSObject {
   public typealias pushReturnBlock = (UserNotifications.UNMutableNotificationContent?) -> Swift.Void
@@ -165,7 +164,7 @@ extension FlyXmpp.FlyXmppController {
   public func resetXmppResource()
 }
 public protocol XMPPLogoutDelegate : ObjectiveC.NSObjectProtocol {
-  func didReceiveLogout(isDeleteAccount: Swift.Bool)
+  func didReceiveLogout()
 }
 public protocol XMPPWebLogoutDelegate : ObjectiveC.NSObjectProtocol {
   func didLogoutWeb(socketId: Swift.String)

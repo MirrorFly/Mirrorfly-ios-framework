@@ -444,10 +444,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
-
 @interface FlyMessenger (SWIFT_EXTENSION(FlyCore))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
+
 
 
 @interface FlyMessenger (SWIFT_EXTENSION(FlyCore))
@@ -518,8 +518,6 @@ SWIFT_PROTOCOL("_TtP7FlyCore21MessageEventsDelegate_")
 - (void)setOrUpdateFavouriteWithMessageId:(NSString * _Nonnull)messageId favourite:(BOOL)favourite removeAllFavourite:(BOOL)removeAllFavourite;
 /// Called when an incoming message is being translated
 - (void)onMessageTranslatedWithMessage:(ChatMessage * _Nonnull)message jid:(NSString * _Nonnull)jid;
-/// Called when user cleared all conversations
-- (void)clearAllConversationForSyncedDevice;
 @end
 
 

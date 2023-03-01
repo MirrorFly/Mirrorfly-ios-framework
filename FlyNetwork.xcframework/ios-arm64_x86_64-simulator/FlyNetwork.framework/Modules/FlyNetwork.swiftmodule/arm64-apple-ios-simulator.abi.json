@@ -3924,6 +3924,13 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/user\/Documents\/uikit\/SubmoduleNetwork\/FlyNetwork\/FlyNetwork\/RegisterModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 720,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/user\/Documents\/uikit\/SubmoduleNetwork\/FlyNetwork\/FlyNetwork\/Socket.swift",
       "kind": "StringLiteral",
       "offset": 614,
@@ -4178,14 +4185,14 @@
     {
       "filePath": "\/Users\/user\/Documents\/uikit\/SubmoduleNetwork\/FlyNetwork\/FlyNetwork\/FlyNetworkController.swift",
       "kind": "StringLiteral",
-      "offset": 9583,
+      "offset": 9579,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/user\/Documents\/uikit\/SubmoduleNetwork\/FlyNetwork\/FlyNetwork\/FlyNetworkController.swift",
       "kind": "StringLiteral",
-      "offset": 9609,
+      "offset": 9605,
       "length": 4,
       "value": "\"\n\""
     },

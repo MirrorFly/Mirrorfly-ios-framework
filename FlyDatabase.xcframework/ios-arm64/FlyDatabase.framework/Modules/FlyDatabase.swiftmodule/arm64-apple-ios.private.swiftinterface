@@ -26,35 +26,6 @@ import _StringProcessing
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
-  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
-  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
-  public func isGroupChatAvailable() -> Swift.Bool
-  public func isGroupCallAvailable() -> Swift.Bool
-  public func isOneToOneCallAvailable() -> Swift.Bool
-  public func isRecentChatSearchAvailable() -> Swift.Bool
-  public func isImageAttachmentAvailable() -> Swift.Bool
-  public func isVideoAttachmentAvailable() -> Swift.Bool
-  public func isAudioAttachmentAvailable() -> Swift.Bool
-  public func isDocumentAttachmentAvailable() -> Swift.Bool
-  public func isContactAttachmentAvailable() -> Swift.Bool
-  public func isLocationAttachmentAvailable() -> Swift.Bool
-  public func isAttachmentAvailable() -> Swift.Bool
-  @objc override dynamic public init()
-  @objc deinit
-}
-public class FileStreamReader {
-  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
-  @objc deinit
-  public func nextLine() -> Swift.String?
-  public func rewind()
-  public func close()
-}
-extension FlyDatabase.FileStreamReader : Swift.Sequence {
-  public func makeIterator() -> Swift.AnyIterator<Swift.String>
-  public typealias Element = Swift.String
-  public typealias Iterator = Swift.AnyIterator<Swift.String>
-}
 @_hasMissingDesignatedInitializers public class MessageHandler {
   public static let shared: FlyDatabase.MessageHandler
   public static func composeAndSaveTextMessage(toJid: Swift.String, textMessage: Swift.String, replyMessageId: Swift.String? = nil) -> (FlyCommon.ChatMessage, FlyCommon.MessageDetail)?
@@ -145,7 +116,6 @@ extension RealmSwift.Realm {
   public func getVcardAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
   public func blockUnblockUser(for jid: Swift.String, isBlock: Swift.Bool)
   public func setUnblockForAllContact()
-  public func resetBlockedMeUsers()
   public func updateUserBlockedMeStatus(forJid: Swift.String, isBlockedMe: Swift.Bool)
   public func saveUserBlockList(jidList: [Swift.String], isBlockedMe: Swift.Bool)
   public func getUserBlockedList(isBlockedMe: Swift.Bool) -> [FlyCommon.ProfileDetails]
@@ -180,14 +150,6 @@ extension RealmSwift.Realm {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
-  public static let shared: FlyDatabase.BackupMessageManager
-  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
-  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
-  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
-  public func removeAllMessages()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class UserPrivacyManager : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
@@ -219,9 +181,46 @@ extension RealmSwift.Realm {
   public func getReceiptsFor(messageId: Swift.String) -> [FlyCommon.DeliveryReceipt]
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
+  public static let shared: FlyDatabase.BackupMessageManager
+  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
+  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
+  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
+  public func removeAllMessages()
+  @objc deinit
+}
+public class FileStreamReader {
+  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
+  @objc deinit
+  public func nextLine() -> Swift.String?
+  public func rewind()
+  public func close()
+}
+extension FlyDatabase.FileStreamReader : Swift.Sequence {
+  public func makeIterator() -> Swift.AnyIterator<Swift.String>
+  public typealias Element = Swift.String
+  public typealias Iterator = Swift.AnyIterator<Swift.String>
+}
+@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
+  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
+  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
+  public func isGroupChatAvailable() -> Swift.Bool
+  public func isGroupCallAvailable() -> Swift.Bool
+  public func isOneToOneCallAvailable() -> Swift.Bool
+  public func isRecentChatSearchAvailable() -> Swift.Bool
+  public func isImageAttachmentAvailable() -> Swift.Bool
+  public func isVideoAttachmentAvailable() -> Swift.Bool
+  public func isAudioAttachmentAvailable() -> Swift.Bool
+  public func isDocumentAttachmentAvailable() -> Swift.Bool
+  public func isContactAttachmentAvailable() -> Swift.Bool
+  public func isLocationAttachmentAvailable() -> Swift.Bool
+  public func isAttachmentAvailable() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class MessageManager : ObjectiveC.NSObject {
   public func updateTranslatedMessage(messageId: Swift.String, translatedText: Swift.String)
-  public func updateMessageStatus(messageId: Swift.String, type: FlyCommon.MessageStatus, fromJid: Swift.String? = nil)
+  public func updateMessageStatus(messageId: Swift.String, type: FlyCommon.MessageStatus)
   public func updateMediaMessageStatus(messageId: Swift.String, fileUrl: Swift.String)
   public func updateMediaDownloadMessageStatus(messageId: Swift.String, localPath: Swift.String, fileName: Swift.String)
   public func updateMediaProgressStatus(percent: Swift.Float, messageId: Swift.String)
