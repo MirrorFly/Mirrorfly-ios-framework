@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlyDatabase
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import FlyCommon
@@ -14,16 +14,6 @@ import _StringProcessing
   public func saveOfflineAction(actionId: Swift.String, jid: Swift.String?, action: FlyCommon.OfflineActionType, actionModel: Foundation.Data)
   public func getOfflineAction(action: FlyCommon.OfflineActionType) -> [FlyCommon.OfflineActionModel]
   public func deleteOfflineAction(for actionId: Swift.String)
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class WebLoginManager : ObjectiveC.NSObject {
-  public func saveWebInfo(webLoginInfo: FlyCommon.WebLoginInfo)
-  public func getWebInfo(bowser: Swift.String, platform: Swift.String) -> FlyCommon.WebLoginInfo?
-  public func getAllWebInfo() -> [FlyCommon.WebLoginInfo?]
-  public func getRecentWebInfo() -> [FlyCommon.WebLoginInfo?]
-  public func deleteAll()
-  public func deleteBySocketId(socketId: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -185,23 +175,6 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ReceiptsManager {
-  public func addReceiptsForTheMessage(ofId: Swift.String, forUsersJids: [Swift.String], sentTime: Swift.Double, chatType: FlyCommon.ChatType)
-  public func updateReceiptsStatusOf(messageId: Swift.String, userJid: Swift.String, type: FlyCommon.MessageStatus, time: Swift.Double)
-  public func updateAcknowledgeStatusOfGroupMessage(messageId: Swift.String, type: FlyCommon.MessageStatus, time: Swift.Double)
-  public func getReceiptsFor(messageId: Swift.String, status: FlyCommon.MessageStatus) -> Swift.Int
-  public func addOfflineReceiptsForReceivedMessage(ofId: Swift.String, chatJid: Swift.String, senderJid: Swift.String)
-  public func updateOfflineReceiptsAcknowledgedStatus(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus) -> (Swift.String, Swift.String, Swift.Bool)?
-  public func changeMessageStatusesForJid(jid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [(Swift.String, Swift.String, Swift.String)]
-  public func updateOfflineReceiptsStatus(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus)
-  public func getMessagesStatusOf(jid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [(Swift.String, Swift.String, Swift.String)]
-  public func getOfflineReceipts() -> [(messageId: Swift.String, chatJid: Swift.String, senderJid: Swift.String, messageStatus: FlyCommon.MessageStatus)]
-  public func removeOfflineReceipt(messageId: Swift.String)
-  public func getReceiptsFor(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [FlyCommon.MessageReceipt]
-  public func getReceiptFor(messageId: Swift.String, userJid: Swift.String) -> FlyCommon.DeliveryReceipt?
-  public func getReceiptsFor(messageId: Swift.String) -> [FlyCommon.DeliveryReceipt]
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
   public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
   public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
@@ -225,6 +198,33 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func isDeleteMessageAvailable() -> Swift.Bool
   public func isViewAllMediasAvailable() -> Swift.Bool
   @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class WebLoginManager : ObjectiveC.NSObject {
+  public func saveWebInfo(webLoginInfo: FlyCommon.WebLoginInfo)
+  public func getWebInfo(bowser: Swift.String, platform: Swift.String) -> FlyCommon.WebLoginInfo?
+  public func getAllWebInfo() -> [FlyCommon.WebLoginInfo?]
+  public func getRecentWebInfo() -> [FlyCommon.WebLoginInfo?]
+  public func deleteAll()
+  public func deleteBySocketId(socketId: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ReceiptsManager {
+  public func addReceiptsForTheMessage(ofId: Swift.String, forUsersJids: [Swift.String], sentTime: Swift.Double, chatType: FlyCommon.ChatType)
+  public func updateReceiptsStatusOf(messageId: Swift.String, userJid: Swift.String, type: FlyCommon.MessageStatus, time: Swift.Double)
+  public func updateAcknowledgeStatusOfGroupMessage(messageId: Swift.String, type: FlyCommon.MessageStatus, time: Swift.Double)
+  public func getReceiptsFor(messageId: Swift.String, status: FlyCommon.MessageStatus) -> Swift.Int
+  public func addOfflineReceiptsForReceivedMessage(ofId: Swift.String, chatJid: Swift.String, senderJid: Swift.String)
+  public func updateOfflineReceiptsAcknowledgedStatus(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus) -> (Swift.String, Swift.String, Swift.Bool)?
+  public func changeMessageStatusesForJid(jid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [(Swift.String, Swift.String, Swift.String)]
+  public func updateOfflineReceiptsStatus(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus)
+  public func getMessagesStatusOf(jid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [(Swift.String, Swift.String, Swift.String)]
+  public func getOfflineReceipts() -> [(messageId: Swift.String, chatJid: Swift.String, senderJid: Swift.String, messageStatus: FlyCommon.MessageStatus)]
+  public func removeOfflineReceipt(messageId: Swift.String)
+  public func getReceiptsFor(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [FlyCommon.MessageReceipt]
+  public func getReceiptFor(messageId: Swift.String, userJid: Swift.String) -> FlyCommon.DeliveryReceipt?
+  public func getReceiptsFor(messageId: Swift.String) -> [FlyCommon.DeliveryReceipt]
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class MessageManager : ObjectiveC.NSObject {
