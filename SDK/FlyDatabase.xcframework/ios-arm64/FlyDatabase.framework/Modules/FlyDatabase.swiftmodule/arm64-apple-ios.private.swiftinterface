@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlyDatabase
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import FlyCommon
@@ -175,31 +175,6 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
-  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
-  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
-  public func isGroupChatAvailable() -> Swift.Bool
-  public func isGroupCallAvailable() -> Swift.Bool
-  public func isOneToOneCallAvailable() -> Swift.Bool
-  public func isRecentChatSearchAvailable() -> Swift.Bool
-  public func isImageAttachmentAvailable() -> Swift.Bool
-  public func isVideoAttachmentAvailable() -> Swift.Bool
-  public func isAudioAttachmentAvailable() -> Swift.Bool
-  public func isDocumentAttachmentAvailable() -> Swift.Bool
-  public func isContactAttachmentAvailable() -> Swift.Bool
-  public func isLocationAttachmentAvailable() -> Swift.Bool
-  public func isAttachmentAvailable() -> Swift.Bool
-  public func isStarMessageAvailable() -> Swift.Bool
-  public func isClearChatAvailable() -> Swift.Bool
-  public func isDeleteChatAvailable() -> Swift.Bool
-  public func isTranslationAvailable() -> Swift.Bool
-  public func isBlockAvailable() -> Swift.Bool
-  public func isReportAvailable() -> Swift.Bool
-  public func isDeleteMessageAvailable() -> Swift.Bool
-  public func isViewAllMediasAvailable() -> Swift.Bool
-  @objc override dynamic public init()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class WebLoginManager : ObjectiveC.NSObject {
   public func saveWebInfo(webLoginInfo: FlyCommon.WebLoginInfo)
   public func getWebInfo(bowser: Swift.String, platform: Swift.String) -> FlyCommon.WebLoginInfo?
@@ -225,6 +200,31 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func getReceiptsFor(messageId: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [FlyCommon.MessageReceipt]
   public func getReceiptFor(messageId: Swift.String, userJid: Swift.String) -> FlyCommon.DeliveryReceipt?
   public func getReceiptsFor(messageId: Swift.String) -> [FlyCommon.DeliveryReceipt]
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
+  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
+  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
+  public func isGroupChatAvailable() -> Swift.Bool
+  public func isGroupCallAvailable() -> Swift.Bool
+  public func isOneToOneCallAvailable() -> Swift.Bool
+  public func isRecentChatSearchAvailable() -> Swift.Bool
+  public func isImageAttachmentAvailable() -> Swift.Bool
+  public func isVideoAttachmentAvailable() -> Swift.Bool
+  public func isAudioAttachmentAvailable() -> Swift.Bool
+  public func isDocumentAttachmentAvailable() -> Swift.Bool
+  public func isContactAttachmentAvailable() -> Swift.Bool
+  public func isLocationAttachmentAvailable() -> Swift.Bool
+  public func isAttachmentAvailable() -> Swift.Bool
+  public func isStarMessageAvailable() -> Swift.Bool
+  public func isClearChatAvailable() -> Swift.Bool
+  public func isDeleteChatAvailable() -> Swift.Bool
+  public func isTranslationAvailable() -> Swift.Bool
+  public func isBlockAvailable() -> Swift.Bool
+  public func isReportAvailable() -> Swift.Bool
+  public func isDeleteMessageAvailable() -> Swift.Bool
+  public func isViewAllMediasAvailable() -> Swift.Bool
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class MessageManager : ObjectiveC.NSObject {
@@ -274,6 +274,7 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
 extension FlyDatabase.MessageManager {
   public func deleteUnreadNotificationMessage(messageId: Swift.String)
   public func getUnreadMessages(chatUserJid: Swift.String, messageId: Swift.String) -> [Swift.String]
+  public func getUnseenMessagesWithTime(chatUserJid: Swift.String, messageId: Swift.String, time: Swift.Double) -> [Swift.String]
 }
 extension FlyDatabase.MessageManager {
   public func searchMessage(text: Swift.String) -> [FlyCommon.SearchMessage]
