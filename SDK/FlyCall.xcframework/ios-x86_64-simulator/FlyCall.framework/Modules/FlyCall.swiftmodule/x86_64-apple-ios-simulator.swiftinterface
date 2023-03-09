@@ -304,6 +304,7 @@ public protocol FeaturesDelegate {
 @objc @_inheritsConvenienceInitializers public class CallManager : ObjectiveC.NSObject {
   public static var delegate: FlyCall.CallManagerDelegate?
   public static var featuresDelegate: FlyCall.FeaturesDelegate?
+  public static var callLogDelegate: FlyCall.CallLogDelegate?
   public static var isCallStarted: Swift.Bool
   public static var incomingUserJidArr: [Swift.String]
   @objc override dynamic public init()
@@ -395,6 +396,11 @@ extension FlyCall.CallManager {
   public class func getCallLink() -> Swift.String?
   public class func isCurrentCallJoinedViaLink() -> Swift.Bool
   public class func isUserJoinedViaLink(userId: Swift.String) -> Swift.Bool
+}
+public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
+  func clearAllCallLog()
+  func deleteCallLogs(callLogIds: [Swift.String])
+  func callLogUpdate(calllogId: Swift.String)
 }
 public protocol VideoWidthHeightAdjuster {
   func getVideoHeightConstraint(usersCount: Swift.Int) -> Swift.Int

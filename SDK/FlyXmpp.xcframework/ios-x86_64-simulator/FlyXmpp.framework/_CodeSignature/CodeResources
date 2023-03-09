@@ -18,23 +18,23 @@
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		6k6SuwLJmZzES9DzEwonFHrRrgU=
+		khkujcQI6qAn3SEthvJCxOvNhoI=
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PGuf+jOM45V8RYXwYy8dgjNNkg8=
+		E2XubHQb5CYmVat6A2Q5X3MxcuE=
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		3uW+2fNALWw1/ako49gCZhMIOeI=
+		ALLhmulh8T3A8pkV28tdFpoK3pg=
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PGuf+jOM45V8RYXwYy8dgjNNkg8=
+		E2XubHQb5CYmVat6A2Q5X3MxcuE=
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mq2E5/6ePY9i8hZXZ/uU94YtKwg=
+		vSrcJAxD55i2tw8/wgG3fQxnP20=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tZ01Kly7U444e5kgeheTaC5dw9T1OtRiOYOaPXR8iwc=
+			5XyA5eLhgZD9IOQb6sgLDVJ66FcODzYREmn+QMPp/D0=
 			</data>
 		</dict>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+JMj8BZoiy+InqnghyW2F3Hje15nwwcASM80kBLUAfs=
+			/jtEsZNVf49mRXa4LFJttQC7pdtFJWuDzktij1crMe8=
 			</data>
 		</dict>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hjfgT9YtIgSamhh+NAt6K3ijvYFZvewNp44r4chB0DQ=
+			xzd/bHw1yKEnXkN5ZIIli9pSrM3F43jTtlX3C56wfHM=
 			</data>
 		</dict>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+JMj8BZoiy+InqnghyW2F3Hje15nwwcASM80kBLUAfs=
+			/jtEsZNVf49mRXa4LFJttQC7pdtFJWuDzktij1crMe8=
 			</data>
 		</dict>
 		<key>Modules/FlyXmpp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NzE2qyE0gomNkt4ah5t/YunzwCPIlpjBOLZoMxSJYS4=
+			1lHbk69OEZ4KDFbtWtlFNi/xFuDksKl1XlxEBUOc2Wo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

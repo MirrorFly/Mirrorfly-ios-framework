@@ -9102,6 +9102,130 @@
           },
           {
             "kind": "Var",
+            "name": "callLogDelegate",
+            "printedName": "callLogDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCall.CallLogDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CallLogDelegate",
+                    "printedName": "FlyCall.CallLogDelegate",
+                    "usr": "s:7FlyCall0B11LogDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvpZ",
+            "mangledName": "$s7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvpZ",
+            "moduleName": "FlyCall",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCall.CallLogDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CallLogDelegate",
+                        "printedName": "FlyCall.CallLogDelegate",
+                        "usr": "s:7FlyCall0B11LogDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvgZ",
+                "mangledName": "$s7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvgZ",
+                "moduleName": "FlyCall",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCall.CallLogDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CallLogDelegate",
+                        "printedName": "FlyCall.CallLogDelegate",
+                        "usr": "s:7FlyCall0B11LogDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvsZ",
+                "mangledName": "$s7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvsZ",
+                "moduleName": "FlyCall",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvMZ",
+                "mangledName": "$s7FlyCall0B7ManagerC15callLogDelegateAA0beF0_pSgvMZ",
+                "moduleName": "FlyCall",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "isCallStarted",
             "printedName": "isCallStarted",
             "children": [
@@ -11906,6 +12030,105 @@
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CallLogDelegate",
+        "printedName": "CallLogDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "clearAllCallLog",
+            "printedName": "clearAllCallLog()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCall0B11LogDelegateP08clearAllbC0yyF",
+            "mangledName": "$s7FlyCall0B11LogDelegateP08clearAllbC0yyF",
+            "moduleName": "FlyCall",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCall.CallLogDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCall.CallLogDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteCallLogs",
+            "printedName": "deleteCallLogs(callLogIds:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCall0B11LogDelegateP06deleteB4Logs04callC3IdsySaySSG_tF",
+            "mangledName": "$s7FlyCall0B11LogDelegateP06deleteB4Logs04callC3IdsySaySSG_tF",
+            "moduleName": "FlyCall",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCall.CallLogDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCall.CallLogDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "callLogUpdate",
+            "printedName": "callLogUpdate(calllogId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCall0B11LogDelegateP04callC6Update9calllogIdySS_tF",
+            "mangledName": "$s7FlyCall0B11LogDelegateP04callC6Update9calllogIdySS_tF",
+            "moduleName": "FlyCall",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCall.CallLogDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCall.CallLogDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCall0B11LogDelegateP",
+        "mangledName": "$s7FlyCall0B11LogDelegateP",
+        "moduleName": "FlyCall",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl"
         ]
       },
       {
@@ -15465,189 +15688,189 @@
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3483,
+      "offset": 3540,
       "length": 4,
       "value": "60.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3519,
+      "offset": 3576,
       "length": 4,
       "value": "30.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3556,
+      "offset": 3613,
       "length": 4,
       "value": "60.0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 3598,
+      "offset": 3655,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4165,
+      "offset": 4222,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4208,
+      "offset": 4265,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4251,
+      "offset": 4308,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4692,
+      "offset": 4749,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 4921,
+      "offset": 4978,
       "length": 6,
       "value": "\"PING\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 4961,
+      "offset": 5018,
       "length": 6,
       "value": "\"PONG\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5148,
+      "offset": 5205,
       "length": 9,
       "value": "\"ENGAGED\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5240,
+      "offset": 5297,
       "length": 6,
       "value": "\"exit\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5292,
+      "offset": 5349,
       "length": 18,
       "value": "\"SOCKET_RECONNECT\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5355,
+      "offset": 5412,
       "length": 17,
       "value": "\"CALL_CONNECTION\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5421,
+      "offset": 5478,
       "length": 21,
       "value": "\"CALL_CONNECTION_ACK\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5537,
+      "offset": 5594,
       "length": 12,
       "value": "\"VIDEO_MUTE\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5590,
+      "offset": 5647,
       "length": 13,
       "value": "\"CALL_STATUS\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5648,
+      "offset": 5705,
       "length": 17,
       "value": "\"CALL_CONVERSION\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 5719,
+      "offset": 5776,
       "length": 26,
       "value": "\"CALL_CONVERSION_RESPONSE\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5896,
+      "offset": 5953,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6158,
+      "offset": 6215,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 6190,
+      "offset": 6247,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "StringLiteral",
-      "offset": 6222,
+      "offset": 6279,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6333,
+      "offset": 6390,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6376,
+      "offset": 6433,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6408,
+      "offset": 6465,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCall\/FlyCall\/FlyCall\/Classes\/JanusWebrtc\/CallManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6444,
+      "offset": 6501,
       "length": 5,
       "value": "false"
     },

@@ -444,10 +444,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
-
 @interface FlyMessenger (SWIFT_EXTENSION(FlyCore))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
+
 
 
 @interface FlyMessenger (SWIFT_EXTENSION(FlyCore))

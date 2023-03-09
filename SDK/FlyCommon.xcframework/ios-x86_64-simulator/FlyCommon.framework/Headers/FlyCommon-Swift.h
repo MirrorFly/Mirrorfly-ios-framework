@@ -352,6 +352,8 @@ SWIFT_CLASS("_TtC9FlyCommon10GroupModel")
 @property (nonatomic, copy) NSString * _Nonnull groupCreatedTime;
 /// groupImage of the group profile
 @property (nonatomic, copy) NSString * _Nonnull groupImage;
+/// groupThumbImage of the group profile
+@property (nonatomic, copy) NSString * _Nonnull groupThumbImage;
 /// groupName of the group profile
 @property (nonatomic, copy) NSString * _Nonnull groupName;
 /// groupAffiliation of the group profile
@@ -459,6 +461,8 @@ SWIFT_CLASS("_TtC9FlyCommon18ParticipantDetails")
 @property (nonatomic, copy) NSString * _Nonnull time;
 /// image  of  the group
 @property (nonatomic, copy) NSString * _Nonnull groupImage;
+/// thumbImage  of  the group
+@property (nonatomic, copy) NSString * _Nonnull groupThumbImage;
 /// name of  the group
 @property (nonatomic, copy) NSString * _Nonnull groupName;
 /// adminJid of  the group
@@ -481,6 +485,8 @@ SWIFT_CLASS("_TtC9FlyCommon14ProfileDetails")
 @property (nonatomic, copy) NSString * _Nonnull nickName;
 /// Image url of the user
 @property (nonatomic, copy) NSString * _Nonnull image;
+/// Thumbnail Image url of the user
+@property (nonatomic, copy) NSString * _Nonnull thumbImage;
 /// Image local  path of the user
 @property (nonatomic, copy) NSString * _Nonnull imageLocalPath;
 /// Mobile number of the user
@@ -550,6 +556,7 @@ SWIFT_CLASS("_TtC9FlyCommon10RecentChat")
 /// To check whether this recent chat model is a pinned to appear on top
 @property (nonatomic) BOOL isChatPinned;
 @property (nonatomic, copy) NSString * _Nullable profileImage;
+@property (nonatomic, copy) NSString * _Nullable profileThumbImage;
 /// Id of the last Message sent/received between us and this recent chat profile
 @property (nonatomic, copy) NSString * _Nonnull lastMessageId;
 /// Data of the last message(text message | image caption) sent/received between us and the user/group

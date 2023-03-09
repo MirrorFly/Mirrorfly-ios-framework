@@ -26,14 +26,6 @@ import _StringProcessing
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
-  public static let shared: FlyDatabase.BackupMessageManager
-  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
-  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
-  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
-  public func removeAllMessages()
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class MessageHandler {
   public static let shared: FlyDatabase.MessageHandler
   public static func composeAndSaveTextMessage(toJid: Swift.String, textMessage: Swift.String, replyMessageId: Swift.String? = nil) -> (FlyCommon.ChatMessage, FlyCommon.MessageDetail)?
@@ -74,18 +66,6 @@ public protocol FlyDatabaseControllerDelegate : ObjectiveC.NSObjectProtocol {
 public func hardDeleteAllTable()
 extension RealmSwift.Realm {
   public func safeWrite(_ block: (() throws -> Swift.Void)) throws
-}
-public class FileStreamReader {
-  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
-  @objc deinit
-  public func nextLine() -> Swift.String?
-  public func rewind()
-  public func close()
-}
-extension FlyDatabase.FileStreamReader : Swift.Sequence {
-  public func makeIterator() -> Swift.AnyIterator<Swift.String>
-  public typealias Element = Swift.String
-  public typealias Iterator = Swift.AnyIterator<Swift.String>
 }
 @objc @_inheritsConvenienceInitializers public class GroupMemberManager : ObjectiveC.NSObject {
   public func saveGroupContact(groupDetailList: [FlyCommon.GroupParticipantDetail])
@@ -128,12 +108,24 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   @objc override dynamic public init()
   @objc deinit
 }
+public class FileStreamReader {
+  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
+  @objc deinit
+  public func nextLine() -> Swift.String?
+  public func rewind()
+  public func close()
+}
+extension FlyDatabase.FileStreamReader : Swift.Sequence {
+  public func makeIterator() -> Swift.AnyIterator<Swift.String>
+  public typealias Element = Swift.String
+  public typealias Iterator = Swift.AnyIterator<Swift.String>
+}
 @objc @_inheritsConvenienceInitializers public class RosterManager : ObjectiveC.NSObject {
   public func getContactsCount() -> Swift.Int
   public func isProfileDetailAvailable(forJid: Swift.String) -> Swift.Bool
   public func saveContact(profileDetailsArray: [FlyCommon.ProfileDetails], chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType, saveAsTemp: Swift.Bool = false, calledBy: Swift.String)
   public func getContactAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
-  public func getVcardAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
+  public func getVcardAsProfileDetails(forJid: Swift.String, isAdminMember: Swift.Bool? = false) -> FlyCommon.ProfileDetails?
   public func blockUnblockUser(for jid: Swift.String, isBlock: Swift.Bool)
   public func setUnblockForAllContact()
   public func resetBlockedMeUsers()
@@ -202,6 +194,14 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func getReceiptsFor(messageId: Swift.String) -> [FlyCommon.DeliveryReceipt]
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
+  public static let shared: FlyDatabase.BackupMessageManager
+  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
+  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
+  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
+  public func removeAllMessages()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
   public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
   public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
@@ -236,9 +236,11 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func updateMediaStatus(uploadStatus: Swift.Int?, downloadStatus: Swift.Int?, messageId: Swift.String)
   public func resetMediaMessage(messageId: Swift.String)
   public func getMessageFor(id: Swift.String) -> FlyCommon.ChatMessage?
+  public func getLastMessageId(jid: Swift.String) -> Swift.String
   public func getMessagesByStatus(status: FlyCommon.MessageStatus) -> [FlyCommon.ChatMessage?]
   public func getMessageDetailFor(id: Swift.String) -> FlyCommon.MessageDetail?
-  public func deleteMessagesForJids(for jids: [Swift.String], isRecentSoftDelete: Swift.Bool, isFavorite: Swift.Bool)
+  public func deleteMessagesForJids(for jids: [Swift.String], isRecentSoftDelete: Swift.Bool, isFavorite: Swift.Bool, time: Swift.String? = "")
+  public func deleteMessagesForJids(for jids: [Swift.String], lastmessageId: Swift.String, isFavorite: Swift.Bool)
   public func getMessagesOfAJid(jid: Swift.String) -> [FlyCommon.ChatMessage]
   public func getSentMessagesFrom(messageId: Swift.String, chatUserJid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [FlyCommon.ChatMessage]
   public func getMeadiaMessagesOfAJid(jid: Swift.String) -> [FlyCommon.ChatMessage]
