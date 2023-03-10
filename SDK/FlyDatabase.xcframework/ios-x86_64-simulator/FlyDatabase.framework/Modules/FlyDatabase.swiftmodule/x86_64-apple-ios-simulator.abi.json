@@ -16,6 +16,590 @@
       },
       {
         "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FileStreamReader",
+        "printedName": "FileStreamReader",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(path:delimiter:encoding:chunkSize:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyDatabase.FileStreamReader?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FileStreamReader",
+                    "printedName": "FlyDatabase.FileStreamReader",
+                    "usr": "s:11FlyDatabase16FileStreamReaderC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoding",
+                "printedName": "Swift.String.Encoding",
+                "hasDefaultArg": true,
+                "usr": "s:SS10FoundationE8EncodingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11FlyDatabase16FileStreamReaderC4path9delimiter8encoding9chunkSizeACSgSS_S2S10FoundationE8EncodingVSitcfc",
+            "mangledName": "$s11FlyDatabase16FileStreamReaderC4path9delimiter8encoding9chunkSizeACSgSS_S2S10FoundationE8EncodingVSitcfc",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "nextLine",
+            "printedName": "nextLine()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase16FileStreamReaderC8nextLineSSSgyF",
+            "mangledName": "$s11FlyDatabase16FileStreamReaderC8nextLineSSSgyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "rewind",
+            "printedName": "rewind()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase16FileStreamReaderC6rewindyyF",
+            "mangledName": "$s11FlyDatabase16FileStreamReaderC6rewindyyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "close",
+            "printedName": "close()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase16FileStreamReaderC5closeyyF",
+            "mangledName": "$s11FlyDatabase16FileStreamReaderC5closeyyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeIterator",
+            "printedName": "makeIterator()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AnyIterator",
+                "printedName": "Swift.AnyIterator<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:s11AnyIteratorV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase16FileStreamReaderC12makeIterators03AnyG0VySSGyF",
+            "mangledName": "$s11FlyDatabase16FileStreamReaderC12makeIterators03AnyG0VySSGyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:11FlyDatabase16FileStreamReaderC",
+        "mangledName": "$s11FlyDatabase16FileStreamReaderC",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyIterator",
+                    "printedName": "Swift.AnyIterator<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:s11AnyIteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WebLoginManager",
+        "printedName": "WebLoginManager",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "saveWebInfo",
+            "printedName": "saveWebInfo(webLoginInfo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WebLoginInfo",
+                "printedName": "FlyCommon.WebLoginInfo",
+                "usr": "s:9FlyCommon12WebLoginInfoV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC04saveC4Info03webdG0y0A6Common0cdG0V_tF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC04saveC4Info03webdG0y0A6Common0cdG0V_tF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getWebInfo",
+            "printedName": "getWebInfo(bowser:platform:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCommon.WebLoginInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WebLoginInfo",
+                    "printedName": "FlyCommon.WebLoginInfo",
+                    "usr": "s:9FlyCommon12WebLoginInfoV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC03getC4Info6bowser8platform0A6Common0cdG0VSgSS_SStF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC03getC4Info6bowser8platform0A6Common0cdG0VSgSS_SStF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAllWebInfo",
+            "printedName": "getAllWebInfo()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCommon.WebLoginInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLoginInfo",
+                        "printedName": "FlyCommon.WebLoginInfo",
+                        "usr": "s:9FlyCommon12WebLoginInfoV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC06getAllC4InfoSay0A6Common0cdH0VSgGyF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC06getAllC4InfoSay0A6Common0cdH0VSgGyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getRecentWebInfo",
+            "printedName": "getRecentWebInfo()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCommon.WebLoginInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLoginInfo",
+                        "printedName": "FlyCommon.WebLoginInfo",
+                        "usr": "s:9FlyCommon12WebLoginInfoV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC09getRecentC4InfoSay0A6Common0cdH0VSgGyF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC09getRecentC4InfoSay0A6Common0cdH0VSgGyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteAll",
+            "printedName": "deleteAll()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC9deleteAllyyF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC9deleteAllyyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteBySocketId",
+            "printedName": "deleteBySocketId(socketId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15WebLoginManagerC16deleteBySocketId06socketI0ySS_tF",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerC16deleteBySocketId06socketI0ySS_tF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebLoginManager",
+                "printedName": "FlyDatabase.WebLoginManager",
+                "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager(im)init",
+            "mangledName": "$s11FlyDatabase15WebLoginManagerCACycfc",
+            "moduleName": "FlyDatabase",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager",
+        "mangledName": "$s11FlyDatabase15WebLoginManagerC",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "FlyCommon",
         "printedName": "FlyCommon",
         "declKind": "Import",
@@ -2608,6 +3192,54 @@
           },
           {
             "kind": "Var",
+            "name": "chatTagsManager",
+            "printedName": "chatTagsManager",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ChatTagsManager",
+                "printedName": "FlyDatabase.ChatTagsManager",
+                "usr": "c:@M@FlyDatabase@objc(cs)ChatTagsManager"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11FlyDatabase0aB10ControllerC15chatTagsManagerAA04ChateF0Cvp",
+            "mangledName": "$s11FlyDatabase0aB10ControllerC15chatTagsManagerAA04ChateF0Cvp",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ChatTagsManager",
+                    "printedName": "FlyDatabase.ChatTagsManager",
+                    "usr": "c:@M@FlyDatabase@objc(cs)ChatTagsManager"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11FlyDatabase0aB10ControllerC15chatTagsManagerAA04ChateF0Cvg",
+                "mangledName": "$s11FlyDatabase0aB10ControllerC15chatTagsManagerAA04ChateF0Cvg",
+                "moduleName": "FlyDatabase",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "shared",
             "printedName": "shared",
             "children": [
@@ -4121,233 +4753,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "FileStreamReader",
-        "printedName": "FileStreamReader",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(path:delimiter:encoding:chunkSize:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyDatabase.FileStreamReader?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "FileStreamReader",
-                    "printedName": "FlyDatabase.FileStreamReader",
-                    "usr": "s:11FlyDatabase16FileStreamReaderC"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "hasDefaultArg": true,
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoding",
-                "printedName": "Swift.String.Encoding",
-                "hasDefaultArg": true,
-                "usr": "s:SS10FoundationE8EncodingV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "hasDefaultArg": true,
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:11FlyDatabase16FileStreamReaderC4path9delimiter8encoding9chunkSizeACSgSS_S2S10FoundationE8EncodingVSitcfc",
-            "mangledName": "$s11FlyDatabase16FileStreamReaderC4path9delimiter8encoding9chunkSizeACSgSS_S2S10FoundationE8EncodingVSitcfc",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "nextLine",
-            "printedName": "nextLine()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase16FileStreamReaderC8nextLineSSSgyF",
-            "mangledName": "$s11FlyDatabase16FileStreamReaderC8nextLineSSSgyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "rewind",
-            "printedName": "rewind()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase16FileStreamReaderC6rewindyyF",
-            "mangledName": "$s11FlyDatabase16FileStreamReaderC6rewindyyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "close",
-            "printedName": "close()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase16FileStreamReaderC5closeyyF",
-            "mangledName": "$s11FlyDatabase16FileStreamReaderC5closeyyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "makeIterator",
-            "printedName": "makeIterator()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "AnyIterator",
-                "printedName": "Swift.AnyIterator<Swift.String>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:s11AnyIteratorV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase16FileStreamReaderC12makeIterators03AnyG0VySSGyF",
-            "mangledName": "$s11FlyDatabase16FileStreamReaderC12makeIterators03AnyG0VySSGyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:11FlyDatabase16FileStreamReaderC",
-        "mangledName": "$s11FlyDatabase16FileStreamReaderC",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Sequence",
-            "printedName": "Sequence",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "Element",
-                "printedName": "Element",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeWitness",
-                "name": "Iterator",
-                "printedName": "Iterator",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AnyIterator",
-                    "printedName": "Swift.AnyIterator<Swift.String>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:s11AnyIteratorV"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:ST",
-            "mangledName": "$sST"
           }
         ]
       },
@@ -5972,8 +6377,8 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "FlyDatabase",
         "declAttributes": [
@@ -5996,13 +6401,13 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "WebLoginManager",
-        "printedName": "WebLoginManager",
+        "name": "ChatTagsManager",
+        "printedName": "ChatTagsManager",
         "children": [
           {
             "kind": "Function",
-            "name": "saveWebInfo",
-            "printedName": "saveWebInfo(webLoginInfo:)",
+            "name": "saveChatTag",
+            "printedName": "saveChatTag(tagId:chatTag:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6011,14 +6416,20 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "WebLoginInfo",
-                "printedName": "FlyCommon.WebLoginInfo",
-                "usr": "s:9FlyCommon12WebLoginInfoV"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ChatTagsModel",
+                "printedName": "FlyCommon.ChatTagsModel",
+                "usr": "s:9FlyCommon13ChatTagsModelV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC04saveC4Info03webdG0y0A6Common0cdG0V_tF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC04saveC4Info03webdG0y0A6Common0cdG0V_tF",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC04saveC3Tag5tagId04chatG0ySS_0A6Common0cD5ModelVtF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC04saveC3Tag5tagId04chatG0ySS_0A6Common0cD5ModelVtF",
             "moduleName": "FlyDatabase",
             "declAttributes": [
               "AccessControl"
@@ -6027,76 +6438,27 @@
           },
           {
             "kind": "Function",
-            "name": "getWebInfo",
-            "printedName": "getWebInfo(bowser:platform:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCommon.WebLoginInfo?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "WebLoginInfo",
-                    "printedName": "FlyCommon.WebLoginInfo",
-                    "usr": "s:9FlyCommon12WebLoginInfoV"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC03getC4Info6bowser8platform0A6Common0cdG0VSgSS_SStF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC03getC4Info6bowser8platform0A6Common0cdG0VSgSS_SStF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getAllWebInfo",
-            "printedName": "getAllWebInfo()",
+            "name": "getAllChatTags",
+            "printedName": "getAllChatTags()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "printedName": "[FlyCommon.ChatTagsModel]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCommon.WebLoginInfo?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLoginInfo",
-                        "printedName": "FlyCommon.WebLoginInfo",
-                        "usr": "s:9FlyCommon12WebLoginInfoV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "ChatTagsModel",
+                    "printedName": "FlyCommon.ChatTagsModel",
+                    "usr": "s:9FlyCommon13ChatTagsModelV"
                   }
                 ],
                 "usr": "s:Sa"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC06getAllC4InfoSay0A6Common0cdH0VSgGyF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC06getAllC4InfoSay0A6Common0cdH0VSgGyF",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC06getAllcD0Say0A6Common0cD5ModelVGyF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC06getAllcD0Say0A6Common0cD5ModelVGyF",
             "moduleName": "FlyDatabase",
             "declAttributes": [
               "AccessControl"
@@ -6105,35 +6467,27 @@
           },
           {
             "kind": "Function",
-            "name": "getRecentWebInfo",
-            "printedName": "getRecentWebInfo()",
+            "name": "getCustomChatTags",
+            "printedName": "getCustomChatTags()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "printedName": "[FlyCommon.ChatTagsModel]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCommon.WebLoginInfo?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLoginInfo",
-                        "printedName": "FlyCommon.WebLoginInfo",
-                        "usr": "s:9FlyCommon12WebLoginInfoV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "ChatTagsModel",
+                    "printedName": "FlyCommon.ChatTagsModel",
+                    "usr": "s:9FlyCommon13ChatTagsModelV"
                   }
                 ],
                 "usr": "s:Sa"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC09getRecentC4InfoSay0A6Common0cdH0VSgGyF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC09getRecentC4InfoSay0A6Common0cdH0VSgGyF",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC09getCustomcD0Say0A6Common0cD5ModelVGyF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC09getCustomcD0Say0A6Common0cD5ModelVGyF",
             "moduleName": "FlyDatabase",
             "declAttributes": [
               "AccessControl"
@@ -6142,29 +6496,8 @@
           },
           {
             "kind": "Function",
-            "name": "deleteAll",
-            "printedName": "deleteAll()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC9deleteAllyyF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC9deleteAllyyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "deleteBySocketId",
-            "printedName": "deleteBySocketId(socketId:)",
+            "name": "deleteChatTag",
+            "printedName": "deleteChatTag(tagId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6179,8 +6512,96 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11FlyDatabase15WebLoginManagerC16deleteBySocketId06socketI0ySS_tF",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerC16deleteBySocketId06socketI0ySS_tF",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC06deleteC3Tag5tagIdySS_tF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC06deleteC3Tag5tagIdySS_tF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteChatTags",
+            "printedName": "deleteChatTags(tagIds:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC06deletecD06tagIdsySaySSG_tF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC06deletecD06tagIdsySaySSG_tF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteAllChatTags",
+            "printedName": "deleteAllChatTags()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC09deleteAllcD0yyF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC09deleteAllcD0yyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reorderChatTags",
+            "printedName": "reorderChatTags(chatTags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FlyCommon.ChatTagsModel]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ChatTagsModel",
+                    "printedName": "FlyCommon.ChatTagsModel",
+                    "usr": "s:9FlyCommon13ChatTagsModelV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase15ChatTagsManagerC07reordercD004chatD0ySay0A6Common0cD5ModelVG_tF",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerC07reordercD004chatD0ySay0A6Common0cD5ModelVG_tF",
             "moduleName": "FlyDatabase",
             "declAttributes": [
               "AccessControl"
@@ -6194,14 +6615,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "WebLoginManager",
-                "printedName": "FlyDatabase.WebLoginManager",
-                "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager"
+                "name": "ChatTagsManager",
+                "printedName": "FlyDatabase.ChatTagsManager",
+                "usr": "c:@M@FlyDatabase@objc(cs)ChatTagsManager"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager(im)init",
-            "mangledName": "$s11FlyDatabase15WebLoginManagerCACycfc",
+            "usr": "c:@M@FlyDatabase@objc(cs)ChatTagsManager(im)init",
+            "mangledName": "$s11FlyDatabase15ChatTagsManagerCACycfc",
             "moduleName": "FlyDatabase",
             "overriding": true,
             "implicit": true,
@@ -6215,8 +6636,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@FlyDatabase@objc(cs)WebLoginManager",
-        "mangledName": "$s11FlyDatabase15WebLoginManagerC",
+        "usr": "c:@M@FlyDatabase@objc(cs)ChatTagsManager",
+        "mangledName": "$s11FlyDatabase15ChatTagsManagerC",
         "moduleName": "FlyDatabase",
         "declAttributes": [
           "AccessControl",
@@ -6278,30 +6699,6 @@
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RealmSwift",
-        "printedName": "RealmSwift",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "Import",
-        "name": "FlyCommon",
-        "printedName": "FlyCommon",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
       },
       {
         "kind": "Import",
@@ -7009,387 +7406,6 @@
       },
       {
         "kind": "Import",
-        "name": "RealmSwift",
-        "printedName": "RealmSwift",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "FlyCommon",
-        "printedName": "FlyCommon",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "Import",
-        "name": "RealmSwift",
-        "printedName": "RealmSwift",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "BackupMessageManager",
-        "printedName": "BackupMessageManager",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "BackupMessageManager",
-                "printedName": "FlyDatabase.BackupMessageManager",
-                "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11FlyDatabase20BackupMessageManagerC6sharedACvpZ",
-            "mangledName": "$s11FlyDatabase20BackupMessageManagerC6sharedACvpZ",
-            "moduleName": "FlyDatabase",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "BackupMessageManager",
-                    "printedName": "FlyDatabase.BackupMessageManager",
-                    "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11FlyDatabase20BackupMessageManagerC6sharedACvgZ",
-                "mangledName": "$s11FlyDatabase20BackupMessageManagerC6sharedACvgZ",
-                "moduleName": "FlyDatabase",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "getAllBackupMessages",
-            "printedName": "getAllBackupMessages(completionHandler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.Bool, FlyCommon.FlyError?, [Swift.String : Any]) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(Swift.Bool, FlyCommon.FlyError?, [Swift.String : Any])",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "FlyCommon.FlyError?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "FlyError",
-                            "printedName": "FlyCommon.FlyError",
-                            "usr": "s:9FlyCommon0A5ErrorO"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.String : Any]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ]
-                  }
-                ],
-                "typeAttributes": [
-                  "noescape"
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase20BackupMessageManagerC06getAllC8Messages17completionHandleryySb_0A6Common0A5ErrorOSgSDySSypGtXE_tF",
-            "mangledName": "$s11FlyDatabase20BackupMessageManagerC06getAllC8Messages17completionHandleryySb_0A6Common0A5ErrorOSgSDySSypGtXE_tF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "insertMessageToDatabase",
-            "printedName": "insertMessageToDatabase(messageModel:recentModel:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCommon.BackupMessageModel?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "BackupMessageModel",
-                    "printedName": "FlyCommon.BackupMessageModel",
-                    "usr": "s:9FlyCommon18BackupMessageModelV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCommon.BackupRecentModel?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "BackupRecentModel",
-                    "printedName": "FlyCommon.BackupRecentModel",
-                    "usr": "s:9FlyCommon17BackupRecentModelV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase20BackupMessageManagerC06insertd2ToB012messageModel06recentI0y0A6Common0cdI0VSg_AG0c6RecentI0VSgtF",
-            "mangledName": "$s11FlyDatabase20BackupMessageManagerC06insertd2ToB012messageModel06recentI0y0A6Common0cdI0VSg_AG0c6RecentI0VSgtF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "saveTempContact",
-            "printedName": "saveTempContact(userId:name:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCommon.ProfileDetails?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProfileDetails",
-                    "printedName": "FlyCommon.ProfileDetails",
-                    "usr": "c:@M@FlyCommon@objc(cs)ProfileDetails"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "hasDefaultArg": true,
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase20BackupMessageManagerC15saveTempContact6userId4name0A6Common14ProfileDetailsCSgSS_SStF",
-            "mangledName": "$s11FlyDatabase20BackupMessageManagerC15saveTempContact6userId4name0A6Common14ProfileDetailsCSgSS_SStF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "removeAllMessages",
-            "printedName": "removeAllMessages()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11FlyDatabase20BackupMessageManagerC17removeAllMessagesyyF",
-            "mangledName": "$s11FlyDatabase20BackupMessageManagerC17removeAllMessagesyyF",
-            "moduleName": "FlyDatabase",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager",
-        "mangledName": "$s11FlyDatabase20BackupMessageManagerC",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RealmSwift",
-        "printedName": "RealmSwift",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "Import",
-        "name": "FlyCommon",
-        "printedName": "FlyCommon",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyDatabase",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "FlyCommon",
         "printedName": "FlyCommon",
         "declKind": "Import",
@@ -7901,6 +7917,387 @@
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyDatabase"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BackupMessageManager",
+        "printedName": "BackupMessageManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BackupMessageManager",
+                "printedName": "FlyDatabase.BackupMessageManager",
+                "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11FlyDatabase20BackupMessageManagerC6sharedACvpZ",
+            "mangledName": "$s11FlyDatabase20BackupMessageManagerC6sharedACvpZ",
+            "moduleName": "FlyDatabase",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BackupMessageManager",
+                    "printedName": "FlyDatabase.BackupMessageManager",
+                    "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11FlyDatabase20BackupMessageManagerC6sharedACvgZ",
+                "mangledName": "$s11FlyDatabase20BackupMessageManagerC6sharedACvgZ",
+                "moduleName": "FlyDatabase",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getAllBackupMessages",
+            "printedName": "getAllBackupMessages(completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool, FlyCommon.FlyError?, [Swift.String : Any]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.Bool, FlyCommon.FlyError?, [Swift.String : Any])",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "FlyCommon.FlyError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlyError",
+                            "printedName": "FlyCommon.FlyError",
+                            "usr": "s:9FlyCommon0A5ErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ]
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase20BackupMessageManagerC06getAllC8Messages17completionHandleryySb_0A6Common0A5ErrorOSgSDySSypGtXE_tF",
+            "mangledName": "$s11FlyDatabase20BackupMessageManagerC06getAllC8Messages17completionHandleryySb_0A6Common0A5ErrorOSgSDySSypGtXE_tF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "insertMessageToDatabase",
+            "printedName": "insertMessageToDatabase(messageModel:recentModel:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCommon.BackupMessageModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BackupMessageModel",
+                    "printedName": "FlyCommon.BackupMessageModel",
+                    "usr": "s:9FlyCommon18BackupMessageModelV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCommon.BackupRecentModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BackupRecentModel",
+                    "printedName": "FlyCommon.BackupRecentModel",
+                    "usr": "s:9FlyCommon17BackupRecentModelV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase20BackupMessageManagerC06insertd2ToB012messageModel06recentI0y0A6Common0cdI0VSg_AG0c6RecentI0VSgtF",
+            "mangledName": "$s11FlyDatabase20BackupMessageManagerC06insertd2ToB012messageModel06recentI0y0A6Common0cdI0VSg_AG0c6RecentI0VSgtF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "saveTempContact",
+            "printedName": "saveTempContact(userId:name:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCommon.ProfileDetails?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProfileDetails",
+                    "printedName": "FlyCommon.ProfileDetails",
+                    "usr": "c:@M@FlyCommon@objc(cs)ProfileDetails"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase20BackupMessageManagerC15saveTempContact6userId4name0A6Common14ProfileDetailsCSgSS_SStF",
+            "mangledName": "$s11FlyDatabase20BackupMessageManagerC15saveTempContact6userId4name0A6Common14ProfileDetailsCSgSS_SStF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeAllMessages",
+            "printedName": "removeAllMessages()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11FlyDatabase20BackupMessageManagerC17removeAllMessagesyyF",
+            "mangledName": "$s11FlyDatabase20BackupMessageManagerC17removeAllMessagesyyF",
+            "moduleName": "FlyDatabase",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@FlyDatabase@objc(cs)BackupMessageManager",
+        "mangledName": "$s11FlyDatabase20BackupMessageManagerC",
+        "moduleName": "FlyDatabase",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
         "inheritsConvenienceInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
@@ -9994,6 +10391,48 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/ChatTags\/ChatTags.swift",
+      "kind": "BooleanLiteral",
+      "offset": 354,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/FileStreamReader.swift",
+      "kind": "StringLiteral",
+      "offset": 362,
+      "length": 4,
+      "value": "\"\n\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/FileStreamReader.swift",
+      "kind": "IntegerLiteral",
+      "offset": 430,
+      "length": 4,
+      "value": "4096"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
+      "kind": "StringLiteral",
+      "offset": 3474,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
+      "kind": "StringLiteral",
+      "offset": 3524,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
+      "kind": "StringLiteral",
+      "offset": 3571,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/UserStatus\/UserStatusManager.swift",
       "kind": "BooleanLiteral",
       "offset": 2464,
@@ -10192,14 +10631,14 @@
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/FlyDatabaseController.swift",
       "kind": "StringLiteral",
-      "offset": 10546,
+      "offset": 10658,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/FlyDatabaseController.swift",
       "kind": "StringLiteral",
-      "offset": 10572,
+      "offset": 10684,
       "length": 4,
       "value": "\"\n\""
     },
@@ -10237,20 +10676,6 @@
       "offset": 15236,
       "length": 1,
       "value": "0"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/FileStreamReader.swift",
-      "kind": "StringLiteral",
-      "offset": 362,
-      "length": 4,
-      "value": "\"\n\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/FileStreamReader.swift",
-      "kind": "IntegerLiteral",
-      "offset": 430,
-      "length": 4,
-      "value": "4096"
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Contact\/RosterManager.swift",
@@ -10293,27 +10718,6 @@
       "offset": 463,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
-      "kind": "StringLiteral",
-      "offset": 3474,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
-      "kind": "StringLiteral",
-      "offset": 3524,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/WebLogin\/WebLoginManager.swift",
-      "kind": "StringLiteral",
-      "offset": 3571,
-      "length": 2,
-      "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Recent\/Recent.swift",
@@ -10449,13 +10853,6 @@
       "value": "\"privacy\""
     },
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/BackupMessageManager.swift",
-      "kind": "StringLiteral",
-      "offset": 6319,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Message\/Media\/MediaMessage.swift",
       "kind": "IntegerLiteral",
       "offset": 370,
@@ -10545,6 +10942,13 @@
       "offset": 2174,
       "length": 14,
       "value": "\"mediaMessage\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Backup\/BackupMessageManager.swift",
+      "kind": "StringLiteral",
+      "offset": 6319,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleDatabase\/FlyDatabase\/FlyDatabase\/Models\/Message\/Message.swift",

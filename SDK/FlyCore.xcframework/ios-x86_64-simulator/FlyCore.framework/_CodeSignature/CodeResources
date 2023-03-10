@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/FlyCore-Swift.h</key>
 		<data>
-		8e6Y1VSMVlwh5hWNz4Wf6O6dlLc=
+		+n8g7C47IyNEGAo5PQgQqHfUn9U=
 		</data>
 		<key>Headers/FlyCore.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		eHkpHyq0cmZj7vMw3lK+KBgyMcM=
+		RtOdWbMGsFHsQJKPOmr7sauJLek=
 		</data>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8WuSWardQVQU1U4b3Bj65PNWawI=
+		ei7mJQYmIrMGxOm9/cgiMkSi7vE=
 		</data>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Bza/j3TMYKDKJPhImK5LmqXzV4A=
+		eruO8CvTMl+7l6RxYIU+gxyHH2k=
 		</data>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8WuSWardQVQU1U4b3Bj65PNWawI=
+		ei7mJQYmIrMGxOm9/cgiMkSi7vE=
 		</data>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0SmkzDRHtPbNUh9CMZRobJHMRTY=
+		W0mw0sFSuvS5n30A/HSVWe3wJQY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Ai4QwQqDAuNlUOWCTvBRuF1FB24DCOC96q8cjsXgA4=
+			9lEdPBnPoMIUxwigjnH0nhk0cDxH5+sxJe/uVhc1mUw=
 			</data>
 		</dict>
 		<key>Headers/FlyCore.h</key>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QoA7WscQDa2FjBb/WzjYcj4cEjoxU9uYZDEwiCJQSxk=
+			QwjSIxId7ljJkp60E9PW0huYutEXErVjwQr1xfNuUDk=
 			</data>
 		</dict>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bcbzcx1D9Q7NVRXAEIIEQ8nvz3xf/m9EX8jdkcKOSjs=
+			YqDZiddGQp1xyaNpck7MZ7JyMvRsRzEMBZCwowb2kbM=
 			</data>
 		</dict>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+nh0b1R2sgMUUTNiOqugiNaCV2RwZlWzEoq7SZyM/2Y=
+			JMMfAREkL88SSofguLWyBQ08C7xw5mp0JzcfeIfy4es=
 			</data>
 		</dict>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bcbzcx1D9Q7NVRXAEIIEQ8nvz3xf/m9EX8jdkcKOSjs=
+			YqDZiddGQp1xyaNpck7MZ7JyMvRsRzEMBZCwowb2kbM=
 			</data>
 		</dict>
 		<key>Modules/FlyCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YKEt791RovPLWPAHi3tRICu4yCBLR9d7t1hA6PcQ3Uc=
+			41BvMB+QZ8oNSsHg6pkfMH5hAb56tbwanJtMGw9c6Rw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

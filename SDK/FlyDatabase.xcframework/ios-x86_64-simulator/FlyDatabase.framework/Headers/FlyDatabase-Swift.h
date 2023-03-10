@@ -265,6 +265,12 @@ SWIFT_CLASS("_TtC11FlyDatabase20BackupMessageManager")
 @end
 
 
+SWIFT_CLASS("_TtC11FlyDatabase15ChatTagsManager")
+@interface ChatTagsManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11FlyDatabase21FlyDatabaseController")
 @interface FlyDatabaseController : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

@@ -44,6 +44,11 @@ import _StringProcessing
   @objc override dynamic public init()
   @objc deinit
 }
+public struct SearchMessage {
+  public init()
+  public var chatUserJid: Swift.String
+  public var messageId: Swift.String
+}
 public typealias FlyCompletionHandler = (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void
 extension Swift.Dictionary where Key == Swift.String, Value == Any {
   public mutating func addMessage(message: Swift.String)
@@ -60,11 +65,6 @@ public struct ContactInfo : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
   public init(_ name: Swift.String, _ mobileNumber: Swift.String)
-}
-public struct SearchMessage {
-  public init()
-  public var chatUserJid: Swift.String
-  public var messageId: Swift.String
 }
 public enum OfflineActionType : Swift.String, Swift.CustomStringConvertible {
   case clearMessage
@@ -162,11 +162,6 @@ public struct MessageReceipt {
   public var time: Swift.Double
   public var profileDetails: FlyCommon.ProfileDetails?
   public init()
-}
-public struct LinkMessage {
-  public init()
-  public var link: Swift.String
-  public var chatMessage: FlyCommon.ChatMessage
 }
 public struct LoginData : Swift.Codable {
   public init()
@@ -800,12 +795,36 @@ public enum ContactType : Swift.String, Swift.CustomStringConvertible {
     get
   }
 }
+public struct ChatTagsModel : Swift.Equatable {
+  public var tagId: Swift.String!
+  public var tagname: Swift.String?
+  public var taginfo: Swift.String?
+  public var isRecommentedTag: Swift.Bool
+  public var memberIdList: [Swift.String]
+  public var currentUserId: Swift.String?
+  public init()
+  public init(tagId: Swift.String, tagname: Swift.String, taginfo: Swift.String, isRecommentedTag: Swift.Bool = false, memberIdList: [Swift.String], currentUserId: Swift.String)
+  public static func == (a: FlyCommon.ChatTagsModel, b: FlyCommon.ChatTagsModel) -> Swift.Bool
+}
 public struct BusyStatus {
   public init()
   public var id: Swift.String!
   public var status: Swift.String!
   public var isCurrentStatus: Swift.Bool
   public init(statusText: Swift.String, isCurrentStatus: Swift.Bool = false)
+}
+public struct DeliveryReceipt : Swift.Codable {
+  public init()
+  public var receiptId: Swift.String
+  public var userJid: Swift.String
+  public var messageId: Swift.String
+  public var broadcastMessageID: Swift.String
+  public var sentTime: Swift.Double
+  public var acknowledgeTime: Swift.Double
+  public var receivedTime: Swift.Double
+  public var seenTime: Swift.Double
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ReportMessage : Swift.Codable {
   public init()
@@ -824,19 +843,6 @@ public struct ReportMessgeData : Swift.Codable {
   public var filename: Swift.String
   public var timestamp: Swift.String
   public var publisherId: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct DeliveryReceipt : Swift.Codable {
-  public init()
-  public var receiptId: Swift.String
-  public var userJid: Swift.String
-  public var messageId: Swift.String
-  public var broadcastMessageID: Swift.String
-  public var sentTime: Swift.Double
-  public var acknowledgeTime: Swift.Double
-  public var receivedTime: Swift.Double
-  public var seenTime: Swift.Double
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1008,133 +1014,6 @@ extension Foundation.URL {
 extension FlyCommon.FlyUtils {
   public static func getDeviceID() -> Swift.String
 }
-public enum ChatType : Swift.String, Swift.CustomStringConvertible {
-  case singleChat
-  case groupChat
-  case broadcast
-  public var description: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum AudioStatus : Swift.String {
-  case playing
-  case stoped
-  case paused
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class MediaChatMessage : ObjectiveC.NSObject {
-  @objc public var messageId: Swift.String
-  @objc public var mediaFileName: Swift.String
-  @objc public var mediaDuration: Swift.Int32
-  public var messageType: FlyCommon.MessageType
-  @objc public var mediaFileSize: Swift.Int32
-  @objc public var mediaFileType: Swift.String
-  @objc public var mediaFileUrl: Swift.String
-  @objc public var mediaLocalStoragePath: Swift.String
-  @objc public var mediaThumbImage: Swift.String
-  @objc public var mediaCaptionText: Swift.String
-  @objc public var mediaProgressStatus: Swift.Int
-  public var mediaUploadStatus: FlyCommon.MediaUploadStatus
-  public var mediaDownloadStatus: FlyCommon.MediaDownloadStatus
-  @objc public var mediaFileKey: Swift.String
-  public var audioType: FlyCommon.AudioType
-  @objc override dynamic public init()
-  @objc deinit
-}
-public struct AvailableFeaturesModel : Swift.Codable {
-  public var isGroupChatEnabled: Swift.Bool
-  public var isGroupCallEnabled: Swift.Bool
-  public var isOneToOneCallEnabled: Swift.Bool
-  public var isRecentChatSearchEnabled: Swift.Bool
-  public var isImageAttachmentEnabled: Swift.Bool
-  public var isVideoAttachmentEnabled: Swift.Bool
-  public var isAudioAttachmentEnabled: Swift.Bool
-  public var isDocumentAttachmentEnabled: Swift.Bool
-  public var isContactAttachmentEnabled: Swift.Bool
-  public var isLocationAttachmentEnabled: Swift.Bool
-  public var isAttachmentEnabled: Swift.Bool
-  public var isStarMessageEnabled: Swift.Bool
-  public var isClearChatEnabled: Swift.Bool
-  public var isDeleteChatEnabled: Swift.Bool
-  public var isTranslationEnabled: Swift.Bool
-  public var isBlockEnabled: Swift.Bool
-  public var isReportEnabled: Swift.Bool
-  public var isDeleteMessageEnabled: Swift.Bool
-  public var isViewAllMediasEnabled: Swift.Bool
-  public init()
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-@objc @objcMembers public class GroupParticipantDetail : ObjectiveC.NSObject {
-  @objc public var groupMemberId: Swift.String!
-  @objc public var groupJid: Swift.String!
-  @objc public var memberJid: Swift.String
-  @objc public var memberItemId: Swift.String
-  @objc public var time: Swift.String
-  @objc public var stanzaId: Swift.String!
-  @objc public var isAdminMember: Swift.Bool
-  @objc public var profileDetail: FlyCommon.ProfileDetails?
-  @objc public init(groupMemberId: Swift.String)
-  @objc deinit
-}
-public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FlyCommonController : ObjectiveC.NSObject {
-  public var delegate: FlyCommon.FlyCommonControllerDelegate?
-  public static let shared: FlyCommon.FlyCommonController
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class Connectivity {
-  public static var isConnectedToInternet: Swift.Bool {
-    get
-  }
-  @objc deinit
-}
-@objc @objcMembers public class ParticipantDetails : ObjectiveC.NSObject {
-  @objc final public let jid: Swift.String!
-  @objc public var groupJid: Swift.String
-  @objc public var stanzaId: Swift.String
-  @objc public var retractId: Swift.String
-  @objc public var removeParticipantJid: Swift.String
-  @objc public var publisherId: Swift.String
-  @objc public var time: Swift.String
-  @objc public var groupImage: Swift.String
-  @objc public var groupThumbImage: Swift.String
-  @objc public var groupName: Swift.String
-  @objc public var newAdmin: Swift.String
-  @objc public var doneBy: Swift.String
-  @objc public init(jid: Swift.String)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers final public class NetStatus {
-  public static let shared: FlyCommon.NetStatus
-  public static let networkNotificationObserver: Swift.String
-  public static let isNetworkAvailable: Swift.String
-  final public var didStartMonitoringHandler: (() -> Swift.Void)?
-  final public var didStopMonitoringHandler: (() -> Swift.Void)?
-  final public var netStatusChangeHandler: (() -> Swift.Void)?
-  final public var isConnected: Swift.Bool {
-    get
-  }
-  @objc deinit
-  final public func startMonitoring()
-  final public var isCellular: Swift.Bool {
-    get
-  }
-  final public var isWifi: Swift.Bool {
-    get
-  }
-  final public func stopMonitoring()
-}
 public struct BackupRestoreModels : Swift.Codable {
   public var messages: [FlyCommon.BackupMessage]
   public var recentMessages: [FlyCommon.BackupRecentChat]
@@ -1238,6 +1117,144 @@ public struct BackupRecentChat : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum ChatType : Swift.String, Swift.CustomStringConvertible {
+  case singleChat
+  case groupChat
+  case broadcast
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AudioStatus : Swift.String {
+  case playing
+  case stoped
+  case paused
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LinkMessage {
+  public init()
+  public var link: Swift.String
+  public var chatMessage: FlyCommon.ChatMessage
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class MediaChatMessage : ObjectiveC.NSObject {
+  @objc public var messageId: Swift.String
+  @objc public var mediaFileName: Swift.String
+  @objc public var mediaDuration: Swift.Int32
+  public var messageType: FlyCommon.MessageType
+  @objc public var mediaFileSize: Swift.Int32
+  @objc public var mediaFileType: Swift.String
+  @objc public var mediaFileUrl: Swift.String
+  @objc public var mediaLocalStoragePath: Swift.String
+  @objc public var mediaThumbImage: Swift.String
+  @objc public var mediaCaptionText: Swift.String
+  @objc public var mediaProgressStatus: Swift.Int
+  public var mediaUploadStatus: FlyCommon.MediaUploadStatus
+  public var mediaDownloadStatus: FlyCommon.MediaDownloadStatus
+  @objc public var mediaFileKey: Swift.String
+  public var audioType: FlyCommon.AudioType
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct AvailableFeaturesModel : Swift.Codable {
+  public var isGroupChatEnabled: Swift.Bool
+  public var isGroupCallEnabled: Swift.Bool
+  public var isOneToOneCallEnabled: Swift.Bool
+  public var isRecentChatSearchEnabled: Swift.Bool
+  public var isImageAttachmentEnabled: Swift.Bool
+  public var isVideoAttachmentEnabled: Swift.Bool
+  public var isAudioAttachmentEnabled: Swift.Bool
+  public var isDocumentAttachmentEnabled: Swift.Bool
+  public var isContactAttachmentEnabled: Swift.Bool
+  public var isLocationAttachmentEnabled: Swift.Bool
+  public var isAttachmentEnabled: Swift.Bool
+  public var isStarMessageEnabled: Swift.Bool
+  public var isClearChatEnabled: Swift.Bool
+  public var isDeleteChatEnabled: Swift.Bool
+  public var isTranslationEnabled: Swift.Bool
+  public var isBlockEnabled: Swift.Bool
+  public var isReportEnabled: Swift.Bool
+  public var isDeleteMessageEnabled: Swift.Bool
+  public var isViewAllMediasEnabled: Swift.Bool
+  public init()
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ChatDataModel {
+  public init()
+  public var subject: Swift.String
+  public var messageContent: Swift.String
+  public var mediaAttachmentsUrl: [Foundation.URL]
+}
+@objc @objcMembers public class GroupParticipantDetail : ObjectiveC.NSObject {
+  @objc public var groupMemberId: Swift.String!
+  @objc public var groupJid: Swift.String!
+  @objc public var memberJid: Swift.String
+  @objc public var memberItemId: Swift.String
+  @objc public var time: Swift.String
+  @objc public var stanzaId: Swift.String!
+  @objc public var isAdminMember: Swift.Bool
+  @objc public var profileDetail: FlyCommon.ProfileDetails?
+  @objc public init(groupMemberId: Swift.String)
+  @objc deinit
+}
+public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FlyCommonController : ObjectiveC.NSObject {
+  public var delegate: FlyCommon.FlyCommonControllerDelegate?
+  public static let shared: FlyCommon.FlyCommonController
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Connectivity {
+  public static var isConnectedToInternet: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+@objc @objcMembers public class ParticipantDetails : ObjectiveC.NSObject {
+  @objc final public let jid: Swift.String!
+  @objc public var groupJid: Swift.String
+  @objc public var stanzaId: Swift.String
+  @objc public var retractId: Swift.String
+  @objc public var removeParticipantJid: Swift.String
+  @objc public var publisherId: Swift.String
+  @objc public var time: Swift.String
+  @objc public var groupImage: Swift.String
+  @objc public var groupThumbImage: Swift.String
+  @objc public var groupName: Swift.String
+  @objc public var newAdmin: Swift.String
+  @objc public var doneBy: Swift.String
+  @objc public init(jid: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class NetStatus {
+  public static let shared: FlyCommon.NetStatus
+  public static let networkNotificationObserver: Swift.String
+  public static let isNetworkAvailable: Swift.String
+  final public var didStartMonitoringHandler: (() -> Swift.Void)?
+  final public var didStopMonitoringHandler: (() -> Swift.Void)?
+  final public var netStatusChangeHandler: (() -> Swift.Void)?
+  final public var isConnected: Swift.Bool {
+    get
+  }
+  @objc deinit
+  final public func startMonitoring()
+  final public var isCellular: Swift.Bool {
+    get
+  }
+  final public var isWifi: Swift.Bool {
+    get
+  }
+  final public func stopMonitoring()
+}
 public struct ProfileStatus {
   public init()
   public var id: Swift.String!
@@ -1248,12 +1265,6 @@ public struct ProfileStatus {
 @objc @_inheritsConvenienceInitializers public class CallUsersModel : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
-}
-public struct ChatDataModel {
-  public init()
-  public var subject: Swift.String
-  public var messageContent: Swift.String
-  public var mediaAttachmentsUrl: [Foundation.URL]
 }
 public enum MessageType : Swift.String, Swift.CustomStringConvertible {
   case text
