@@ -30,6 +30,669 @@
       },
       {
         "kind": "Import",
+        "name": "RealmSwift",
+        "printedName": "RealmSwift",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BackupManager",
+        "printedName": "BackupManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "backupDelegate",
+            "printedName": "backupDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCore.BackupEventDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BackupEventDelegate",
+                    "printedName": "FlyCore.BackupEventDelegate",
+                    "usr": "s:7FlyCore19BackupEventDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvp",
+            "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvp",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.BackupEventDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BackupEventDelegate",
+                        "printedName": "FlyCore.BackupEventDelegate",
+                        "usr": "s:7FlyCore19BackupEventDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvg",
+                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvg",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.BackupEventDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BackupEventDelegate",
+                        "printedName": "FlyCore.BackupEventDelegate",
+                        "usr": "s:7FlyCore19BackupEventDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvs",
+                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvs",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvM",
+                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvM",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "restoreDelegate",
+            "printedName": "restoreDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCore.RestoreEventDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RestoreEventDelegate",
+                    "printedName": "FlyCore.RestoreEventDelegate",
+                    "usr": "s:7FlyCore20RestoreEventDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvp",
+            "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvp",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.RestoreEventDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RestoreEventDelegate",
+                        "printedName": "FlyCore.RestoreEventDelegate",
+                        "usr": "s:7FlyCore20RestoreEventDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvg",
+                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvg",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.RestoreEventDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RestoreEventDelegate",
+                        "printedName": "FlyCore.RestoreEventDelegate",
+                        "usr": "s:7FlyCore20RestoreEventDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvs",
+                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvs",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvM",
+                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvM",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BackupManager",
+                "printedName": "FlyCore.BackupManager",
+                "usr": "c:@M@FlyCore@objc(cs)BackupManager"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCore13BackupManagerC6sharedACvpZ",
+            "mangledName": "$s7FlyCore13BackupManagerC6sharedACvpZ",
+            "moduleName": "FlyCore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BackupManager",
+                    "printedName": "FlyCore.BackupManager",
+                    "usr": "c:@M@FlyCore@objc(cs)BackupManager"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore13BackupManagerC6sharedACvgZ",
+                "mangledName": "$s7FlyCore13BackupManagerC6sharedACvgZ",
+                "moduleName": "FlyCore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "startBackup",
+            "printedName": "startBackup()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC05startC0yyF",
+            "mangledName": "$s7FlyCore13BackupManagerC05startC0yyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeAllMessages",
+            "printedName": "removeAllMessages()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC17removeAllMessagesyyF",
+            "mangledName": "$s7FlyCore13BackupManagerC17removeAllMessagesyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "restoreMessages",
+            "printedName": "restoreMessages(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC15restoreMessages3urly10Foundation3URLV_tF",
+            "mangledName": "$s7FlyCore13BackupManagerC15restoreMessages3urly10Foundation3URLV_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancelBackup",
+            "printedName": "cancelBackup()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC06cancelC0yyF",
+            "mangledName": "$s7FlyCore13BackupManagerC06cancelC0yyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "calculatePercentage",
+            "printedName": "calculatePercentage(value:percentageVal:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC19calculatePercentage5value13percentageValSdSi_SitF",
+            "mangledName": "$s7FlyCore13BackupManagerC19calculatePercentage5value13percentageValSdSi_SitF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "calculateProgress",
+            "printedName": "calculateProgress(value:percentageVal:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore13BackupManagerC17calculateProgress5value13percentageValSdSi_SitF",
+            "mangledName": "$s7FlyCore13BackupManagerC17calculateProgress5value13percentageValSdSi_SitF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@FlyCore@objc(cs)BackupManager",
+        "mangledName": "$s7FlyCore13BackupManagerC",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AdminBlockCurrentUserDelegate",
+        "printedName": "AdminBlockCurrentUserDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockCurrentUser",
+            "printedName": "didBlockOrUnblockCurrentUser(userJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didd9OrUnblockeF07userJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didd9OrUnblockeF07userJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockGroup",
+            "printedName": "didBlockOrUnblockGroup(groupJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockContact",
+            "printedName": "didBlockOrUnblockContact(userJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP",
+        "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP",
+        "moduleName": "FlyCore",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyDatabase",
+        "printedName": "FlyDatabase",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
         "name": "FlyXmpp",
         "printedName": "FlyXmpp",
         "declKind": "Import",
@@ -7388,6 +8051,33 @@
           },
           {
             "kind": "Function",
+            "name": "enableAutoDownload",
+            "printedName": "enableAutoDownload(isEnable:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore11ChatManagerC18enableAutoDownload8isEnableySb_tF",
+            "mangledName": "$s7FlyCore11ChatManagerC18enableAutoDownload8isEnableySb_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "startAutoDownload",
             "printedName": "startAutoDownload()",
             "children": [
@@ -9278,6 +9968,131 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "AdminBlockDelegate",
+        "printedName": "AdminBlockDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockContact",
+            "printedName": "didBlockOrUnblockContact(userJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore18AdminBlockDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockSelf",
+            "printedName": "didBlockOrUnblockSelf(userJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore18AdminBlockDelegateP03didD13OrUnblockSelf7userJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD13OrUnblockSelf7userJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didBlockOrUnblockGroup",
+            "printedName": "didBlockOrUnblockGroup(groupJid:isBlocked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore18AdminBlockDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
+            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCore18AdminBlockDelegateP",
+        "mangledName": "$s7FlyCore18AdminBlockDelegateP",
+        "moduleName": "FlyCore",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FlyCommon",
         "printedName": "FlyCommon",
@@ -9727,102 +10542,6 @@
         "declKind": "Protocol",
         "usr": "c:@M@FlyCore@objc(pl)GroupEventsDelegate",
         "mangledName": "$s7FlyCore19GroupEventsDelegateP",
-        "moduleName": "FlyCore",
-        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
-        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC",
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "ArchiveEventsDelegate",
-        "printedName": "ArchiveEventsDelegate",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "updateArchiveUnArchiveChats",
-            "printedName": "updateArchiveUnArchiveChats(toUser:archiveStatus:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate(im)updateArchiveUnArchiveChatsToUser:archiveStatus:",
-            "mangledName": "$s7FlyCore21ArchiveEventsDelegateP06updatec2UnC5Chats6toUser13archiveStatusySS_SbtF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.ArchiveEventsDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.ArchiveEventsDelegate>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment",
-              "ObjC"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "updateArchivedSettings",
-            "printedName": "updateArchivedSettings(archivedSettingsStatus:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate(im)updateArchivedSettingsWithArchivedSettingsStatus:",
-            "mangledName": "$s7FlyCore21ArchiveEventsDelegateP22updateArchivedSettings08archivedH6StatusySb_tF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.ArchiveEventsDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.ArchiveEventsDelegate>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment",
-              "ObjC"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate",
-        "mangledName": "$s7FlyCore21ArchiveEventsDelegateP",
         "moduleName": "FlyCore",
         "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
         "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
@@ -10316,18 +11035,45 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "FlyCommon",
-        "printedName": "FlyCommon",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
+        "kind": "TypeDecl",
+        "name": "WebLogoutDelegate",
+        "printedName": "WebLogoutDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didLogoutWeb",
+            "printedName": "didLogoutWeb(socketId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore17WebLogoutDelegateP03diddC08socketIdySS_tF",
+            "mangledName": "$s7FlyCore17WebLogoutDelegateP03diddC08socketIdySS_tF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.WebLogoutDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.WebLogoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCore17WebLogoutDelegateP",
+        "mangledName": "$s7FlyCore17WebLogoutDelegateP",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -12058,13 +12804,13 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "AdminBlockCurrentUserDelegate",
-        "printedName": "AdminBlockCurrentUserDelegate",
+        "name": "ArchiveEventsDelegate",
+        "printedName": "ArchiveEventsDelegate",
         "children": [
           {
             "kind": "Function",
-            "name": "didBlockOrUnblockCurrentUser",
-            "printedName": "didBlockOrUnblockCurrentUser(userJid:isBlocked:)",
+            "name": "updateArchiveUnArchiveChats",
+            "printedName": "updateArchiveUnArchiveChats(toUser:archiveStatus:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12085,33 +12831,28 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didd9OrUnblockeF07userJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didd9OrUnblockeF07userJid9isBlockedySS_SbtF",
+            "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate(im)updateArchiveUnArchiveChatsToUser:archiveStatus:",
+            "mangledName": "$s7FlyCore21ArchiveEventsDelegateP06updatec2UnC5Chats6toUser13archiveStatusySS_SbtF",
             "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.ArchiveEventsDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.ArchiveEventsDelegate>",
             "protocolReq": true,
             "declAttributes": [
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "didBlockOrUnblockGroup",
-            "printedName": "didBlockOrUnblockGroup(groupJid:isBlocked:)",
+            "name": "updateArchivedSettings",
+            "printedName": "updateArchivedSettings(archivedSettingsStatus:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -12121,63 +12862,29 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
+            "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate(im)updateArchivedSettingsWithArchivedSettingsStatus:",
+            "mangledName": "$s7FlyCore21ArchiveEventsDelegateP22updateArchivedSettings08archivedH6StatusySb_tF",
             "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.ArchiveEventsDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.ArchiveEventsDelegate>",
             "protocolReq": true,
             "declAttributes": [
-              "RawDocComment"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didBlockOrUnblockContact",
-            "printedName": "didBlockOrUnblockContact(userJid:isBlocked:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockCurrentUserDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockCurrentUserDelegate>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
-        "usr": "s:7FlyCore29AdminBlockCurrentUserDelegateP",
-        "mangledName": "$s7FlyCore29AdminBlockCurrentUserDelegateP",
+        "usr": "c:@M@FlyCore@objc(pl)ArchiveEventsDelegate",
+        "mangledName": "$s7FlyCore21ArchiveEventsDelegateP",
         "moduleName": "FlyCore",
         "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
         "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
         "declAttributes": [
           "AccessControl",
+          "ObjC",
           "RawDocComment"
         ]
       },
@@ -14950,13 +15657,153 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "LogoutDelegate",
-        "printedName": "LogoutDelegate",
+        "name": "BackupEventDelegate",
+        "printedName": "BackupEventDelegate",
         "children": [
           {
             "kind": "Function",
-            "name": "didReceiveLogout",
-            "printedName": "didReceiveLogout()",
+            "name": "backupProgressDidReceive",
+            "printedName": "backupProgressDidReceive(completedCount:completedSize:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore19BackupEventDelegateP24backupProgressDidReceive14completedCount0J4SizeySS_SStF",
+            "mangledName": "$s7FlyCore19BackupEventDelegateP24backupProgressDidReceive14completedCount0J4SizeySS_SStF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "backupDidFinish",
+            "printedName": "backupDidFinish(fileUrl:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore19BackupEventDelegateP15backupDidFinish7fileUrlySS_tF",
+            "mangledName": "$s7FlyCore19BackupEventDelegateP15backupDidFinish7fileUrlySS_tF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "backupDidFailed",
+            "printedName": "backupDidFailed(errorMessage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore19BackupEventDelegateP15backupDidFailed12errorMessageySS_tF",
+            "mangledName": "$s7FlyCore19BackupEventDelegateP15backupDidFailed12errorMessageySS_tF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCore19BackupEventDelegateP",
+        "mangledName": "$s7FlyCore19BackupEventDelegateP",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RestoreEventDelegate",
+        "printedName": "RestoreEventDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "restoreProgressDidReceive",
+            "printedName": "restoreProgressDidReceive(completedCount:completedPercentage:completedSize:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore20RestoreEventDelegateP25restoreProgressDidReceive14completedCount0J10Percentage0J4SizeySd_S2StF",
+            "mangledName": "$s7FlyCore20RestoreEventDelegateP25restoreProgressDidReceive14completedCount0J10Percentage0J4SizeySd_S2StF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "restoreDidFinish",
+            "printedName": "restoreDidFinish()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14965,19 +15812,46 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7FlyCore14LogoutDelegateP010didReceiveC0yyF",
-            "mangledName": "$s7FlyCore14LogoutDelegateP010didReceiveC0yyF",
+            "usr": "s:7FlyCore20RestoreEventDelegateP16restoreDidFinishyyF",
+            "mangledName": "$s7FlyCore20RestoreEventDelegateP16restoreDidFinishyyF",
             "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.LogoutDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.LogoutDelegate>",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "restoreDidFailed",
+            "printedName": "restoreDidFailed(errorMessage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore20RestoreEventDelegateP16restoreDidFailed12errorMessageySS_tF",
+            "mangledName": "$s7FlyCore20RestoreEventDelegateP16restoreDidFailed12errorMessageySS_tF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
-        "usr": "s:7FlyCore14LogoutDelegateP",
-        "mangledName": "$s7FlyCore14LogoutDelegateP",
+        "usr": "s:7FlyCore20RestoreEventDelegateP",
+        "mangledName": "$s7FlyCore20RestoreEventDelegateP",
         "moduleName": "FlyCore",
         "declAttributes": [
           "AccessControl"
@@ -17126,8 +18000,8 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "FlyCore",
         "declAttributes": [
@@ -17135,10 +18009,506 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "FlyCommon",
+        "printedName": "FlyCommon",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyNetwork",
+        "printedName": "FlyNetwork",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyXmpp",
+        "printedName": "FlyXmpp",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
+        "name": "FlyDatabase",
+        "printedName": "FlyDatabase",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreAudioTypes",
+        "printedName": "CoreAudioTypes",
+        "declKind": "Import",
+        "moduleName": "FlyCore"
+      },
+      {
         "kind": "TypeDecl",
-        "name": "WebLogoutDelegate",
-        "printedName": "WebLogoutDelegate",
+        "name": "WebLoginsManager",
+        "printedName": "WebLoginsManager",
         "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebLoginsManager",
+                "printedName": "FlyCore.WebLoginsManager",
+                "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCore16WebLoginsManagerC6sharedACvpZ",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC6sharedACvpZ",
+            "moduleName": "FlyCore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WebLoginsManager",
+                    "printedName": "FlyCore.WebLoginsManager",
+                    "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore16WebLoginsManagerC6sharedACvgZ",
+                "mangledName": "$s7FlyCore16WebLoginsManagerC6sharedACvgZ",
+                "moduleName": "FlyCore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "webLogoutDelegate",
+            "printedName": "webLogoutDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FlyCore.WebLogoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WebLogoutDelegate",
+                    "printedName": "FlyCore.WebLogoutDelegate",
+                    "usr": "s:7FlyCore17WebLogoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvp",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvp",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.WebLogoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLogoutDelegate",
+                        "printedName": "FlyCore.WebLogoutDelegate",
+                        "usr": "s:7FlyCore17WebLogoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvg",
+                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvg",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCore.WebLogoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLogoutDelegate",
+                        "printedName": "FlyCore.WebLogoutDelegate",
+                        "usr": "s:7FlyCore17WebLogoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvs",
+                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvs",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvM",
+                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvM",
+                "moduleName": "FlyCore",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "handleQrCodeData",
+            "printedName": "handleQrCodeData(qrCodeString:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool, Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.Bool, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC16handleQrCodeData02qrH6String17completionHandlerySS_ySb_SStctF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC16handleQrCodeData02qrH6String17completionHandlerySS_ySb_SStctF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSocketId",
+            "printedName": "getSocketId(completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool, Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.Bool, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC11getSocketId17completionHandleryySb_SStc_tF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC11getSocketId17completionHandleryySb_SStc_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reset",
+            "printedName": "reset()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC5resetyyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC5resetyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logoutFromDevices",
+            "printedName": "logoutFromDevices()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC17logoutFromDevicesyyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC17logoutFromDevicesyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didGetSocketId",
+            "printedName": "didGetSocketId(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC14didGetSocketId4dataySayypG_tF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC14didGetSocketId4dataySayypG_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didLogin",
+            "printedName": "didLogin(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC8didLogin4dataySayypG_tF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC8didLogin4dataySayypG_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didConnect",
+            "printedName": "didConnect()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC10didConnectyyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC10didConnectyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC7onErroryyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC7onErroryyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didDisconnect",
+            "printedName": "didDisconnect()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC13didDisconnectyyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC13didDisconnectyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onReconnecting",
+            "printedName": "onReconnecting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC14onReconnectingyyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC14onReconnectingyyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "didLogoutWeb",
@@ -17157,22 +18527,204 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7FlyCore17WebLogoutDelegateP03diddC08socketIdySS_tF",
-            "mangledName": "$s7FlyCore17WebLogoutDelegateP03diddC08socketIdySS_tF",
+            "usr": "s:7FlyCore16WebLoginsManagerC09didLogoutC08socketIdySS_tF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC09didLogoutC08socketIdySS_tF",
             "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.WebLogoutDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.WebLogoutDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "saveWebLogin",
+            "printedName": "saveWebLogin(qrData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC04saveC5Login6qrDataySS_tF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC04saveC5Login6qrDataySS_tF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getWebLogins",
+            "printedName": "getWebLogins()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCommon.WebLoginInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLoginInfo",
+                        "printedName": "FlyCommon.WebLoginInfo",
+                        "usr": "s:9FlyCommon12WebLoginInfoV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC03getcD0Say0A6Common0C9LoginInfoVSgGyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC03getcD0Say0A6Common0C9LoginInfoVSgGyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getRecentWebLogin",
+            "printedName": "getRecentWebLogin()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FlyCommon.WebLoginInfo?]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FlyCommon.WebLoginInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WebLoginInfo",
+                        "printedName": "FlyCommon.WebLoginInfo",
+                        "usr": "s:9FlyCommon12WebLoginInfoV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore16WebLoginsManagerC09getRecentC5LoginSay0A6Common0cH4InfoVSgGyF",
+            "mangledName": "$s7FlyCore16WebLoginsManagerC09getRecentC5LoginSay0A6Common0cH4InfoVSgGyF",
+            "moduleName": "FlyCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
         ],
-        "declKind": "Protocol",
-        "usr": "s:7FlyCore17WebLogoutDelegateP",
-        "mangledName": "$s7FlyCore17WebLogoutDelegateP",
+        "declKind": "Class",
+        "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager",
+        "mangledName": "$s7FlyCore16WebLoginsManagerC",
         "moduleName": "FlyCore",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "WebLoginDelegate",
+            "printedName": "WebLoginDelegate",
+            "usr": "s:10FlyNetwork16WebLoginDelegateP",
+            "mangledName": "$s10FlyNetwork16WebLoginDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SocketDelegate",
+            "printedName": "SocketDelegate",
+            "usr": "s:10FlyNetwork14SocketDelegateP",
+            "mangledName": "$s10FlyNetwork14SocketDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "XMPPWebLogoutDelegate",
+            "printedName": "XMPPWebLogoutDelegate",
+            "usr": "s:7FlyXmpp21XMPPWebLogoutDelegateP",
+            "mangledName": "$s7FlyXmpp21XMPPWebLogoutDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -17700,639 +19252,10 @@
       },
       {
         "kind": "Import",
-        "name": "FlyDatabase",
-        "printedName": "FlyDatabase",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "RealmSwift",
-        "printedName": "RealmSwift",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "BackupManager",
-        "printedName": "BackupManager",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "backupDelegate",
-            "printedName": "backupDelegate",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCore.BackupEventDelegate?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "BackupEventDelegate",
-                    "printedName": "FlyCore.BackupEventDelegate",
-                    "usr": "s:7FlyCore19BackupEventDelegateP"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvp",
-            "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvp",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.BackupEventDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "BackupEventDelegate",
-                        "printedName": "FlyCore.BackupEventDelegate",
-                        "usr": "s:7FlyCore19BackupEventDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvg",
-                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvg",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.BackupEventDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "BackupEventDelegate",
-                        "printedName": "FlyCore.BackupEventDelegate",
-                        "usr": "s:7FlyCore19BackupEventDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvs",
-                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvs",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvM",
-                "mangledName": "$s7FlyCore13BackupManagerC14backupDelegateAA0c5EventF0_pSgvM",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "restoreDelegate",
-            "printedName": "restoreDelegate",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCore.RestoreEventDelegate?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "RestoreEventDelegate",
-                    "printedName": "FlyCore.RestoreEventDelegate",
-                    "usr": "s:7FlyCore20RestoreEventDelegateP"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvp",
-            "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvp",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.RestoreEventDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "RestoreEventDelegate",
-                        "printedName": "FlyCore.RestoreEventDelegate",
-                        "usr": "s:7FlyCore20RestoreEventDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvg",
-                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvg",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.RestoreEventDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "RestoreEventDelegate",
-                        "printedName": "FlyCore.RestoreEventDelegate",
-                        "usr": "s:7FlyCore20RestoreEventDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvs",
-                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvs",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvM",
-                "mangledName": "$s7FlyCore13BackupManagerC15restoreDelegateAA012RestoreEventF0_pSgvM",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "BackupManager",
-                "printedName": "FlyCore.BackupManager",
-                "usr": "c:@M@FlyCore@objc(cs)BackupManager"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7FlyCore13BackupManagerC6sharedACvpZ",
-            "mangledName": "$s7FlyCore13BackupManagerC6sharedACvpZ",
-            "moduleName": "FlyCore",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "BackupManager",
-                    "printedName": "FlyCore.BackupManager",
-                    "usr": "c:@M@FlyCore@objc(cs)BackupManager"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore13BackupManagerC6sharedACvgZ",
-                "mangledName": "$s7FlyCore13BackupManagerC6sharedACvgZ",
-                "moduleName": "FlyCore",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "startBackup",
-            "printedName": "startBackup()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC05startC0yyF",
-            "mangledName": "$s7FlyCore13BackupManagerC05startC0yyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "removeAllMessages",
-            "printedName": "removeAllMessages()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC17removeAllMessagesyyF",
-            "mangledName": "$s7FlyCore13BackupManagerC17removeAllMessagesyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "restoreMessages",
-            "printedName": "restoreMessages(url:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC15restoreMessages3urly10Foundation3URLV_tF",
-            "mangledName": "$s7FlyCore13BackupManagerC15restoreMessages3urly10Foundation3URLV_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "cancelBackup",
-            "printedName": "cancelBackup()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC06cancelC0yyF",
-            "mangledName": "$s7FlyCore13BackupManagerC06cancelC0yyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "calculatePercentage",
-            "printedName": "calculatePercentage(value:percentageVal:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC19calculatePercentage5value13percentageValSdSi_SitF",
-            "mangledName": "$s7FlyCore13BackupManagerC19calculatePercentage5value13percentageValSdSi_SitF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "calculateProgress",
-            "printedName": "calculateProgress(value:percentageVal:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore13BackupManagerC17calculateProgress5value13percentageValSdSi_SitF",
-            "mangledName": "$s7FlyCore13BackupManagerC17calculateProgress5value13percentageValSdSi_SitF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@FlyCore@objc(cs)BackupManager",
-        "mangledName": "$s7FlyCore13BackupManagerC",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "AdminBlockDelegate",
-        "printedName": "AdminBlockDelegate",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "didBlockOrUnblockContact",
-            "printedName": "didBlockOrUnblockContact(userJid:isBlocked:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore18AdminBlockDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD16OrUnblockContact7userJid9isBlockedySS_SbtF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didBlockOrUnblockSelf",
-            "printedName": "didBlockOrUnblockSelf(userJid:isBlocked:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore18AdminBlockDelegateP03didD13OrUnblockSelf7userJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD13OrUnblockSelf7userJid9isBlockedySS_SbtF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didBlockOrUnblockGroup",
-            "printedName": "didBlockOrUnblockGroup(groupJid:isBlocked:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore18AdminBlockDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
-            "mangledName": "$s7FlyCore18AdminBlockDelegateP03didD14OrUnblockGroup8groupJid9isBlockedySS_SbtF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.AdminBlockDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.AdminBlockDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:7FlyCore18AdminBlockDelegateP",
-        "mangledName": "$s7FlyCore18AdminBlockDelegateP",
-        "moduleName": "FlyCore",
-        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
-        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
-        "declAttributes": [
-          "AccessControl"
-        ]
       },
       {
         "kind": "Import",
@@ -18843,6 +19766,51 @@
           "AccessControl",
           "ObjC",
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LogoutDelegate",
+        "printedName": "LogoutDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didReceiveLogout",
+            "printedName": "didReceiveLogout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7FlyCore14LogoutDelegateP010didReceiveC0yyF",
+            "mangledName": "$s7FlyCore14LogoutDelegateP010didReceiveC0yyF",
+            "moduleName": "FlyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.LogoutDelegate>",
+            "sugared_genericSig": "<Self where Self : FlyCore.LogoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:7FlyCore14LogoutDelegateP",
+        "mangledName": "$s7FlyCore14LogoutDelegateP",
+        "moduleName": "FlyCore",
+        "declAttributes": [
+          "AccessControl"
         ]
       },
       {
@@ -21316,735 +22284,6 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "FlyCommon",
-        "printedName": "FlyCommon",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "FlyNetwork",
-        "printedName": "FlyNetwork",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "FlyXmpp",
-        "printedName": "FlyXmpp",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "FlyDatabase",
-        "printedName": "FlyDatabase",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreAudioTypes",
-        "printedName": "CoreAudioTypes",
-        "declKind": "Import",
-        "moduleName": "FlyCore"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "WebLoginsManager",
-        "printedName": "WebLoginsManager",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "WebLoginsManager",
-                "printedName": "FlyCore.WebLoginsManager",
-                "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7FlyCore16WebLoginsManagerC6sharedACvpZ",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC6sharedACvpZ",
-            "moduleName": "FlyCore",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "WebLoginsManager",
-                    "printedName": "FlyCore.WebLoginsManager",
-                    "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore16WebLoginsManagerC6sharedACvgZ",
-                "mangledName": "$s7FlyCore16WebLoginsManagerC6sharedACvgZ",
-                "moduleName": "FlyCore",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "webLogoutDelegate",
-            "printedName": "webLogoutDelegate",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "FlyCore.WebLogoutDelegate?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "WebLogoutDelegate",
-                    "printedName": "FlyCore.WebLogoutDelegate",
-                    "usr": "s:7FlyCore17WebLogoutDelegateP"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvp",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvp",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.WebLogoutDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLogoutDelegate",
-                        "printedName": "FlyCore.WebLogoutDelegate",
-                        "usr": "s:7FlyCore17WebLogoutDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvg",
-                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvg",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCore.WebLogoutDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLogoutDelegate",
-                        "printedName": "FlyCore.WebLogoutDelegate",
-                        "usr": "s:7FlyCore17WebLogoutDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvs",
-                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvs",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvM",
-                "mangledName": "$s7FlyCore16WebLoginsManagerC17webLogoutDelegateAA0cgH0_pSgvM",
-                "moduleName": "FlyCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "handleQrCodeData",
-            "printedName": "handleQrCodeData(qrCodeString:completionHandler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.Bool, Swift.String) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(Swift.Bool, Swift.String)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC16handleQrCodeData02qrH6String17completionHandlerySS_ySb_SStctF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC16handleQrCodeData02qrH6String17completionHandlerySS_ySb_SStctF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getSocketId",
-            "printedName": "getSocketId(completionHandler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.Bool, Swift.String) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(Swift.Bool, Swift.String)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC11getSocketId17completionHandleryySb_SStc_tF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC11getSocketId17completionHandleryySb_SStc_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "reset",
-            "printedName": "reset()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC5resetyyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC5resetyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "logoutFromDevices",
-            "printedName": "logoutFromDevices()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC17logoutFromDevicesyyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC17logoutFromDevicesyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didGetSocketId",
-            "printedName": "didGetSocketId(data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC14didGetSocketId4dataySayypG_tF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC14didGetSocketId4dataySayypG_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didLogin",
-            "printedName": "didLogin(data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC8didLogin4dataySayypG_tF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC8didLogin4dataySayypG_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didConnect",
-            "printedName": "didConnect()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC10didConnectyyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC10didConnectyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "onError",
-            "printedName": "onError()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC7onErroryyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC7onErroryyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didDisconnect",
-            "printedName": "didDisconnect()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC13didDisconnectyyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC13didDisconnectyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "onReconnecting",
-            "printedName": "onReconnecting()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC14onReconnectingyyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC14onReconnectingyyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didLogoutWeb",
-            "printedName": "didLogoutWeb(socketId:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC09didLogoutC08socketIdySS_tF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC09didLogoutC08socketIdySS_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "saveWebLogin",
-            "printedName": "saveWebLogin(qrData:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC04saveC5Login6qrDataySS_tF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC04saveC5Login6qrDataySS_tF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getWebLogins",
-            "printedName": "getWebLogins()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[FlyCommon.WebLoginInfo?]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCommon.WebLoginInfo?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLoginInfo",
-                        "printedName": "FlyCommon.WebLoginInfo",
-                        "usr": "s:9FlyCommon12WebLoginInfoV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC03getcD0Say0A6Common0C9LoginInfoVSgGyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC03getcD0Say0A6Common0C9LoginInfoVSgGyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getRecentWebLogin",
-            "printedName": "getRecentWebLogin()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[FlyCommon.WebLoginInfo?]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "FlyCommon.WebLoginInfo?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "WebLoginInfo",
-                        "printedName": "FlyCommon.WebLoginInfo",
-                        "usr": "s:9FlyCommon12WebLoginInfoV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore16WebLoginsManagerC09getRecentC5LoginSay0A6Common0cH4InfoVSgGyF",
-            "mangledName": "$s7FlyCore16WebLoginsManagerC09getRecentC5LoginSay0A6Common0cH4InfoVSgGyF",
-            "moduleName": "FlyCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@FlyCore@objc(cs)WebLoginsManager",
-        "mangledName": "$s7FlyCore16WebLoginsManagerC",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "WebLoginDelegate",
-            "printedName": "WebLoginDelegate",
-            "usr": "s:10FlyNetwork16WebLoginDelegateP",
-            "mangledName": "$s10FlyNetwork16WebLoginDelegateP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "SocketDelegate",
-            "printedName": "SocketDelegate",
-            "usr": "s:10FlyNetwork14SocketDelegateP",
-            "mangledName": "$s10FlyNetwork14SocketDelegateP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "XMPPWebLogoutDelegate",
-            "printedName": "XMPPWebLogoutDelegate",
-            "usr": "s:7FlyXmpp21XMPPWebLogoutDelegateP",
-            "mangledName": "$s7FlyXmpp21XMPPWebLogoutDelegateP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -22536,223 +22775,46 @@
         "printedName": "UserNotifications",
         "declKind": "Import",
         "moduleName": "FlyCore"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "BackupEventDelegate",
-        "printedName": "BackupEventDelegate",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "backupProgressDidReceive",
-            "printedName": "backupProgressDidReceive(completedCount:completedSize:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore19BackupEventDelegateP24backupProgressDidReceive14completedCount0J4SizeySS_SStF",
-            "mangledName": "$s7FlyCore19BackupEventDelegateP24backupProgressDidReceive14completedCount0J4SizeySS_SStF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "backupDidFinish",
-            "printedName": "backupDidFinish(fileUrl:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore19BackupEventDelegateP15backupDidFinish7fileUrlySS_tF",
-            "mangledName": "$s7FlyCore19BackupEventDelegateP15backupDidFinish7fileUrlySS_tF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "backupDidFailed",
-            "printedName": "backupDidFailed(errorMessage:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore19BackupEventDelegateP15backupDidFailed12errorMessageySS_tF",
-            "mangledName": "$s7FlyCore19BackupEventDelegateP15backupDidFailed12errorMessageySS_tF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.BackupEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.BackupEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:7FlyCore19BackupEventDelegateP",
-        "mangledName": "$s7FlyCore19BackupEventDelegateP",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "RestoreEventDelegate",
-        "printedName": "RestoreEventDelegate",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "restoreProgressDidReceive",
-            "printedName": "restoreProgressDidReceive(completedCount:completedPercentage:completedSize:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore20RestoreEventDelegateP25restoreProgressDidReceive14completedCount0J10Percentage0J4SizeySd_S2StF",
-            "mangledName": "$s7FlyCore20RestoreEventDelegateP25restoreProgressDidReceive14completedCount0J10Percentage0J4SizeySd_S2StF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "restoreDidFinish",
-            "printedName": "restoreDidFinish()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore20RestoreEventDelegateP16restoreDidFinishyyF",
-            "mangledName": "$s7FlyCore20RestoreEventDelegateP16restoreDidFinishyyF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "restoreDidFailed",
-            "printedName": "restoreDidFailed(errorMessage:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7FlyCore20RestoreEventDelegateP16restoreDidFailed12errorMessageySS_tF",
-            "mangledName": "$s7FlyCore20RestoreEventDelegateP16restoreDidFailed12errorMessageySS_tF",
-            "moduleName": "FlyCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : FlyCore.RestoreEventDelegate>",
-            "sugared_genericSig": "<Self where Self : FlyCore.RestoreEventDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:7FlyCore20RestoreEventDelegateP",
-        "mangledName": "$s7FlyCore20RestoreEventDelegateP",
-        "moduleName": "FlyCore",
-        "declAttributes": [
-          "AccessControl"
-        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 573,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 589,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 607,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 624,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 708,
+      "length": 5,
+      "value": "false"
+    },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/ChatManager.swift",
       "kind": "StringLiteral",
@@ -22899,13 +22961,6 @@
       "offset": 454,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/Utils.swift",
-      "kind": "StringLiteral",
-      "offset": 144,
-      "length": 126,
-      "value": "\"http[s]?:\/\/(([^\/:.[:space:]]+(.[^\/:.[:space:]]+)*)|([0-9](.[0-9]{3})))(:[0-9]+)?((\/[^?#[:space:]]+)([^#[:space:]]+)?(#.+)?)?\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/ChatSDK.swift",
@@ -23076,6 +23131,27 @@
       "value": "50"
     },
     {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 253,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 339,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 375,
+      "length": 9,
+      "value": "\"qrlogin\""
+    },
+    {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/FlyCoreController.swift",
       "kind": "StringLiteral",
       "offset": 14706,
@@ -23090,39 +23166,11 @@
       "value": "\"\n\""
     },
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 573,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 589,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 607,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 624,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/BackupManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 708,
-      "length": 5,
-      "value": "false"
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/Utils.swift",
+      "kind": "StringLiteral",
+      "offset": 144,
+      "length": 126,
+      "value": "\"http[s]?:\/\/(([^\/:.[:space:]]+(.[^\/:.[:space:]]+)*)|([0-9](.[0-9]{3})))(:[0-9]+)?((\/[^?#[:space:]]+)([^#[:space:]]+)?(#.+)?)?\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/GroupManager.swift",
@@ -23144,27 +23192,6 @@
       "offset": 48590,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
-      "kind": "StringLiteral",
-      "offset": 253,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
-      "kind": "StringLiteral",
-      "offset": 339,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/WebLoginsManager.swift",
-      "kind": "StringLiteral",
-      "offset": 375,
-      "length": 9,
-      "value": "\"qrlogin\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCore\/FlyCore\/FlyCore\/RecentChatListBuilder.swift",
