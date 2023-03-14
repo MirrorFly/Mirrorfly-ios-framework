@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlyDatabase
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import FlyCommon
@@ -8,21 +8,13 @@ import Foundation
 import Realm
 import RealmSwift
 import Swift
+import UIKit
 import _Concurrency
 import _StringProcessing
 @objc @_inheritsConvenienceInitializers public class OfflineActionManager : ObjectiveC.NSObject {
   public func saveOfflineAction(actionId: Swift.String, jid: Swift.String?, action: FlyCommon.OfflineActionType, actionModel: Foundation.Data)
   public func getOfflineAction(action: FlyCommon.OfflineActionType) -> [FlyCommon.OfflineActionModel]
   public func deleteOfflineAction(for actionId: Swift.String)
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class UserStatusManager : ObjectiveC.NSObject {
-  public func saveStatus(profileStatus: FlyCommon.ProfileStatus)
-  public func getAllStatus() -> [FlyCommon.ProfileStatus]
-  public func deleteStatus(statusId: Swift.String) -> (status: Swift.Bool, statusMessge: Swift.String)
-  public func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false) -> (status: Swift.Bool, statusMessage: Swift.String)
-  public func getProfileStatusForId(statusId: Swift.String) -> FlyCommon.ProfileStatus?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -33,6 +25,15 @@ import _StringProcessing
   public func getRecentWebInfo() -> [FlyCommon.WebLoginInfo?]
   public func deleteAll()
   public func deleteBySocketId(socketId: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class UserStatusManager : ObjectiveC.NSObject {
+  public func saveStatus(profileStatus: FlyCommon.ProfileStatus)
+  public func getAllStatus() -> [FlyCommon.ProfileStatus]
+  public func deleteStatus(statusId: Swift.String) -> (status: Swift.Bool, statusMessge: Swift.String)
+  public func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false) -> (status: Swift.Bool, statusMessage: Swift.String)
+  public func getProfileStatusForId(statusId: Swift.String) -> FlyCommon.ProfileStatus?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -68,6 +69,7 @@ public protocol FlyDatabaseControllerDelegate : ObjectiveC.NSObjectProtocol {
   final public let offlineManager: FlyDatabase.OfflineActionManager
   final public let webLoginManager: FlyDatabase.WebLoginManager
   final public let availableFeaturesManager: FlyDatabase.AvailableFeaturesManager
+  final public let chatTagsManager: FlyDatabase.ChatTagsManager
   public static let shared: FlyDatabase.FlyDatabaseController
   public func printRealmDBPath()
   public func processGroupPayload(_ userInfo: [Swift.AnyHashable : Any]?) -> Swift.String?
@@ -118,6 +120,40 @@ extension RealmSwift.Realm {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class RosterManager : ObjectiveC.NSObject {
+  public func getContactsCount() -> Swift.Int
+  public func isProfileDetailAvailable(forJid: Swift.String) -> Swift.Bool
+  public func saveContact(profileDetailsArray: [FlyCommon.ProfileDetails], chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType, saveAsTemp: Swift.Bool = false, calledBy: Swift.String)
+  public func getContactAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
+  public func getVcardAsProfileDetails(forJid: Swift.String, isAdminMember: Swift.Bool? = false) -> FlyCommon.ProfileDetails?
+  public func blockUnblockUser(for jid: Swift.String, isBlock: Swift.Bool)
+  public func setUnblockForAllContact()
+  public func resetBlockedMeUsers()
+  public func updateUserBlockedMeStatus(forJid: Swift.String, isBlockedMe: Swift.Bool)
+  public func saveUserBlockList(jidList: [Swift.String], isBlockedMe: Swift.Bool)
+  public func getUserBlockedList(isBlockedMe: Swift.Bool) -> [FlyCommon.ProfileDetails]
+  public func getProfilesForJids(jidList: [Swift.String]) -> [FlyCommon.ProfileDetails]
+  public func getAllContactsByChatType(chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType) -> [FlyCommon.ProfileDetails]
+  public func getAllContactsByChatType(chatType: FlyCommon.ChatType) -> [FlyCommon.ProfileDetails]
+  public func getContactTypeOfAUser(jid: Swift.String) -> FlyCommon.ContactType?
+  public func hardDeleteTable()
+  public func getContactActiveStatus(_ numberArray: [Swift.String]?, chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType) -> [Swift.String]?
+  public func removeContact(jid: Swift.String, chatType: FlyCommon.ChatType)
+  public func getContctCountTo(chatType: FlyCommon.ChatType) -> Swift.Int
+  public func getContact(jid: Swift.String) -> FlyCommon.ProfileDetails?
+  public func getGroupName(jid: Swift.String) -> Swift.String?
+  public func changeContactsType(contactsJid: [Swift.String], to contactType: FlyCommon.ContactType)
+  public func changeContactsType(from: FlyCommon.ContactType, to: FlyCommon.ContactType, calledBy: Swift.String = emptyString())
+  public func getAllTempProfiles() -> [Swift.String]
+  public func updateGroupSync(isSyncNeeded: Swift.Bool, groupJid: Swift.String)
+  public func deleteContactsBy(type: FlyCommon.ContactType)
+  public func deletedContactUpdate(jid: Swift.String) -> FlyCommon.ProfileDetails?
+  public func getAllAppContacts() -> [FlyCommon.ProfileDetails]
+  public func saveUnsentMessage(id: Swift.String, message: Swift.String)
+  public func getUnsentMessageOf(id: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class UserBusyStatusManager : ObjectiveC.NSObject {
   public func saveStatus(busyStatus: FlyCommon.BusyStatus) -> Swift.Bool
   public func deleteBusyStatus(statusId: Swift.String)
@@ -128,6 +164,17 @@ extension RealmSwift.Realm {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class UserPrivacyManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ChatTagsManager : ObjectiveC.NSObject {
+  public func saveChatTag(tagId: Swift.String, chatTag: FlyCommon.ChatTagsModel)
+  public func getAllChatTags() -> [FlyCommon.ChatTagsModel]
+  public func getCustomChatTags() -> [FlyCommon.ChatTagsModel]
+  public func deleteChatTag(tagId: Swift.String)
+  public func deleteChatTags(tagIds: [Swift.String])
+  public func deleteAllChatTags()
+  public func reorderChatTags(chatTags: [FlyCommon.ChatTagsModel])
   @objc override dynamic public init()
   @objc deinit
 }
@@ -161,40 +208,6 @@ extension RealmSwift.Realm {
   public func isReportAvailable() -> Swift.Bool
   public func isDeleteMessageAvailable() -> Swift.Bool
   public func isViewAllMediasAvailable() -> Swift.Bool
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class RosterManager : ObjectiveC.NSObject {
-  public func getContactsCount() -> Swift.Int
-  public func isProfileDetailAvailable(forJid: Swift.String) -> Swift.Bool
-  public func saveContact(profileDetailsArray: [FlyCommon.ProfileDetails], chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType, saveAsTemp: Swift.Bool = false, calledBy: Swift.String)
-  public func getContactAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
-  public func getVcardAsProfileDetails(forJid: Swift.String) -> FlyCommon.ProfileDetails?
-  public func blockUnblockUser(for jid: Swift.String, isBlock: Swift.Bool)
-  public func setUnblockForAllContact()
-  public func resetBlockedMeUsers()
-  public func updateUserBlockedMeStatus(forJid: Swift.String, isBlockedMe: Swift.Bool)
-  public func saveUserBlockList(jidList: [Swift.String], isBlockedMe: Swift.Bool)
-  public func getUserBlockedList(isBlockedMe: Swift.Bool) -> [FlyCommon.ProfileDetails]
-  public func getProfilesForJids(jidList: [Swift.String]) -> [FlyCommon.ProfileDetails]
-  public func getAllContactsByChatType(chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType) -> [FlyCommon.ProfileDetails]
-  public func getAllContactsByChatType(chatType: FlyCommon.ChatType) -> [FlyCommon.ProfileDetails]
-  public func getContactTypeOfAUser(jid: Swift.String) -> FlyCommon.ContactType?
-  public func hardDeleteTable()
-  public func getContactActiveStatus(_ numberArray: [Swift.String]?, chatType: FlyCommon.ChatType, contactType: FlyCommon.ContactType) -> [Swift.String]?
-  public func removeContact(jid: Swift.String, chatType: FlyCommon.ChatType)
-  public func getContctCountTo(chatType: FlyCommon.ChatType) -> Swift.Int
-  public func getContact(jid: Swift.String) -> FlyCommon.ProfileDetails?
-  public func getGroupName(jid: Swift.String) -> Swift.String?
-  public func changeContactsType(contactsJid: [Swift.String], to contactType: FlyCommon.ContactType)
-  public func changeContactsType(from: FlyCommon.ContactType, to: FlyCommon.ContactType, calledBy: Swift.String = emptyString())
-  public func getAllTempProfiles() -> [Swift.String]
-  public func updateGroupSync(isSyncNeeded: Swift.Bool, groupJid: Swift.String)
-  public func deleteContactsBy(type: FlyCommon.ContactType)
-  public func deletedContactUpdate(jid: Swift.String) -> FlyCommon.ProfileDetails?
-  public func getAllAppContacts() -> [FlyCommon.ProfileDetails]
-  public func saveUnsentMessage(id: Swift.String, message: Swift.String)
-  public func getUnsentMessageOf(id: Swift.String) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -236,9 +249,11 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func updateMediaStatus(uploadStatus: Swift.Int?, downloadStatus: Swift.Int?, messageId: Swift.String)
   public func resetMediaMessage(messageId: Swift.String)
   public func getMessageFor(id: Swift.String) -> FlyCommon.ChatMessage?
+  public func getLastMessageId(jid: Swift.String) -> Swift.String
   public func getMessagesByStatus(status: FlyCommon.MessageStatus) -> [FlyCommon.ChatMessage?]
   public func getMessageDetailFor(id: Swift.String) -> FlyCommon.MessageDetail?
-  public func deleteMessagesForJids(for jids: [Swift.String], isRecentSoftDelete: Swift.Bool, isFavorite: Swift.Bool)
+  public func deleteMessagesForJids(for jids: [Swift.String], isRecentSoftDelete: Swift.Bool, isFavorite: Swift.Bool, time: Swift.String? = "")
+  public func deleteMessagesForJids(for jids: [Swift.String], lastmessageId: Swift.String, isFavorite: Swift.Bool)
   public func getMessagesOfAJid(jid: Swift.String) -> [FlyCommon.ChatMessage]
   public func getSentMessagesFrom(messageId: Swift.String, chatUserJid: Swift.String, messageStatus: FlyCommon.MessageStatus) -> [FlyCommon.ChatMessage]
   public func getMeadiaMessagesOfAJid(jid: Swift.String) -> [FlyCommon.ChatMessage]
