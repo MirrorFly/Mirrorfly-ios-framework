@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlyCall
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFAudio
@@ -304,6 +304,7 @@ public protocol FeaturesDelegate {
 @objc @_inheritsConvenienceInitializers public class CallManager : ObjectiveC.NSObject {
   public static var delegate: FlyCall.CallManagerDelegate?
   public static var featuresDelegate: FlyCall.FeaturesDelegate?
+  public static var callLogDelegate: FlyCall.CallLogDelegate?
   public static var isCallStarted: Swift.Bool
   public static var incomingUserJidArr: [Swift.String]
   @objc override dynamic public init()
@@ -395,6 +396,11 @@ extension FlyCall.CallManager {
   public class func getCallLink() -> Swift.String?
   public class func isCurrentCallJoinedViaLink() -> Swift.Bool
   public class func isUserJoinedViaLink(userId: Swift.String) -> Swift.Bool
+}
+public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
+  func clearAllCallLog()
+  func deleteCallLogs(callLogIds: [Swift.String])
+  func callLogUpdate(calllogId: Swift.String)
 }
 public protocol VideoWidthHeightAdjuster {
   func getVideoHeightConstraint(usersCount: Swift.Int) -> Swift.Int
