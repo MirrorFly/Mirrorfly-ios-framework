@@ -37,6 +37,31 @@ import _StringProcessing
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
+  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
+  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
+  public func isGroupChatAvailable() -> Swift.Bool
+  public func isGroupCallAvailable() -> Swift.Bool
+  public func isOneToOneCallAvailable() -> Swift.Bool
+  public func isRecentChatSearchAvailable() -> Swift.Bool
+  public func isImageAttachmentAvailable() -> Swift.Bool
+  public func isVideoAttachmentAvailable() -> Swift.Bool
+  public func isAudioAttachmentAvailable() -> Swift.Bool
+  public func isDocumentAttachmentAvailable() -> Swift.Bool
+  public func isContactAttachmentAvailable() -> Swift.Bool
+  public func isLocationAttachmentAvailable() -> Swift.Bool
+  public func isAttachmentAvailable() -> Swift.Bool
+  public func isStarMessageAvailable() -> Swift.Bool
+  public func isClearChatAvailable() -> Swift.Bool
+  public func isDeleteChatAvailable() -> Swift.Bool
+  public func isTranslationAvailable() -> Swift.Bool
+  public func isBlockAvailable() -> Swift.Bool
+  public func isReportAvailable() -> Swift.Bool
+  public func isDeleteMessageAvailable() -> Swift.Bool
+  public func isViewAllMediasAvailable() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class MessageHandler {
   public static let shared: FlyDatabase.MessageHandler
   public static func composeAndSaveTextMessage(toJid: Swift.String, textMessage: Swift.String, replyMessageId: Swift.String? = nil) -> (FlyCommon.ChatMessage, FlyCommon.MessageDetail)?
@@ -163,10 +188,6 @@ extension RealmSwift.Realm {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class UserPrivacyManager : ObjectiveC.NSObject {
-  @objc override dynamic public init()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class ChatTagsManager : ObjectiveC.NSObject {
   public func saveChatTag(tagId: Swift.String, chatTag: FlyCommon.ChatTagsModel)
   public func getAllChatTags() -> [FlyCommon.ChatTagsModel]
@@ -178,37 +199,16 @@ extension RealmSwift.Realm {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class UserPrivacyManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
   public static let shared: FlyDatabase.BackupMessageManager
   public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
   public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
   public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
   public func removeAllMessages()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class AvailableFeaturesManager : ObjectiveC.NSObject {
-  public func saveAvailableFeatures(jid: Swift.String, encryptedData: Swift.String)
-  public func getAvailableFeatures(jid: Swift.String) -> FlyCommon.AvailableFeaturesModel
-  public func isGroupChatAvailable() -> Swift.Bool
-  public func isGroupCallAvailable() -> Swift.Bool
-  public func isOneToOneCallAvailable() -> Swift.Bool
-  public func isRecentChatSearchAvailable() -> Swift.Bool
-  public func isImageAttachmentAvailable() -> Swift.Bool
-  public func isVideoAttachmentAvailable() -> Swift.Bool
-  public func isAudioAttachmentAvailable() -> Swift.Bool
-  public func isDocumentAttachmentAvailable() -> Swift.Bool
-  public func isContactAttachmentAvailable() -> Swift.Bool
-  public func isLocationAttachmentAvailable() -> Swift.Bool
-  public func isAttachmentAvailable() -> Swift.Bool
-  public func isStarMessageAvailable() -> Swift.Bool
-  public func isClearChatAvailable() -> Swift.Bool
-  public func isDeleteChatAvailable() -> Swift.Bool
-  public func isTranslationAvailable() -> Swift.Bool
-  public func isBlockAvailable() -> Swift.Bool
-  public func isReportAvailable() -> Swift.Bool
-  public func isDeleteMessageAvailable() -> Swift.Bool
-  public func isViewAllMediasAvailable() -> Swift.Bool
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ReceiptsManager {

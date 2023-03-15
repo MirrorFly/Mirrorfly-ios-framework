@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		jXvaBNsSESm48B7XmehMyMwojMA=
+		YUINjpVgzIKsEagdaPDvaMbTXKk=
 		</data>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		pl9gp7HYWWL4wFHKxcJbiJnDar4=
+		gIFOT15tGpNC5DQ84n4AlxKmHiw=
 		</data>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		pl9gp7HYWWL4wFHKxcJbiJnDar4=
+		gIFOT15tGpNC5DQ84n4AlxKmHiw=
 		</data>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jU6haFwGqD+V9BbwNaQd2YpN+Ac=
+		eyUd3KOGbujdvmEGWofFpuRMMOE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,14 +61,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k/7WadltoU3myNZUuAgL2CedlF2lQ6NQXRFLbHnci8k=
+			ogcmUTMdCiriQ2N7lEJDdFeGLUasp5wn6evP2fDJqM8=
 			</data>
 		</dict>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			878g3wC9J5sSQFP4GDFbJ0UYnLn1DHdSy7eW7jwSZE4=
+			75acRDE5fLK2NTGDXF5hlsQtWWQ9ECo/qzUGKgYLxTg=
 			</data>
 		</dict>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -82,14 +82,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			878g3wC9J5sSQFP4GDFbJ0UYnLn1DHdSy7eW7jwSZE4=
+			75acRDE5fLK2NTGDXF5hlsQtWWQ9ECo/qzUGKgYLxTg=
 			</data>
 		</dict>
 		<key>Modules/FlyDatabase.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kgS0jC5qf8iNJ46kmf2v0ri9ORirdvjyC4vbG7Kq888=
+			xgYdDqXglIicVt04oEDXjCHbo9ECROHMlL5rLAtp05E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
