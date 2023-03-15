@@ -1054,11 +1054,6 @@ public enum AudioStatus : Swift.String {
   @objc override dynamic public init()
   @objc deinit
 }
-public struct SearchMessage {
-  public init()
-  public var chatUserJid: Swift.String
-  public var messageId: Swift.String
-}
 public struct AvailableFeaturesModel : Swift.Codable {
   public var isGroupChatEnabled: Swift.Bool
   public var isGroupCallEnabled: Swift.Bool
@@ -1095,17 +1090,6 @@ public struct AvailableFeaturesModel : Swift.Codable {
   @objc public init(groupMemberId: Swift.String)
   @objc deinit
 }
-public struct ChatDataModel {
-  public init()
-  public var subject: Swift.String
-  public var messageContent: Swift.String
-  public var mediaAttachmentsUrl: [Foundation.URL]
-}
-public struct LinkMessage {
-  public init()
-  public var link: Swift.String
-  public var chatMessage: FlyCommon.ChatMessage
-}
 public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FlyCommonController : ObjectiveC.NSObject {
@@ -1118,6 +1102,12 @@ public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
     get
   }
   @objc deinit
+}
+public struct ChatDataModel {
+  public init()
+  public var subject: Swift.String
+  public var messageContent: Swift.String
+  public var mediaAttachmentsUrl: [Foundation.URL]
 }
 @objc @objcMembers public class ParticipantDetails : ObjectiveC.NSObject {
   @objc final public let jid: Swift.String!
@@ -1166,6 +1156,11 @@ public struct ProfileStatus {
   @objc override dynamic public init()
   @objc deinit
 }
+public struct SearchMessage {
+  public init()
+  public var chatUserJid: Swift.String
+  public var messageId: Swift.String
+}
 public enum MessageType : Swift.String, Swift.CustomStringConvertible {
   case text
   case image
@@ -1210,6 +1205,10 @@ public enum AudioType : Swift.String {
   @objc public var groupAffiliation: Swift.String
   @objc public var groupItemId: Swift.String
   @objc public init(groupId: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FlyLog {
+  public class func DLog(param1: Swift.String?, param2: Any?)
   @objc deinit
 }
 public struct BackupRestoreModels : Swift.Codable {
@@ -1314,10 +1313,6 @@ public struct BackupRecentChat : Swift.Codable {
   public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
-}
-@_hasMissingDesignatedInitializers public class FlyLog {
-  public class func DLog(param1: Swift.String?, param2: Any?)
-  @objc deinit
 }
 public struct FlyProfile {
   public let jid: Swift.String!
@@ -1895,6 +1890,11 @@ public struct FlyConstants {
     public static let backup_recent_success: Swift.String
     public static let latest_profile_updates_fetched: Swift.String
   }
+}
+public struct LinkMessage {
+  public init()
+  public var link: Swift.String
+  public var chatMessage: FlyCommon.ChatMessage
 }
 extension FlyCommon.OfflineActionType : Swift.Equatable {}
 extension FlyCommon.OfflineActionType : Swift.Hashable {}

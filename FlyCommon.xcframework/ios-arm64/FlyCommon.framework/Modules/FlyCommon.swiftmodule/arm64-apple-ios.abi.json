@@ -33473,223 +33473,6 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "SearchMessage",
-        "printedName": "SearchMessage",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SearchMessage",
-                "printedName": "FlyCommon.SearchMessage",
-                "usr": "s:9FlyCommon13SearchMessageV"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:9FlyCommon13SearchMessageVACycfc",
-            "mangledName": "$s9FlyCommon13SearchMessageVACycfc",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
-            "name": "chatUserJid",
-            "printedName": "chatUserJid",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvp",
-            "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvg",
-                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvs",
-                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvM",
-                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "messageId",
-            "printedName": "messageId",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvp",
-            "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvg",
-                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvs",
-                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvM",
-                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:9FlyCommon13SearchMessageV",
-        "mangledName": "$s9FlyCommon13SearchMessageV",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
         "name": "AvailableFeaturesModel",
         "printedName": "AvailableFeaturesModel",
         "children": [
@@ -36422,550 +36205,6 @@
         ]
       },
       {
-        "kind": "TypeDecl",
-        "name": "ChatDataModel",
-        "printedName": "ChatDataModel",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ChatDataModel",
-                "printedName": "FlyCommon.ChatDataModel",
-                "usr": "s:9FlyCommon13ChatDataModelV"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:9FlyCommon13ChatDataModelVACycfc",
-            "mangledName": "$s9FlyCommon13ChatDataModelVACycfc",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
-            "name": "subject",
-            "printedName": "subject",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvp",
-            "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvg",
-                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvs",
-                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvM",
-                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "messageContent",
-            "printedName": "messageContent",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvp",
-            "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvg",
-                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvs",
-                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvM",
-                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "mediaAttachmentsUrl",
-            "printedName": "mediaAttachmentsUrl",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Foundation.URL]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "URL",
-                    "printedName": "Foundation.URL",
-                    "usr": "s:10Foundation3URLV"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvp",
-            "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Foundation.URL]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "URL",
-                        "printedName": "Foundation.URL",
-                        "usr": "s:10Foundation3URLV"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvg",
-                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Foundation.URL]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "URL",
-                        "printedName": "Foundation.URL",
-                        "usr": "s:10Foundation3URLV"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvs",
-                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvM",
-                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:9FlyCommon13ChatDataModelV",
-        "mangledName": "$s9FlyCommon13ChatDataModelV",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "LinkMessage",
-        "printedName": "LinkMessage",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "LinkMessage",
-                "printedName": "FlyCommon.LinkMessage",
-                "usr": "s:9FlyCommon11LinkMessageV"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:9FlyCommon11LinkMessageVACycfc",
-            "mangledName": "$s9FlyCommon11LinkMessageVACycfc",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
-            "name": "link",
-            "printedName": "link",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon11LinkMessageV4linkSSvp",
-            "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV4linkSSvg",
-                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV4linkSSvs",
-                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV4linkSSvM",
-                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "chatMessage",
-            "printedName": "chatMessage",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ChatMessage",
-                "printedName": "FlyCommon.ChatMessage",
-                "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvp",
-            "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvp",
-            "moduleName": "FlyCommon",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ChatMessage",
-                    "printedName": "FlyCommon.ChatMessage",
-                    "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvg",
-                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvg",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ChatMessage",
-                    "printedName": "FlyCommon.ChatMessage",
-                    "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvs",
-                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvs",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0CvM",
-                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0CvM",
-                "moduleName": "FlyCommon",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:9FlyCommon11LinkMessageV",
-        "mangledName": "$s9FlyCommon11LinkMessageV",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
@@ -37282,6 +36521,333 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ChatDataModel",
+        "printedName": "ChatDataModel",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ChatDataModel",
+                "printedName": "FlyCommon.ChatDataModel",
+                "usr": "s:9FlyCommon13ChatDataModelV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9FlyCommon13ChatDataModelVACycfc",
+            "mangledName": "$s9FlyCommon13ChatDataModelVACycfc",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "subject",
+            "printedName": "subject",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvp",
+            "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvg",
+                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvs",
+                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV7subjectSSvM",
+                "mangledName": "$s9FlyCommon13ChatDataModelV7subjectSSvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "messageContent",
+            "printedName": "messageContent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvp",
+            "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvg",
+                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvs",
+                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV14messageContentSSvM",
+                "mangledName": "$s9FlyCommon13ChatDataModelV14messageContentSSvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mediaAttachmentsUrl",
+            "printedName": "mediaAttachmentsUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.URL]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvp",
+            "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.URL]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URL",
+                        "printedName": "Foundation.URL",
+                        "usr": "s:10Foundation3URLV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvg",
+                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.URL]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URL",
+                        "printedName": "Foundation.URL",
+                        "usr": "s:10Foundation3URLV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvs",
+                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvM",
+                "mangledName": "$s9FlyCommon13ChatDataModelV19mediaAttachmentsUrlSay10Foundation3URLVGvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9FlyCommon13ChatDataModelV",
+        "mangledName": "$s9FlyCommon13ChatDataModelV",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -39850,6 +39416,223 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "SearchMessage",
+        "printedName": "SearchMessage",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SearchMessage",
+                "printedName": "FlyCommon.SearchMessage",
+                "usr": "s:9FlyCommon13SearchMessageV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9FlyCommon13SearchMessageVACycfc",
+            "mangledName": "$s9FlyCommon13SearchMessageVACycfc",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "chatUserJid",
+            "printedName": "chatUserJid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvp",
+            "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvg",
+                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvs",
+                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV11chatUserJidSSvM",
+                "mangledName": "$s9FlyCommon13SearchMessageV11chatUserJidSSvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "messageId",
+            "printedName": "messageId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvp",
+            "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvg",
+                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvs",
+                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon13SearchMessageV9messageIdSSvM",
+                "mangledName": "$s9FlyCommon13SearchMessageV9messageIdSSvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9FlyCommon13SearchMessageV",
+        "mangledName": "$s9FlyCommon13SearchMessageV",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "MessageType",
         "printedName": "MessageType",
         "children": [
@@ -41923,6 +41706,79 @@
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlyLog",
+        "printedName": "FlyLog",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "DLog",
+            "printedName": "DLog(param1:param2:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9FlyCommon0A3LogC4DLog6param16param2ySSSg_ypSgtFZ",
+            "mangledName": "$s9FlyCommon0A3LogC4DLog6param16param2ySSSg_ypSgtFZ",
+            "moduleName": "FlyCommon",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9FlyCommon0A3LogC",
+        "mangledName": "$s9FlyCommon0A3LogC",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "Import",
@@ -47869,79 +47725,6 @@
             "mangledName": "$sSE"
           }
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "FlyLog",
-        "printedName": "FlyLog",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "DLog",
-            "printedName": "DLog(param1:param2:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Any?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:9FlyCommon0A3LogC4DLog6param16param2ySSSg_ypSgtFZ",
-            "mangledName": "$s9FlyCommon0A3LogC4DLog6param16param2ySSSg_ypSgtFZ",
-            "moduleName": "FlyCommon",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:9FlyCommon0A3LogC",
-        "mangledName": "$s9FlyCommon0A3LogC",
-        "moduleName": "FlyCommon",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "Import",
@@ -77499,6 +77282,223 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LinkMessage",
+        "printedName": "LinkMessage",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LinkMessage",
+                "printedName": "FlyCommon.LinkMessage",
+                "usr": "s:9FlyCommon11LinkMessageV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9FlyCommon11LinkMessageVACycfc",
+            "mangledName": "$s9FlyCommon11LinkMessageVACycfc",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "link",
+            "printedName": "link",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon11LinkMessageV4linkSSvp",
+            "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV4linkSSvg",
+                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV4linkSSvs",
+                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV4linkSSvM",
+                "mangledName": "$s9FlyCommon11LinkMessageV4linkSSvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "chatMessage",
+            "printedName": "chatMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ChatMessage",
+                "printedName": "FlyCommon.ChatMessage",
+                "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvp",
+            "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvp",
+            "moduleName": "FlyCommon",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ChatMessage",
+                    "printedName": "FlyCommon.ChatMessage",
+                    "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvg",
+                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvg",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ChatMessage",
+                    "printedName": "FlyCommon.ChatMessage",
+                    "usr": "c:@M@FlyCommon@objc(cs)ChatMessage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvs",
+                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0Cvs",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9FlyCommon11LinkMessageV04chatD0AA04ChatD0CvM",
+                "mangledName": "$s9FlyCommon11LinkMessageV04chatD0AA04ChatD0CvM",
+                "moduleName": "FlyCommon",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9FlyCommon11LinkMessageV",
+        "mangledName": "$s9FlyCommon11LinkMessageV",
+        "moduleName": "FlyCommon",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "Dictionary",
         "printedName": "Dictionary",
@@ -82229,20 +82229,6 @@
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/SearchMessage.swift",
-      "kind": "StringLiteral",
-      "offset": 194,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/SearchMessage.swift",
-      "kind": "StringLiteral",
-      "offset": 233,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/AvailableFeaturesModel.swift",
       "kind": "BooleanLiteral",
       "offset": 210,
@@ -82656,27 +82642,6 @@
       "value": "\"FlyCommon.GroupParticipantDetail\""
     },
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/ChatDataModel.swift",
-      "kind": "StringLiteral",
-      "offset": 184,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/ChatDataModel.swift",
-      "kind": "StringLiteral",
-      "offset": 227,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/LinkMessage.swift",
-      "kind": "StringLiteral",
-      "offset": 178,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/FlyCommonController.swift",
       "kind": "StringLiteral",
       "offset": 576,
@@ -82689,6 +82654,20 @@
       "offset": 602,
       "length": 4,
       "value": "\"\n\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/ChatDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 184,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/ChatDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 227,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/RemoveParticipantDetails.swift",
@@ -82738,6 +82717,20 @@
       "offset": 263,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/SearchMessage.swift",
+      "kind": "StringLiteral",
+      "offset": 194,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/SearchMessage.swift",
+      "kind": "StringLiteral",
+      "offset": 233,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/MessageType.swift",
@@ -85734,6 +85727,13 @@
       "offset": 19470,
       "length": 32,
       "value": "\"Latest Profile Updates fetched\""
+    },
+    {
+      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleCommon\/FlyCommon\/FlyCommon\/LinkMessage.swift",
+      "kind": "StringLiteral",
+      "offset": 178,
+      "length": 2,
+      "value": "\"\""
     }
   ]
 }
