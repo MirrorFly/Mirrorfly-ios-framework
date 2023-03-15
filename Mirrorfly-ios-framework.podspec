@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|  
     s.name              = 'Mirrorfly-ios-framework' # Name for your pod
-    s.version           = "0.0.11"
+    s.version           = "0.0.12"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
 
 
 
-    s.dependency 'libPhoneNumber-iOS'
-    s.dependency 'Alamofire'
+    s.dependency 'libPhoneNumber-iOS', '0.9.15'
+    s.dependency 'Alamofire', '5.5'
     s.dependency 'SocketRocket'
     s.dependency 'Socket.IO-Client-Swift', '15.2.0'
     s.dependency 'XMPPFramework/Swift'
