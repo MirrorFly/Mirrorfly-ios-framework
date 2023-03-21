@@ -416,7 +416,7 @@ public protocol VideoWidthHeightAdjuster {
   public func updatecallLog(callLogs: [Any])
   public class func getMissedCallCount() -> Swift.Int
   public func deleteCallLog(callLogId: Swift.String? = nil, completionHandler: @escaping FlyCommon.FlyCompletionHandler)
-  public func getCallLogs(pageNumber: Swift.Int, completionHandler: @escaping FlyCommon.FlyCompletionHandler)
+  public func getCallLogs(pageNumber: Swift.Int, isForegroundSync: Swift.Bool = false, completionHandler: @escaping FlyCommon.FlyCompletionHandler)
   public func syncCallLogs(completionHandler: @escaping FlyCommon.FlyCompletionHandler)
   @objc override dynamic public init()
   @objc deinit

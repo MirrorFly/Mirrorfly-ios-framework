@@ -1218,14 +1218,14 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleTranslate\/FlyTranslate\/FlyTranslate\/FlyTranslationManager.swift",
+      "filePath": "\/Users\/user\/Documents\/mergeProjects\/flutter_release\/SubmoduleTranslate\/FlyTranslate\/FlyTranslate\/FlyTranslationManager.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 69,
       "value": "\"https:\/\/translation.googleapis.com\/language\/translate\/v2\/languages?\""
     },
     {
-      "filePath": "\/Users\/user\/Documents\/Projects\/UIKitiOS\/SubmoduleTranslate\/FlyTranslate\/FlyTranslate\/FlyTranslationManager.swift",
+      "filePath": "\/Users\/user\/Documents\/mergeProjects\/flutter_release\/SubmoduleTranslate\/FlyTranslate\/FlyTranslate\/FlyTranslationManager.swift",
       "kind": "StringLiteral",
       "offset": 291,
       "length": 59,

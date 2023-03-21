@@ -443,6 +443,7 @@ typedef SWIFT_ENUM(NSInteger, MessageStatus, open) {
 
 
 
+
 SWIFT_CLASS("_TtC9FlyCommon18ParticipantDetails")
 @interface ParticipantDetails : NSObject
 /// Jid of the admin User

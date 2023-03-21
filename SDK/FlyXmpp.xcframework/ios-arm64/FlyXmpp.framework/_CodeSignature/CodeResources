@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		khkujcQI6qAn3SEthvJCxOvNhoI=
+		RTtEzYqzK710Ijw+M4gByPJL6pE=
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/FlyXmpp.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		YBDkvDCIZwZztp9G4GrlGIS+0wY=
+		bFHDqaBWTQ5msJRkV8CDmLiYMLg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,7 +61,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5XyA5eLhgZD9IOQb6sgLDVJ66FcODzYREmn+QMPp/D0=
+			96A0Efgff/IdV6ec134PmKl177qUoygco6m5jt+qE1Q=
 			</data>
 		</dict>
 		<key>Modules/FlyXmpp.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KL85YiFKRUMDeV92GZpJ5YZo7nz9sbB36ndEjY7eEYw=
+			Eletq7w4dACzmSAcr9aqWh/B+w0Wi2a0NCAe5mFd0JQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -11,28 +11,6 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
-public class FileStreamReader {
-  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
-  @objc deinit
-  public func nextLine() -> Swift.String?
-  public func rewind()
-  public func close()
-}
-extension FlyDatabase.FileStreamReader : Swift.Sequence {
-  public func makeIterator() -> Swift.AnyIterator<Swift.String>
-  public typealias Element = Swift.String
-  public typealias Iterator = Swift.AnyIterator<Swift.String>
-}
-@objc @_inheritsConvenienceInitializers public class WebLoginManager : ObjectiveC.NSObject {
-  public func saveWebInfo(webLoginInfo: FlyCommon.WebLoginInfo)
-  public func getWebInfo(bowser: Swift.String, platform: Swift.String) -> FlyCommon.WebLoginInfo?
-  public func getAllWebInfo() -> [FlyCommon.WebLoginInfo?]
-  public func getRecentWebInfo() -> [FlyCommon.WebLoginInfo?]
-  public func deleteAll()
-  public func deleteBySocketId(socketId: Swift.String)
-  @objc override dynamic public init()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class OfflineActionManager : ObjectiveC.NSObject {
   public func saveOfflineAction(actionId: Swift.String, jid: Swift.String?, action: FlyCommon.OfflineActionType, actionModel: Foundation.Data)
   public func getOfflineAction(action: FlyCommon.OfflineActionType) -> [FlyCommon.OfflineActionModel]
@@ -48,6 +26,18 @@ extension FlyDatabase.FileStreamReader : Swift.Sequence {
   public func getProfileStatusForId(statusId: Swift.String) -> FlyCommon.ProfileStatus?
   @objc override dynamic public init()
   @objc deinit
+}
+public class FileStreamReader {
+  public init?(path: Swift.String, delimiter: Swift.String = "\n", encoding: Swift.String.Encoding = .utf8, chunkSize: Swift.Int = 4096)
+  @objc deinit
+  public func nextLine() -> Swift.String?
+  public func rewind()
+  public func close()
+}
+extension FlyDatabase.FileStreamReader : Swift.Sequence {
+  public func makeIterator() -> Swift.AnyIterator<Swift.String>
+  public typealias Element = Swift.String
+  public typealias Iterator = Swift.AnyIterator<Swift.String>
 }
 @_hasMissingDesignatedInitializers public class MessageHandler {
   public static let shared: FlyDatabase.MessageHandler
@@ -90,6 +80,14 @@ public protocol FlyDatabaseControllerDelegate : ObjectiveC.NSObjectProtocol {
 public func hardDeleteAllTable()
 extension RealmSwift.Realm {
   public func safeWrite(_ block: (() throws -> Swift.Void)) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
+  public static let shared: FlyDatabase.BackupMessageManager
+  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
+  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
+  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
+  public func removeAllMessages()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class GroupMemberManager : ObjectiveC.NSObject {
   public func saveGroupContact(groupDetailList: [FlyCommon.GroupParticipantDetail])
@@ -232,12 +230,14 @@ extension RealmSwift.Realm {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BackupMessageManager : ObjectiveC.NSObject {
-  public static let shared: FlyDatabase.BackupMessageManager
-  public func getAllBackupMessages(completionHandler: (_ isSuccess: Swift.Bool, _ error: FlyCommon.FlyError?, _ data: [Swift.String : Any]) -> Swift.Void)
-  public func insertMessageToDatabase(messageModel: FlyCommon.BackupMessageModel? = nil, recentModel: FlyCommon.BackupRecentModel? = nil)
-  public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> FlyCommon.ProfileDetails?
-  public func removeAllMessages()
+@objc @_inheritsConvenienceInitializers public class WebLoginManager : ObjectiveC.NSObject {
+  public func saveWebInfo(webLoginInfo: FlyCommon.WebLoginInfo)
+  public func getWebInfo(bowser: Swift.String, platform: Swift.String) -> FlyCommon.WebLoginInfo?
+  public func getAllWebInfo() -> [FlyCommon.WebLoginInfo?]
+  public func getRecentWebInfo() -> [FlyCommon.WebLoginInfo?]
+  public func deleteAll()
+  public func deleteBySocketId(socketId: Swift.String)
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class MessageManager : ObjectiveC.NSObject {
@@ -289,6 +289,7 @@ extension RealmSwift.Realm {
 extension FlyDatabase.MessageManager {
   public func deleteUnreadNotificationMessage(messageId: Swift.String)
   public func getUnreadMessages(chatUserJid: Swift.String, messageId: Swift.String) -> [Swift.String]
+  public func updateUnreadMessageCount(messageId: Swift.String, unreadText: Swift.String)
   public func getUnseenMessagesWithTime(chatUserJid: Swift.String, messageId: Swift.String, time: Swift.Double) -> [Swift.String]
 }
 extension FlyDatabase.MessageManager {
