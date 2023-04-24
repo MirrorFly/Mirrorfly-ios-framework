@@ -24,12 +24,12 @@ fi
 
 TEMPLATE="
 Pod::Spec.new do |s|  
-    s.name              = 'Mirrorfly-ios-framework' # Name for your pod
+    s.name              = 'MirrorflyFlySDK'
     s.version           = \"$VERSION\"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
-    s.author            = { 'Hariram' => 'hariram.c@contus.in' }
+    s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
 
     s.platform          = :ios, "12.1"
@@ -41,8 +41,8 @@ Pod::Spec.new do |s|
 
 
 
-    s.dependency 'libPhoneNumber-iOS', '0.8'
-    s.dependency 'Alamofire'
+    s.dependency 'libPhoneNumber-iOS', '0.9.15'
+    s.dependency 'Alamofire', '5.5'
     s.dependency 'SocketRocket'
     s.dependency 'Socket.IO-Client-Swift', '15.2.0'
     s.dependency 'XMPPFramework/Swift'
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
     s.dependency 'GoogleWebRTC'
 
 
-    s.ios.vendored_frameworks = 'Source/FlyCommon.xcframework' , 'Source/FlyCall.xcframework' ,'Source/FlyCore.xcframework', 'Source/FlyXmpp.xcframework', 'Source/FlyDatabase.xcframework', 'Source/FlyNetwork.xcframework', 'Source/FlyTranslate.xcframework'
+    s.ios.vendored_frameworks = 'Source/MirrorFlySDK.xcframework'
 
    
 end
