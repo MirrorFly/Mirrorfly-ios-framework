@@ -1,4 +1,4 @@
--e 
+
 Pod::Spec.new do |s|  
     s.name              = 'MirrorFlySDK'
     s.version           = "1.0.0"
