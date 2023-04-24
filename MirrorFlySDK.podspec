@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|  
     s.name              = 'MirrorFlySDK'
-    s.version           = "1.0.1"
+    s.version           = "2.0.0"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
