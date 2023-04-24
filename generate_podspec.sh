@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='0.0.5'
+VERSION='2.0.0'
 SHA1='f'
 
 while getopts v:s: flag
@@ -56,5 +56,5 @@ Pod::Spec.new do |s|
 end
 "
 
-echo -e "$TEMPLATE" > Mirrorfly-ios-framework.podspec
+echo -e "$TEMPLATE" > MirrorFlySDK.podspec
 
