@@ -645,6 +645,10 @@ public protocol MobileCallActionDelegate {
   func whileDialing()
   func didCallDisconnected()
 }
+public protocol CallStatusContactDelegate {
+  func onCallAction(callAction: MirrorFlySDK.CallAction, userId: Swift.String)
+  func onCallStatusUpdated(callStatus: MirrorFlySDK.CALLSTATUS, userId: Swift.String)
+}
 public protocol CallManagerDelegate {
   func getDisplayName(IncomingUser: [Swift.String])
   func getGroupName(_ groupId: Swift.String)
@@ -669,6 +673,7 @@ public protocol MissedCallNotificationDelegate {
   public static var featuresDelegate: MirrorFlySDK.FeaturesDelegate?
   public static var callLogDelegate: MirrorFlySDK.CallLogDelegate?
   public static var missedCallNotificationDelegate: MirrorFlySDK.MissedCallNotificationDelegate?
+  public static var onCallStatusDelegate: MirrorFlySDK.CallStatusContactDelegate?
   public static var isCallStarted: Swift.Bool
   public static var incomingUserJidArr: [Swift.String]
   @objc override dynamic public init()
