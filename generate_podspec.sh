@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='2.0.0'
+VERSION='2.0.2'
 SHA1='f'
 
 while getopts v:s: flag
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
     s.dependency 'GoogleWebRTC'
 
 
-    s.ios.vendored_frameworks = 'Source/MirrorFlySDK.xcframework'
+    s.ios.vendored_frameworks = 'MirrorFlySDK.xcframework'
 
    
 end
