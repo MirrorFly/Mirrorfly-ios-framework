@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|  
     s.name              = 'MirrorFlySDK'
-    s.version           = "2.0.3"
+    s.version           = "2.0.2"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     s.dependency 'GoogleWebRTC'
 
 
-    s.ios.vendored_frameworks = 'MirrorFlySDK.xcframework'
+    s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
 
    
 end

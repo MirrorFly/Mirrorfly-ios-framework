@@ -50,11 +50,11 @@ Pod::Spec.new do |s|
     s.dependency 'GoogleWebRTC'
 
 
-    s.ios.vendored_frameworks = 'MirrorFlySDK.xcframework'
+    s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
 
    
 end
 "
 
-echo -e "$TEMPLATE" > MirrorFlySDK.podspec
+echo "$TEMPLATE" > MirrorFlySDK.podspec
 
