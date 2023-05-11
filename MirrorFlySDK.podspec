@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|  
     s.name              = 'MirrorFlySDK'
-    s.version           = "3.6.2"
+    s.version           = "3.6.3"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     s.dependency 'SocketRocket', '0.6.0'
     s.dependency 'Socket.IO-Client-Swift', '15.2.0'
     s.dependency 'RealmSwift' , '10.20.1'
-    s.dependency 'GoogleWebRTC', '1.1.32000'
+    s.dependency 'GoogleWebRTC'
     s.dependency 'CocoaLumberjack', '3.6.2'
     s.dependency 'XMPPFramework/Swift', '4.0.0'
 
