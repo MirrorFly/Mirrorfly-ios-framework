@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|  
     s.name              = 'MirrorFlySDK'
-    s.version           = "3.6.3"
+    s.version           = "5.8.1"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
@@ -10,8 +10,7 @@ Pod::Spec.new do |s|
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
     s.swift_version = '4.0'
     s.requires_arc = true
-    s.frameworks = 'UIKit'
-    s.ios.deployment_target = '12.1'	
+    s.ios.deployment_target = '12.1'
     s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
     s.dependency 'libPhoneNumber-iOS', '0.9.15'
     s.dependency 'Alamofire', '5.5.0'

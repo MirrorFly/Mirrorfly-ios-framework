@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION='2.0.7'
-SHA1='f'
+VERSION='5.8.1'
+SHA1='v5.8.1'
 
 while getopts v:s: flag
 do
@@ -28,31 +28,23 @@ Pod::Spec.new do |s|
     s.version           = \"$VERSION\"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
-
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
-
     s.platform          = :ios, "12.1"
-    # change the source location
-    s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
-
+    s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
     s.swift_version = '4.0'
     s.requires_arc = true
-
-
-
+    s.ios.deployment_target = '12.1'
+    s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
     s.dependency 'libPhoneNumber-iOS', '0.9.15'
-    s.dependency 'Alamofire', '5.5'
-    s.dependency 'SocketRocket'
+    s.dependency 'Alamofire', '5.5.0'
+    s.dependency 'SocketRocket', '0.6.0'
     s.dependency 'Socket.IO-Client-Swift', '15.2.0'
-    s.dependency 'XMPPFramework/Swift'
     s.dependency 'RealmSwift' , '10.20.1'
     s.dependency 'GoogleWebRTC'
-
-
-    s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
-
-   
+    s.dependency 'CocoaLumberjack', '3.6.2'
+    s.dependency 'XMPPFramework/Swift', '4.0.0'
+    s.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1',}
 end
 "
 
