@@ -6,11 +6,8 @@ Pod::Spec.new do |s|
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
-
     s.platform          = :ios, 12.1
-
-    s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
-
+    s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
     s.swift_version = '4.0'
     s.requires_arc = true
     s.frameworks = 'UIKit'
@@ -24,7 +21,6 @@ Pod::Spec.new do |s|
     s.dependency 'GoogleWebRTC'
     s.dependency 'CocoaLumberjack', '3.6.2'
     s.dependency 'XMPPFramework/Swift', '4.0.0'
-
     s.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1',}
 end
 
