@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION='5.8.1'
-SHA1='v5.8.1'
+VERSION='5.8.0'
+SHA1='v5.8.0'
 
 while getopts v:s: flag
 do
@@ -22,20 +22,23 @@ if [ -z $SHA1 ]; then
     echo 'shasum is required'
 fi
 
-TEMPLATE="
-Pod::Spec.new do |s|  
+TEMPLATE="Pod::Spec.new do |s|
     s.name              = 'MirrorFlySDK'
     s.version           = \"$VERSION\"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
-    s.author            = { 'Vishvanath' => 'vishvanatheshwer.v.c@contus.in' }
+    s.author            = { 'Vishvanath' => 'vishvanatheshwer.v@contus.in','Vanitha' => 'vanitha.g@contus.in', }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
     s.platform          = :ios, "12.1"
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
-    s.swift_version = '4.0'
+#    s.screenshots       = '','',''
+#    s.social_media_url = ''
+    s.swift_version = '5.0'
     s.requires_arc = true
     s.ios.deployment_target = '12.1'
     s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
+    s.documentation_url = 'https://www.mirrorfly.com/docs/chat/ios/v2/quick-start/'
+    s.ios.frameworks = ['UIKit']
     s.dependency 'libPhoneNumber-iOS', '0.9.15'
     s.dependency 'Alamofire', '5.5.0'
     s.dependency 'SocketRocket', '0.6.0'
