@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='2.0.9'
+VERSION='5.8.0'
 SHA1='f'
 
 while getopts v:s: flag
