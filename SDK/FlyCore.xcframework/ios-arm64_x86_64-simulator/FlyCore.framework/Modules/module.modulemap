@@ -1,6 +1,0 @@
-framework module FlyCore {
-  umbrella header "FlyCore.h"
-
-  export *
-  module * { export * }
-}
