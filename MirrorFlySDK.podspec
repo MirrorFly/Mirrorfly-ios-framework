@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name              = 'MirrorFlySDK'
-    s.version           = "5.7.8"
+    s.version           = "5.7.5"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v@contus.in','Vanitha' => 'vanitha.g@contus.in', }
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.swift_version = '5.0'
     s.requires_arc = true
     s.ios.deployment_target = '12.1'
-    s.ios.vendored_frameworks = 'Frameworks/MirrorFlySDK.xcframework'
+    s.ios.vendored_frameworks = 'SDK/MirrorFlySDK.xcframework'
     s.documentation_url = 'https://www.mirrorfly.com/docs/chat/ios/v2/quick-start/'
     s.ios.frameworks = ['UIKit']
     s.dependency 'libPhoneNumber-iOS', '0.9.15'
