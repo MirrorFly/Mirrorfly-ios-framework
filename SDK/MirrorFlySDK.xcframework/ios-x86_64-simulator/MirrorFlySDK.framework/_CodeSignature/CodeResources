@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		NVUZQ7DjKlVciv1mYyGvU5JXahc=
+		w3PuiPls7WPQ36p5aeNtG2F/3Lg=
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		83zriqh7KWXO1QQZ9YEE4xNTkGg=
+		vyvXmPD+tliy+v72fbl0ApKHjOw=
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		83zriqh7KWXO1QQZ9YEE4xNTkGg=
+		vyvXmPD+tliy+v72fbl0ApKHjOw=
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hZBE4/unF4k0WbgZ9vMbygSs2+s=
+		EvfgY5XmRImm5mTutJAP7Oaacbk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,7 +74,11 @@
 		</data>
 		<key>build.properties</key>
 		<data>
-		HnJL2+ZqO+3re18/axbPtfvbkJM=
+		HjgDVL6obbl2532DH2GFywiIUmI=
+		</data>
+		<key>generate_podspec.sh</key>
+		<data>
+		PUlXSOAct4VNgdk2O2cgPFJEckA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -153,14 +157,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s4YPxdI0uvAIHplAWMgQzdR+3UzOX65AR+O1tlvzExw=
+			YGOWdUbiQ/y9TzO+s6G+6r+rrqTz41wKaggVclobzS0=
 			</data>
 		</dict>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MPgIbQj2FG58FY9YY5n6/O8XVrJaZprpn96XTERVB9M=
+			6GPiepdh4s375RTHq/D9vPzpsyWa8JvauDNTVWyginc=
 			</data>
 		</dict>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -174,14 +178,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MPgIbQj2FG58FY9YY5n6/O8XVrJaZprpn96XTERVB9M=
+			6GPiepdh4s375RTHq/D9vPzpsyWa8JvauDNTVWyginc=
 			</data>
 		</dict>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E3JX5efKFHRiNnU6EnGoqkZj/wWCxWDLLr6jce1ou+w=
+			FjzH5W6/cnMOeFbj7lyGxkoaZZxWnHeNmoPd2r8kT0w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -195,7 +199,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4VJSGeaVTic7cNbN0euVbGz8cIyEM044me6olxGpIx8=
+			2Ayf1homjKCHpvl/R5AX++ZyDjNQ2kmeFILNPB1TQ+c=
+			</data>
+		</dict>
+		<key>generate_podspec.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i9EiG3gIE0BHcT4O67mu5pfEgJ1sv/y8Q1Q7f0waNM8=
 			</data>
 		</dict>
 	</dict>

@@ -1414,12 +1414,14 @@ extension MirrorFlySDK.FlyMessenger {
 extension MirrorFlySDK.FlyMessenger {
   @objc dynamic public func deleteUnreadMessageSeparatorOfAConversation(jid: Swift.String)
 }
-public struct BusyStatus {
+public struct BusyStatus : Swift.Codable {
   public init()
   public var id: Swift.String!
   public var status: Swift.String!
   public var isCurrentStatus: Swift.Bool
   public init(statusText: Swift.String, isCurrentStatus: Swift.Bool = false)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ReportMessage : Swift.Codable {
   public init()
@@ -1441,11 +1443,13 @@ public struct ReportMessgeData : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct MessageReceipt {
+public struct MessageReceipt : Swift.Codable {
   public var messageId: Swift.String
   public var time: Swift.Double
   public var profileDetails: MirrorFlySDK.ProfileDetails?
   public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objcMembers public class MediaChatMessage : Swift.Codable {
   @objc public var messageId: Swift.String
@@ -1794,7 +1798,7 @@ extension Foundation.Data {
 }
 public protocol FlyNetworkControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
-public struct FlyProfile {
+public struct FlyProfile : Swift.Codable {
   public let jid: Swift.String!
   public var name: Swift.String
   public var nickName: Swift.String
@@ -1804,6 +1808,8 @@ public struct FlyProfile {
   public var email: Swift.String
   public var thumbImage: Swift.String
   public init(jid: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc @objcMembers public class ProfileDetails : ObjectiveC.NSObject, Swift.Codable {
   @objc public var jid: Swift.String!
@@ -2905,18 +2911,22 @@ public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
   }
   @objc deinit
 }
-public struct SearchMessage {
+public struct SearchMessage : Swift.Codable {
   public init()
   public var chatUserJid: Swift.String
   public var messageId: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-public struct UnsentMessage {
+public struct UnsentMessage : Swift.Codable {
   public var textContent: Swift.String
   public var mentionedUsers: [Swift.String]
   public var mentionSearch: [Swift.String]
   public var mentionLocation: [Swift.Int]
   public var mentionLength: [Swift.Int]
   public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol XMPPArchiveDelegate : ObjectiveC.NSObjectProtocol {
   func updateArchiveUnArchiveChats(toUser: Swift.String, archiveStatus: Swift.Bool)
@@ -2961,12 +2971,14 @@ public protocol WebLogoutDelegate {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-public struct ProfileStatus {
+public struct ProfileStatus : Swift.Codable {
   public init()
   public var id: Swift.String!
   public var status: Swift.String!
   public var isCurrentStatus: Swift.Bool
   public init(statusText: Swift.String, isCurrentStatus: Swift.Bool)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct CallLog {
   public let callLogId: Swift.String

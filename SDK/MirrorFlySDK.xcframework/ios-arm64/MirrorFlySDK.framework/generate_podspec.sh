@@ -1,11 +1,35 @@
-Pod::Spec.new do |s|
+#!/bin/bash
+
+VERSION='5.9.0'
+SHA1='v5.9.0'
+
+while getopts v:s: flag
+do
+    case "${flag}" in
+        v) VERSION=${OPTARG};;
+        s) SHA1=${OPTARG};;
+        *) error "Unexpected option ${flag}";;
+    esac
+done
+
+echo $VERSION
+if [ -z $VERSION ]; then
+    echo 'Version is required'
+fi
+
+echo $SHA1
+if [ -z $SHA1 ]; then
+    echo 'shasum is required'
+fi
+
+TEMPLATE="Pod::Spec.new do |s|
     s.name              = 'MirrorFlySDK'
-    s.version           = "5.9.0"
+    s.version           = \"$VERSION\"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v@contus.in','Vanitha' => 'vanitha.g@contus.in', }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
-    s.platform          = :ios, 12.1
+    s.platform          = :ios, "12.1"
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
 #    s.screenshots       = '','',''
 #    s.social_media_url = ''
@@ -25,4 +49,6 @@ Pod::Spec.new do |s|
     s.dependency 'XMPPFramework/Swift', '4.0.0'
     s.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1',}
 end
+"
 
+echo "$TEMPLATE" > MirrorFlySDK.podspec
