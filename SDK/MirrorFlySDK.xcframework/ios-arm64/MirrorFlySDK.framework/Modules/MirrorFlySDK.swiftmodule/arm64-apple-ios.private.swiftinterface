@@ -3052,7 +3052,7 @@ extension MirrorFlySDK.ContactManager {
   public func saveTempContact(userId: Swift.String, name: Swift.String = "") -> MirrorFlySDK.ProfileDetails?
   public func sendContactUsInfo(title: Swift.String, description: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func deleteMyAccountRequest(reason: Swift.String, feedback: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
-  public func getUsersList(pageNo: Swift.Int = 1, pageSize: Swift.Int = 50, search: Swift.String = emptyString(), completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public func getUsersList(pageNo: Swift.Int = 1, pageSize: Swift.Int = 50, search: Swift.String = emptyString(), metaData: MirrorFlySDK.MetaDataUserList? = nil, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func saveUser(profileDetails: MirrorFlySDK.ProfileDetails, saveAs: MirrorFlySDK.ContactType = .unknown)
   public func getAllUsers() -> [MirrorFlySDK.ProfileDetails]
 }
@@ -3089,6 +3089,9 @@ public enum ARDSignalingChannelState : Swift.Int {
 }
 public struct MetaData {
   public init(key: Swift.String, value: Swift.String)
+}
+public struct MetaDataUserList {
+  public init(key: Swift.String, value: [Swift.String])
 }
 public protocol XMPPConnectionDelegate : ObjectiveC.NSObjectProtocol {
   func xmppDidConnected()
