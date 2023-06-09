@@ -2533,6 +2533,9 @@ extension Swift.Dictionary where Key == Swift.String, Value == Any {
     set
   }
 }
+extension MirrorFlySDK.FlyDefaults {
+  public static func migrateFlyDefaults()
+}
 @objc public protocol ArchiveEventsDelegate : ObjectiveC.NSObjectProtocol {
   @objc func updateArchiveUnArchiveChats(toUser: Swift.String, archiveStatus: Swift.Bool)
   @objc func updateArchivedSettings(archivedSettingsStatus: Swift.Bool)
@@ -2603,6 +2606,8 @@ public enum NotificationSoundKeys : Swift.String {
 }
 public struct FlyConstants {
   public static var suiteName: Swift.String
+  public static var dbPathExtension: Swift.String
+  public static let didMigrateToAppGroups: Swift.String
   public static var isTrialLicense: Swift.String
   public static var isContactPermissionDenied: Swift.String
   public static var isContactPermissionChanged: Swift.String
