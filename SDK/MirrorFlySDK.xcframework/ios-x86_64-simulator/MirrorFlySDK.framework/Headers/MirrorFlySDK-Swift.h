@@ -419,6 +419,13 @@ SWIFT_CLASS("_TtC12MirrorFlySDK18ContactSyncManager")
 @end
 
 
+typedef SWIFT_ENUM(NSInteger, DeliveryStatus, open) {
+  DeliveryStatusAcknowledged = 0,
+  DeliveryStatusDelivered = 1,
+  DeliveryStatusSeen = 2,
+  DeliveryStatusDeleted = 4,
+};
+
 
 SWIFT_CLASS("_TtC12MirrorFlySDK21FetchMessageListQuery")
 @interface FetchMessageListQuery : NSObject
@@ -497,10 +504,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
+
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
-
 
 
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))

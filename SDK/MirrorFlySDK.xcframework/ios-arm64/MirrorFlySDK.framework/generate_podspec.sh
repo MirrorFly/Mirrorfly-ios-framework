@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION='5.9.1'
-SHA1='v5.9.1'
+VERSION='5.9.2'
+SHA1='v5.9.2'
 
 while getopts v:s: flag
 do
