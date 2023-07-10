@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name              = 'MirrorFlySDK'
-    s.version           = "5.9.12"
+    s.version           = "5.10.0"
     s.summary           = 'This repo to explore the cocopod and how to upload pod in public accessc'
     s.homepage          = 'https://github.com/MirrorFly/Mirrorfly-ios-framework'
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v@contus.in','Vanitha' => 'vanitha.g@contus.in', }
@@ -18,16 +18,11 @@ Pod::Spec.new do |s|
     s.dependency 'libPhoneNumber-iOS', '0.9.15'
     s.dependency 'Alamofire', '5.5.0'
     s.dependency 'SocketRocket', '0.6.0'
-    s.dependency 'Socket.IO-Client-Swift'
+    s.dependency 'Socket.IO-Client-Swift', '15.2.0'
     s.dependency 'RealmSwift' , '10.20.1'
     s.dependency 'GoogleWebRTC'
-    s.dependency 'CocoaLumberjack'
-    s.dependency 'XMPPFramework/Swift'
+    s.dependency 'CocoaLumberjack', '3.6.2'
+    s.dependency 'XMPPFramework/Swift', '4.0.0'
     s.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1',}
-    s.subspec 'default' do |ss|
-ss.xcconfig = {
-  'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'Yes'
-}
-  end
 end
 
