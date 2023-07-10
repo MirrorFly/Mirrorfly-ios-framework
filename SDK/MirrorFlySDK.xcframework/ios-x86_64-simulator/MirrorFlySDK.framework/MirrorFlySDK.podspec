@@ -21,12 +21,17 @@ Pod::Spec.new do |s|
   s.resources = "MirrorFlySDK/*.xcassets"
   #spec.exclude_files = [AppDelegate, ViewController, SceneDelegate]
   #s.requires_arc = true
-  s.dependency 'libPhoneNumber-iOS', '0.9.15', :inhibit_warnings => true
-  s.dependency 'Alamofire', '5.5', :inhibit_warnings => true
-  s.dependency 'XMPPFramework/Swift', :inhibit_warnings => true
-  s.dependency 'SocketRocket', :inhibit_warnings => true
-  s.dependency 'Socket.IO-Client-Swift', '~> 15.2.0', :inhibit_warnings => true
-  s.dependency 'RealmSwift', '10.20.1', :inhibit_warnings => true
-  s.dependency 'GoogleWebRTC', :inhibit_warnings => true
-
+  s.dependency 'libPhoneNumber-iOS', '0.9.15'
+  s.dependency 'Alamofire', '5.5'
+  s.dependency 'XMPPFramework/Swift'
+  s.dependency 'SocketRocket'
+  s.dependency 'Socket.IO-Client-Swift', '~> 15.2.0'
+  s.dependency 'RealmSwift', '10.20.1'
+  s.dependency 'GoogleWebRTC'
+  
+s.subspec 'default' do |ss|
+ss.xcconfig = {
+  'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'Yes'
+}
+  end
 end
