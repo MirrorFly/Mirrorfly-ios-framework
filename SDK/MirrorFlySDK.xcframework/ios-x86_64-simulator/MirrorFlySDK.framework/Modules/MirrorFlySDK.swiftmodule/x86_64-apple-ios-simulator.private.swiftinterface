@@ -209,6 +209,7 @@ public enum CallState : Swift.String {
   public static func isTrialLicense(isTrial: Swift.Bool = true)
   public static func disableLocalNotification()
   public static func setRegisterDeviceType(deviceType: Swift.String)
+  public static func setMediaFolderName(name: Swift.String)
   @objc deinit
 }
 extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPTypingStatusDelegate {
@@ -1379,6 +1380,7 @@ public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
 @_hasMissingDesignatedInitializers public class FlyLogWriter {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
   public func writeText(_ str: Swift.String)
+  public func writeStatusText(_ str: Swift.String)
   public func getLogFileURL() -> Foundation.URL
   public func getVCFFileURL() -> Foundation.URL
   public func deleteLogFiles()
@@ -2546,6 +2548,16 @@ extension Swift.Dictionary where Key == Swift.String, Value == Any {
     _modify
   }
   @MirrorFlySDK.SDKDefaults public static var isNewLoggedIn: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @MirrorFlySDK.SDKDefaults public static var isNeedCodeSync: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @MirrorFlySDK.SDKDefaults public static var mediaFolderName: Swift.String {
     get
     set
     _modify
