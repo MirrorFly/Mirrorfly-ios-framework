@@ -1129,6 +1129,7 @@ public enum ChatType : Swift.String, Swift.CustomStringConvertible, Swift.Codabl
   public func loadNextMessages(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func loadPreviousMessages(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func setLastMessage(messageId: Swift.String)
+  public func setFirstMessage(messageId: Swift.String)
   public func hasPreviousMessages() -> Swift.Bool
   public func hasNextMessages() -> Swift.Bool
   public func isFetchingInProgress() -> Swift.Bool
@@ -2754,6 +2755,9 @@ extension Foundation.Date {
 }
 extension Foundation.URL {
   public func mimeType() -> Swift.String
+  public var isDirectory: Swift.Bool {
+    get
+  }
 }
 extension MirrorFlySDK.FlyUtils {
   public static func getDeviceID() -> Swift.String
