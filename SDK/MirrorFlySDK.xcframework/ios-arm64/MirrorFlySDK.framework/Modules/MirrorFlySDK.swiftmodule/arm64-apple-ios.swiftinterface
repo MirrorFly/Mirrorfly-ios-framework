@@ -2506,6 +2506,7 @@ public struct FlyConstants {
     public static let identifierEmptyValidation: Swift.String
     public static let licenseKeyValidation: Swift.String
     public static let domainUrlValidation: Swift.String
+    public static let registrationValidation: Swift.String
     public static let invalidToJid: Swift.String
     public static let invalidToJidPassed: Swift.String
     public static let emptyTextMessage: Swift.String
