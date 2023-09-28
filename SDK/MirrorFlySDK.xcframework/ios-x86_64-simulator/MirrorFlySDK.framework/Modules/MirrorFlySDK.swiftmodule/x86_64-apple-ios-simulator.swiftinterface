@@ -860,7 +860,6 @@ public protocol CallStatusContactDelegate {
 public protocol CallManagerDelegate {
   func getDisplayName(IncomingUser: [Swift.String])
   func getGroupName(_ groupId: Swift.String)
-  func sendCallMessage(groupCallDetails: MirrorFlySDK.GroupCallDetails, users: [Swift.String], invitedUsers: [Swift.String])
   func socketConnectionEstablished()
   func onCallStatusUpdated(callStatus: MirrorFlySDK.CALLSTATUS, userId: Swift.String)
   func onCallAction(callAction: MirrorFlySDK.CallAction, userId: Swift.String)
@@ -880,6 +879,7 @@ public protocol MissedCallNotificationDelegate {
   public static var delegate: MirrorFlySDK.CallManagerDelegate?
   public static var featuresDelegate: MirrorFlySDK.FeaturesDelegate?
   public static var callLogDelegate: MirrorFlySDK.CallLogDelegate?
+  public static var callUiDelegate: MirrorFlySDK.CallUIDelegate?
   public static var missedCallNotificationDelegate: MirrorFlySDK.MissedCallNotificationDelegate?
   public static var onCallStatusDelegate: MirrorFlySDK.CallStatusContactDelegate?
   public static var isCallStarted: Swift.Bool
@@ -971,6 +971,7 @@ extension MirrorFlySDK.CallManager {
 extension MirrorFlySDK.CallManager {
   public class func setupJoinCallViaLink()
   public class func startVideoCapture()
+  public class func endVideoCapture()
   public class func setJoinCallDelegate(delegate: MirrorFlySDK.JoinCallDelegate?)
   public class func subscribeToCallEvents(link: Swift.String, name: Swift.String, completion: @escaping (Swift.Bool, MirrorFlySDK.FlyError?) -> Swift.Void)
   public class func cleanUpJoinCallViaLink()
@@ -978,11 +979,15 @@ extension MirrorFlySDK.CallManager {
   public class func getCallLink() -> Swift.String?
   public class func isCurrentCallJoinedViaLink() -> Swift.Bool
   public class func isUserJoinedViaLink(userId: Swift.String) -> Swift.Bool
+  public class func createMeetLink(completion: @escaping MirrorFlySDK.FlyCompletionHandler)
 }
 public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllCallLog()
   func deleteCallLogs(callLogId: Swift.String)
   func callLogUpdate(calllogId: Swift.String)
+}
+public protocol CallUIDelegate : ObjectiveC.NSObjectProtocol {
+  func uiPresented()
 }
 public enum FileType : Swift.String {
   case pdf
@@ -1455,6 +1460,7 @@ public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
 @_hasMissingDesignatedInitializers public class FlyLogWriter {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
+  public var logStatusFileName: Swift.String
   public func writeText(_ str: Swift.String)
   public func writeStatusText(_ str: Swift.String)
   public func getLogFileURL() -> Foundation.URL
@@ -1592,9 +1598,6 @@ extension MirrorFlySDK.FlyMessenger : AVFoundation.AVCaptureFileOutputRecordingD
   @objc dynamic public func fileOutput(_ output: AVFoundation.AVCaptureFileOutput, didFinishRecordingTo outputFileURL: Foundation.URL, from connections: [AVFoundation.AVCaptureConnection], error: Swift.Error?)
   @objc public static func compressVideo(inputURL: Foundation.URL, outputURL: Foundation.URL, handler: @escaping (_ exportSession: AVFoundation.AVAssetExportSession?) -> Swift.Void)
   public static func sendNotAcknowledgeMessage(chatMessages: [MirrorFlySDK.ChatMessage?])
-}
-extension MirrorFlySDK.FlyMessenger {
-  public static func sendCallMessage(for groupCallDetails: MirrorFlySDK.GroupCallDetails, users: [Swift.String], inviteUsers: [Swift.String], completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
 }
 extension MirrorFlySDK.FlyMessenger {
   @objc dynamic public func deleteUnreadMessageSeparatorOfAConversation(jid: Swift.String)
@@ -2392,6 +2395,7 @@ public struct FlyConstants {
   public static let isTranlationEnabled: Swift.String
   public static let autoDownloadEnable: Swift.String
   public static let chatHistoryEnable: Swift.String
+  public static let isFirstchatHistory: Swift.String
   public static let autoDownloadMobile: Swift.String
   public static let autoDownloadWifi: Swift.String
   public static let autoDownloadLastEnabledTime: Swift.String
@@ -2614,6 +2618,7 @@ public enum CallMode : Swift.String {
   case ONE_TO_ONE
   case ONE_TO_MANY
   case MANY_TO_MANY
+  case MEET
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
