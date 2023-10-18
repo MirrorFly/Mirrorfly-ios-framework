@@ -81,6 +81,7 @@ public struct MessageBody : Swift.Codable {
   public var location: MirrorFlySDK.LocationBody?
   public var contact: MirrorFlySDK.ContactBody?
   public var media: MirrorFlySDK.MediaBody?
+  public var meet: MirrorFlySDK.MeetingBody?
   public init()
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -115,6 +116,15 @@ public struct ContactBody : Swift.Codable {
   public var phone_number: [Swift.String]
   public var active_status: [Swift.String]
   public init(name: Swift.String?, phone_number: [Swift.String], active_status: [Swift.String])
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MeetingBody : Swift.Codable {
+  public var mid: Swift.String?
+  public var title: Swift.String?
+  public var link: Swift.String
+  public var scheduledDateTime: Swift.Int
+  public init(mid: Swift.String, title: Swift.String, link: Swift.String, scheduledDateTime: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -664,6 +674,20 @@ public struct TextMessage : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public struct MeetMessage : Swift.Codable {
+  public var toId: Swift.String!
+  public var title: Swift.String
+  public var link: Swift.String
+  public var scheduledDateTime: Swift.Int
+  public var replyMessageId: Swift.String?
+  public var mentionedUsersIds: [Swift.String]?
+  public var metaData: [MirrorFlySDK.MessageMetaData]?
+  public var topicID: Swift.String?
+  public init()
+  public init(toId: Swift.String, title: Swift.String, link: Swift.String, scheduledDateTime: Swift.Int, replyMessageId: Swift.String? = nil, mentionedUsersIds: [Swift.String]? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "")
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct FileMessage : Swift.Codable {
   public var toId: Swift.String!
   public var messageType: MirrorFlySDK.MessageType!
@@ -683,6 +707,7 @@ public struct FileMessage : Swift.Codable {
   public class func shared() -> MirrorFlySDK.AudioManager
   public func autoReRoute()
   public var audioManagerDelegate: MirrorFlySDK.AudioManagerDelegate?
+  public func setCategoryAndMode()
   public func routeToAvailableDevice(preferredDevice: MirrorFlySDK.OutputType? = nil)
   public func getCurrentAudioInput()
   public func getAllAvailableAudioInput() -> [MirrorFlySDK.AudioDevice]
@@ -1311,6 +1336,16 @@ public struct LinkMessage {
   public var link: Swift.String
   public var chatMessage: MirrorFlySDK.ChatMessage
 }
+@objcMembers public class MeetChatMessage : Swift.Codable {
+  @objc public var messageId: Swift.String
+  @objc public var title: Swift.String
+  @objc public var link: Swift.String
+  @objc public var scheduledDateTime: Swift.Int
+  @objc public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
 public enum AudioType : Swift.String, Swift.Codable {
   case recording
   case file
@@ -1409,6 +1444,7 @@ public struct ErrorCode {
   public static let CALL_ENDED_ALREADY: Swift.Int
   public static let MAX_USERS_REACHED: Swift.Int
   public static let INTERNAL_SERVER_ERROR: Swift.Int
+  public static let INVALID_INPUT: Swift.Int
 }
 @objc @_inheritsConvenienceInitializers public class ChatMessage : ObjectiveC.NSObject, Swift.Codable {
   public var messageId: Swift.String
@@ -1433,6 +1469,7 @@ public struct ErrorCode {
   public var contactChatMessage: MirrorFlySDK.ContactChatMessage?
   public var locationChatMessage: MirrorFlySDK.LocationChatMessage?
   public var mediaChatMessage: MirrorFlySDK.MediaChatMessage?
+  public var meetChatMessage: MirrorFlySDK.MeetChatMessage?
   public var replyParentChatMessage: MirrorFlySDK.ReplyParentChatMessage?
   public var audioTrackTime: Swift.Float?
   public var isRetryButtonDisabled: Swift.Bool?
@@ -1486,6 +1523,7 @@ extension MirrorFlySDK.MessageType {
   public func isMediaMessage() -> Swift.Bool
   public func isLocationMessage() -> Swift.Bool
   public func isContactMessage() -> Swift.Bool
+  public func isMeetMessage() -> Swift.Bool
 }
 extension Swift.String {
   public func utf8DecodedString() -> Swift.String
@@ -1542,6 +1580,7 @@ public typealias FlySendMessageListener = (_ isSuccess: Swift.Bool, _ error: Mir
   @objc public static let shared: MirrorFlySDK.FlyMessenger
   public static func sendTextMessage(messageParams: MirrorFlySDK.TextMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   public static func sendFileMessage(messageParams: MirrorFlySDK.FileMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+  public static func sendMeetMessage(messageParams: MirrorFlySDK.MeetMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use the ChatManager.sendTextMessage(messageParams: TextMessageParams) instead.")
   public static func sendTextMessage(toJid: Swift.String, message: Swift.String, replyMessageId: Swift.String? = nil, mentionedUsersIds: [Swift.String], metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
@@ -1819,12 +1858,13 @@ public struct BackupMessage : Swift.Codable {
   public var contactModel: MirrorFlySDK.ContactChat?
   public var locationModel: MirrorFlySDK.LocationChat?
   public var mediaModel: MirrorFlySDK.MediaChat?
+  public var meetChat: MirrorFlySDK.MeetChat?
   public var messageStatus: Swift.Int
   public var messageStatusList: [MirrorFlySDK.MessageStatusList]?
-  public var mentionedUsersIds: Swift.String?
+  public var mentionedUsersIds: [Swift.String]?
   public var metaData: Swift.String
-  public var topicID: Swift.String
-  public init(messageId: Swift.String, chatUserJid: Swift.String, messageType: Swift.String, replyToMessageId: Swift.String, chatType: Swift.String, messageTime: Swift.String, isCarbon: Swift.Bool, isSender: Swift.Bool, isStarred: Swift.Bool, isRecalled: Swift.Bool, isDeleted: Swift.Bool, textModel: MirrorFlySDK.TextModel, groupUserSenderJid: Swift.String, messageStatus: Swift.Int, mentionedUsersIds: Swift.String, metaData: Swift.String = "", topicID: Swift.String = "")
+  public var topicId: Swift.String
+  public init(messageId: Swift.String, chatUserJid: Swift.String, messageType: Swift.String, replyToMessageId: Swift.String, chatType: Swift.String, messageTime: Swift.String, isCarbon: Swift.Bool, isSender: Swift.Bool, isStarred: Swift.Bool, isRecalled: Swift.Bool, isDeleted: Swift.Bool, textModel: MirrorFlySDK.TextModel, groupUserSenderJid: Swift.String, messageStatus: Swift.Int, mentionedUsersIds: [Swift.String], metaData: Swift.String = "", topicID: Swift.String = "")
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1880,6 +1920,14 @@ public struct MediaChat : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public struct MeetChat : Swift.Codable {
+  public var link: Swift.String
+  public var title: Swift.String?
+  public var scheduledDateTime: Swift.Int?
+  public init(link: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct BackupRecentChat : Swift.Codable {
   public var jid: Swift.String
   public var messageId: Swift.String
@@ -1888,7 +1936,7 @@ public struct BackupRecentChat : Swift.Codable {
   public var isMuted: Swift.Bool
   public var isPinned: Swift.Bool
   public var metaData: Swift.String
-  public var topicID: Swift.String
+  public var topicId: Swift.String
   public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool, metaData: Swift.String = "", topicID: Swift.String = "")
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2540,6 +2588,8 @@ public struct FlyConstants {
     public static let fileDosentExist: Swift.String
     public static let invalidMetaData: Swift.String
     public static let invalidTopicID: Swift.String
+    public static let meetLinkError: Swift.String
+    public static let scheduledDateTimeError: Swift.String
   }
   public struct SuccessMessage {
     public static let profileFetch: Swift.String
@@ -2842,6 +2892,7 @@ public protocol WebLogoutDelegate {
   public var contactChatMessage: MirrorFlySDK.ContactChatMessage?
   public var locationChatMessage: MirrorFlySDK.LocationChatMessage?
   public var mediaChatMessage: MirrorFlySDK.MediaChatMessage?
+  public var meetChatMessage: MirrorFlySDK.MeetChatMessage?
   public var isDeletedUser: Swift.Bool?
   @objc public init()
   @objc deinit
@@ -2891,6 +2942,7 @@ public enum MessageType : Swift.String, Swift.CustomStringConvertible, Swift.Cas
   case location
   case document
   case contact
+  case meet
   case notification
   public var description: Swift.String {
     get
@@ -3133,6 +3185,7 @@ public struct MessageDetail : Swift.Codable {
   public var location: MirrorFlySDK.Location?
   public var contact: MirrorFlySDK.ContactModel?
   public var media: MirrorFlySDK.Media?
+  public var meet: MirrorFlySDK.Meeting?
   public init()
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -3175,6 +3228,15 @@ public struct Media : Swift.Codable {
   public var androidHeight: Swift.Int?
   public var audioType: Swift.String?
   public init(mid: Swift.String, duration: Swift.Int32, file_size: Swift.Int32, file_key: Swift.String, file_type: Swift.String, file_url: Swift.String, thumb_image: Swift.String, caption: Swift.String, fileName: Swift.String, local_path: Swift.String, mediaDownloadStatus: Swift.Int, mediaUploadStatus: Swift.Int, progressStatus: Swift.Int, is_uploading: Swift.Int, is_downloaded: Swift.Int, webWidth: Swift.Int, webHeight: Swift.Int, androidWidth: Swift.Int, androidHeight: Swift.Int, audioType: Swift.String)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Meeting : Swift.Codable {
+  public var mid: Swift.String?
+  public var title: Swift.String?
+  public var link: Swift.String
+  public var scheduledDateTime: Swift.Int
+  public init(mid: Swift.String, title: Swift.String, link: Swift.String, scheduledDateTime: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
