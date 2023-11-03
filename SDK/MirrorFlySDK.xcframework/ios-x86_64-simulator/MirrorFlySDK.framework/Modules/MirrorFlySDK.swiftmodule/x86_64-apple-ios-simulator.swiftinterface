@@ -358,7 +358,7 @@ extension MirrorFlySDK.ChatManager : MirrorFlySDK.GroupEventsDelegate {
   @objc dynamic public func didFetchGroupProfile(groupJid: Swift.String)
   @objc dynamic public func didUpdateGroupProfile(groupJid: Swift.String)
   @objc dynamic public func didMakeMemberAsAdmin(groupJid: Swift.String, newAdminMemberJid: Swift.String, madeByMemberJid: Swift.String)
-  @objc dynamic public func didRemoveMemberFromAdmin(groupJid: Swift.String, removedAdminMemberJid: Swift.String, removedByMemberJid: Swift.String)
+  @objc dynamic public func didRevokedAdminAccess(groupJid: Swift.String, revokedAdminMemberJid: Swift.String, revokedByMemberJid: Swift.String)
   @objc dynamic public func didDeleteGroupLocally(groupJid: Swift.String)
   @objc dynamic public func didLeftFromGroup(groupJid: Swift.String, leftUserJid: Swift.String)
   @objc dynamic public func didCreateGroup(groupJid: Swift.String)
@@ -599,6 +599,7 @@ public protocol XMPPGroupDelegate : ObjectiveC.NSObjectProtocol {
   func didMakeAdmin(message: Swift.String)
   func didGroupInfoUpdatedMessage(groupDetail: MirrorFlySDK.ParticipantDetails)
   func didMakeAdminMessage(participantDetail: MirrorFlySDK.ParticipantDetails)
+  func didRemoveAdminMessage(participantDetail: MirrorFlySDK.ParticipantDetails)
   func didExitFromGroup(message: Swift.String)
   func didDeleteFromGroup(message: Swift.String)
   func didReceiveGroupDeleteMessage(groupJid: Swift.String, messageFrom: Swift.String)
@@ -1270,6 +1271,7 @@ extension MirrorFlySDK.GroupManager {
   public func updateGroupProfileImage(groupJid: Swift.String, groupProfileImageUrl: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
   public func updateGroupName(groupJid: Swift.String, groupName: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
   public func makeAdmin(groupJid: Swift.String, userJid: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
+  public func revokeAdmin(groupJid: Swift.String, revokeAdminJid: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
   public func deleteGroup(groupJid: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
   public func leaveFromGroup(groupJid: Swift.String, userJid: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler) throws
   public func getMessageDeliveredListBy(messageId: Swift.String, groupId: Swift.String) -> (deliveredParticipantList: [MirrorFlySDK.MessageReceipt], deliveredCount: Swift.Int, totalParticipatCount: Swift.Int)
@@ -1305,6 +1307,7 @@ extension MirrorFlySDK.GroupManager : MirrorFlySDK.XMPPGroupDelegate {
   public func didGroupInfoUpdatedMessage(groupDetail: MirrorFlySDK.ParticipantDetails)
   public func didReceiveGroupDeleteMessage(groupJid: Swift.String, messageFrom: Swift.String)
   public func didMakeAdminMessage(participantDetail: MirrorFlySDK.ParticipantDetails)
+  public func didRemoveAdminMessage(participantDetail: MirrorFlySDK.ParticipantDetails)
   public func didReceiveParticipantMessage(participantDetails: [MirrorFlySDK.ProfileDetails], groupDetails: MirrorFlySDK.GroupModel)
 }
 public struct QrCodeInfo : Swift.Codable {
@@ -2414,7 +2417,9 @@ public struct FlyConstants {
   public static let groupImageUpdated: Swift.String
   public static let groupImageRemoved: Swift.String
   public static let asAdmin: Swift.String
+  public static let fromAdmin: Swift.String
   public static let made: Swift.String
+  public static let removed: Swift.String
   public static let admin_exit_group: Swift.String
   public static let user_exit_group: Swift.String
   public static let deleteMultipleConversation: Swift.String
@@ -2544,6 +2549,7 @@ public struct FlyConstants {
     public static let notMemberOfTheGroup: Swift.String
     public static let onlyAdminPerformAction: Swift.String
     public static let alreadyAdminMessage: Swift.String
+    public static let alreadyNotAdminMessage: Swift.String
     public static let leaveThenDelete: Swift.String
     public static let emptyFileUrl: Swift.String
     public static let invalidMessageId: Swift.String
@@ -3287,7 +3293,7 @@ public enum MessageNotificationStatus : Swift.Int, Swift.Codable {
   @objc func didFetchGroupProfile(groupJid: Swift.String)
   @objc func didUpdateGroupProfile(groupJid: Swift.String)
   @objc func didMakeMemberAsAdmin(groupJid: Swift.String, newAdminMemberJid: Swift.String, madeByMemberJid: Swift.String)
-  @objc func didRemoveMemberFromAdmin(groupJid: Swift.String, removedAdminMemberJid: Swift.String, removedByMemberJid: Swift.String)
+  @objc func didRevokedAdminAccess(groupJid: Swift.String, revokedAdminMemberJid: Swift.String, revokedByMemberJid: Swift.String)
   @objc func didDeleteGroupLocally(groupJid: Swift.String)
   @objc func didLeftFromGroup(groupJid: Swift.String, leftUserJid: Swift.String)
   @objc func didCreateGroup(groupJid: Swift.String)

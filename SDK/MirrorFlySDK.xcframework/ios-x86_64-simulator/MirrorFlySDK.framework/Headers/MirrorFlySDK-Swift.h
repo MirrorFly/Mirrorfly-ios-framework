@@ -369,7 +369,7 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 /// called whenever get make Admin message is received in user group
 - (void)didMakeMemberAsAdminWithGroupJid:(NSString * _Nonnull)groupJid newAdminMemberJid:(NSString * _Nonnull)newAdminMemberJid madeByMemberJid:(NSString * _Nonnull)madeByMemberJid;
 /// Called whenever if a member removed from admin
-- (void)didRemoveMemberFromAdminWithGroupJid:(NSString * _Nonnull)groupJid removedAdminMemberJid:(NSString * _Nonnull)removedAdminMemberJid removedByMemberJid:(NSString * _Nonnull)removedByMemberJid;
+- (void)didRevokedAdminAccessWithGroupJid:(NSString * _Nonnull)groupJid revokedAdminMemberJid:(NSString * _Nonnull)revokedAdminMemberJid revokedByMemberJid:(NSString * _Nonnull)revokedByMemberJid;
 /// called   Whenever participant deleted from  the group
 - (void)didDeleteGroupLocallyWithGroupJid:(NSString * _Nonnull)groupJid;
 /// called  Whenever participant removed from  the group
@@ -389,7 +389,7 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 - (void)didFetchGroupProfileWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didUpdateGroupProfileWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didMakeMemberAsAdminWithGroupJid:(NSString * _Nonnull)groupJid newAdminMemberJid:(NSString * _Nonnull)newAdminMemberJid madeByMemberJid:(NSString * _Nonnull)madeByMemberJid;
-- (void)didRemoveMemberFromAdminWithGroupJid:(NSString * _Nonnull)groupJid removedAdminMemberJid:(NSString * _Nonnull)removedAdminMemberJid removedByMemberJid:(NSString * _Nonnull)removedByMemberJid;
+- (void)didRevokedAdminAccessWithGroupJid:(NSString * _Nonnull)groupJid revokedAdminMemberJid:(NSString * _Nonnull)revokedAdminMemberJid revokedByMemberJid:(NSString * _Nonnull)revokedByMemberJid;
 - (void)didDeleteGroupLocallyWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didLeftFromGroupWithGroupJid:(NSString * _Nonnull)groupJid leftUserJid:(NSString * _Nonnull)leftUserJid;
 - (void)didCreateGroupWithGroupJid:(NSString * _Nonnull)groupJid;
