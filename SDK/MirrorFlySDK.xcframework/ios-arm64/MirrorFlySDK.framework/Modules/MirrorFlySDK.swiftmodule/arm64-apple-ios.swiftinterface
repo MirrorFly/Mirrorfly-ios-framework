@@ -16,7 +16,6 @@ import MobileCoreServices
 import Network
 import Photos
 import WebRTC.RTCLogging
-import Realm
 @_exported import RealmSwift
 import SocketIO
 import Swift
@@ -1493,10 +1492,10 @@ public protocol ConnectionEventDelegate : ObjectiveC.NSObjectProtocol {
   func onReconnecting()
 }
 public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
-  func processPushMessage(_ userInfo: [Swift.AnyHashable : Any]?, completionHandler: @escaping (Swift.String, Swift.String, Swift.String, Swift.String) -> Swift.Void)
+  func processPushMessage(_ userInfo: [Swift.AnyHashable : Any]?, completionHandler: @escaping (Swift.String, Swift.String, Swift.String, Swift.String, MirrorFlySDK.ChatMessage?) -> Swift.Void)
   func processGroupPushMessage(_ userInfo: [Swift.AnyHashable : Any]?) -> Swift.String
   func processAdminBlockPushMessage(userJid: Swift.String, blockStatus: Swift.String) -> Swift.String
-  func processDeleteMessagePushMessage(messageIds: [Swift.String]) -> (Swift.String, Swift.String, Swift.String)
+  func processDeleteMessagePushMessage(messageIds: [Swift.String]) -> (Swift.String, Swift.String, Swift.String, MirrorFlySDK.ChatMessage)
 }
 @_hasMissingDesignatedInitializers public class FlyLogWriter {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
@@ -2008,7 +2007,7 @@ extension Foundation.Data {
   public func write(withName name: Swift.String, path: Foundation.URL) -> Foundation.URL
 }
 @_inheritsConvenienceInitializers @objc public class NotificationMessageSupport : ObjectiveC.NSObject {
-  public typealias pushReturnBlock = (UserNotifications.UNMutableNotificationContent?) -> Swift.Void
+  public typealias pushReturnBlock = (UserNotifications.UNMutableNotificationContent?, MirrorFlySDK.ChatMessage?) -> Swift.Void
   public static let shared: MirrorFlySDK.NotificationMessageSupport
   @objc public func didReceiveNotificationRequest(_ bestContent: UserNotifications.UNMutableNotificationContent?, appName: Swift.String, onCompletion: @escaping MirrorFlySDK.NotificationMessageSupport.pushReturnBlock)
   public func handleAdminBlockNotification(_ bestContent: UserNotifications.UNMutableNotificationContent?, onCompletion: @escaping MirrorFlySDK.NotificationMessageSupport.pushReturnBlock)

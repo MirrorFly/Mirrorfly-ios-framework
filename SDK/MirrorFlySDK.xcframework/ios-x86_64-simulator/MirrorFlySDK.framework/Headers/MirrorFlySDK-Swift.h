@@ -674,7 +674,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK28NotificationExtensionSupport")
 
 SWIFT_CLASS("_TtC12MirrorFlySDK26NotificationMessageSupport")
 @interface NotificationMessageSupport : NSObject
-- (void)didReceiveNotificationRequest:(UNMutableNotificationContent * _Nullable)bestContent appName:(NSString * _Nonnull)appName onCompletion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nullable))onCompletion;
+- (void)didReceiveNotificationRequest:(UNMutableNotificationContent * _Nullable)bestContent appName:(NSString * _Nonnull)appName onCompletion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nullable, ChatMessage * _Nullable))onCompletion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
