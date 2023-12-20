@@ -16,7 +16,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "MirrorFlySDK_Github",
-            path: "SDK"),
+            dependencies: []),
         .testTarget(
             name: "MirrorFlySDK_GithubTests",
             dependencies: ["MirrorFlySDK_Github"]),
