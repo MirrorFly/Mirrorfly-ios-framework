@@ -41,7 +41,7 @@ let package = Package(
                 name: "MirrorFlySDK_Github",
                 dependencies: []),
             .binaryTarget(name: "MirrorFlySDK",
-                          path: "SDK/MirrorFlySDK.xcframework"),
+                          path: "./SDK/MirrorFlySDK.xcframework"),
             .testTarget(
                 name: "MirrorFlySDK_GithubTests",
                 dependencies: ["MirrorFlySDK_Github"]),
