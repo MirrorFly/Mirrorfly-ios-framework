@@ -29,6 +29,5 @@ Pod::Spec.new do |s|
   s.dependency 'Starscream', '4.0.4'
   s.dependency 'RealmSwift', '~> 10.43.0'
   s.dependency 'GoogleWebRTC', '1.1.31999'
-  s.dependency 'IDZSwiftCommonCrypto', '~> 0.16'
 
 end
