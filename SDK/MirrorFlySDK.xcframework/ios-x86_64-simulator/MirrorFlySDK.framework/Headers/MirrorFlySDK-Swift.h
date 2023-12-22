@@ -284,6 +284,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK14CallLogManager")
 SWIFT_CLASS("_TtC12MirrorFlySDK11CallManager")
 @interface CallManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (void)receiverSeemsToBeOffline:(NSTimer * _Nonnull)timer;
 + (void)callRingingStatusWaiting:(NSTimer * _Nonnull)timer;
 @end
 
@@ -326,7 +327,10 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 @interface ChatManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)initDelegates SWIFT_METHOD_FAMILY(none);
 @end
+
+
 
 
 
@@ -514,10 +518,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 
 
 
-@interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
-+ (void)forwardMessageMediaAccessWithMessages:(NSArray<ChatMessage *> * _Nonnull)messages jidList:(NSArray<NSString *> * _Nonnull)jidList;
-@end
-
 
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 + (void)cancelMediaUploadOrDownloadWithMessage:(ChatMessage * _Nonnull)message sendMessageListener:(void (^ _Nonnull)(BOOL))sendMessageListener SWIFT_DEPRECATED_MSG("Use the FlyMessenger.cancelMediaUploadOrDownload(messageId: String, sendMessageListener : @escaping (_ isSuccess: Bool)-> Void) instead");
@@ -536,12 +536,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
+
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)uploadingProgressWithPercent:(float)percent message:(ChatMessage * _Nonnull)message;
 - (void)uploadSucceededWithMessage:(ChatMessage * _Nonnull)message response:(NSDictionary<NSString *, id> * _Nonnull)response;
+- (void)uploadSucceededV2WithMessage:(ChatMessage * _Nonnull)message;
 - (void)uploadWithErrorWithError:(NSString * _Nonnull)error messageId:(NSString * _Nonnull)messageId;
 - (void)downloadingProgressWithPercent:(float)percent message:(ChatMessage * _Nonnull)message;
 - (void)downloadSucceededWithMessage:(ChatMessage * _Nonnull)message fileLocalPath:(NSString * _Nonnull)fileLocalPath fileName:(NSString * _Nonnull)fileName;
+- (void)downloadSucceededV2WithMessage:(ChatMessage * _Nonnull)message fileLocalPath:(NSString * _Nonnull)fileLocalPath fileName:(NSString * _Nonnull)fileName;
 - (void)downloadWithErrorWithError:(NSString * _Nonnull)error messageId:(NSString * _Nonnull)messageId errorCode:(NSInteger)errorCode;
 @end
 
@@ -903,11 +906,13 @@ SWIFT_CLASS("_TtC12MirrorFlySDK16SocketConnection")
 @end
 
 
+
 SWIFT_CLASS("_TtC12MirrorFlySDK20TopicChatListBuilder")
 @interface TopicChatListBuilder : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
