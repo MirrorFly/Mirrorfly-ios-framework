@@ -15,18 +15,18 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        ///.package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMinor(from: "5.5.0")),
+        //.package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMinor(from: "5.5.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MirrorFlySDK_Github",
-            dependencies: []),
+            dependencies: [],
+            linkerSettings: [.linkedFramework("Alamofire"), .linkedFramework("libPhoneNumber-iOS"), .linkedFramework("XMPPFramework/Swift"), .linkedFramework("SocketRocket"), .linkedFramework("Socket.IO-Client-Swift"), .linkedFramework("Starscream"), .linkedFramework("RealmSwift"), .linkedFramework("GoogleWebRTC"), .linkedFramework("IDZSwiftCommonCrypto")]),
         .binaryTarget(name: "MirrorFlySDK",
                       path: "SDK/MirrorFlySDK.xcframework"),
-        .testTarget(
-            name: "MirrorFlySDK_GithubTests",
-            dependencies: ["MirrorFlySDK_Github"]),
     ]
 )
+
+//.product(name: "Alamofire", package: "Alamofire")
