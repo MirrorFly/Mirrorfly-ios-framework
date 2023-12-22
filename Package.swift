@@ -22,8 +22,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MirrorFlySDK_Github",
-            dependencies: [],
-            linkerSettings: [.linkedFramework("Alamofire"), .linkedFramework("libPhoneNumber-iOS"), .linkedFramework("XMPPFramework/Swift"), .linkedFramework("SocketRocket"), .linkedFramework("Socket.IO-Client-Swift"), .linkedFramework("Starscream"), .linkedFramework("RealmSwift"), .linkedFramework("GoogleWebRTC"), .linkedFramework("IDZSwiftCommonCrypto")]),
+            dependencies: []),
         .binaryTarget(name: "MirrorFlySDK",
                       path: "SDK/MirrorFlySDK.xcframework"),
     ]
