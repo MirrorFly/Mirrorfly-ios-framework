@@ -579,6 +579,11 @@ extension MirrorFlySDK.ChatManager {
   public static func getUnreadPrivateChatMessageAndChatCount() -> (Swift.Int, Swift.Int)
 }
 extension MirrorFlySDK.ChatManager {
+  public static func getGroupChatCountEligibleForChatSummary() -> Swift.Int
+  public static func fetchChatSummaryForUnReadGroupChat()
+  public static func getChatSummary(groupJid: Swift.String) -> Swift.String
+}
+extension MirrorFlySDK.ChatManager {
   public func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String)
 }
 public enum MessageExtension : Swift.String, Swift.CustomStringConvertible {
@@ -2628,6 +2633,7 @@ public struct FlyConstants {
   public static var callIceServers: Swift.String
   public static let lastLoginJid: Swift.String
   public static let setLastSeenJids: Swift.String
+  public static let ChatSummary: Swift.String
   public static let unreadMissedCallCount: Swift.String
   public static let deviceType: Swift.String
   public static let backupId: Swift.String

@@ -356,6 +356,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 
 
 
+
 @class ProfileDetails;
 @class ChatMessage;
 
@@ -512,10 +513,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
+
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
-
 
 
 
@@ -662,6 +663,7 @@ typedef SWIFT_ENUM(NSInteger, MessageStatus, open) {
   MessageStatusSeen = 4,
   MessageStatusReceived = 5,
 };
+
 
 @class UNMutableNotificationContent;
 
