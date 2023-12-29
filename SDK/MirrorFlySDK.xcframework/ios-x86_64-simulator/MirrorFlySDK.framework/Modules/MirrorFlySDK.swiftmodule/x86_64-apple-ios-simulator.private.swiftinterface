@@ -252,7 +252,7 @@ public enum CallAction : Swift.String {
     get
   }
 }
-public enum CallState : Swift.String {
+public enum CallState : Swift.String, Swift.Codable {
   case IncomingCall
   case OutgoingCall
   case MissedCall
@@ -890,6 +890,8 @@ public enum MuteEvent {
   case ACTION_REMOTE_AUDIO_UN_MUTE
   case ACTION_LOCAL_AUDIO_MUTE
   case ACTION_LOCAL_AUDIO_UN_MUTE
+  case ACTION_LOCAL_VIDEO_MUTE
+  case ACTION_LOCAL_VIDEO_UN_MUTE
   public static func == (a: MirrorFlySDK.MuteEvent, b: MirrorFlySDK.MuteEvent) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1063,7 +1065,7 @@ extension MirrorFlySDK.CallManager {
 public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllCallLog()
   func deleteCallLogs(callLogId: Swift.String)
-  func callLogUpdate(calllogId: Swift.String)
+  func onCallLogsUpdated()
 }
 public protocol CallUIDelegate : ObjectiveC.NSObjectProtocol {
   func uiPresented()
@@ -2799,7 +2801,7 @@ public enum CallDirection {
     get
   }
 }
-public enum CallType : Swift.String {
+public enum CallType : Swift.String, Swift.Codable {
   case Audio
   case Video
   public init?(rawValue: Swift.String)
@@ -2808,7 +2810,7 @@ public enum CallType : Swift.String {
     get
   }
 }
-public enum CallMode : Swift.String {
+public enum CallMode : Swift.String, Swift.Codable {
   case ONE_TO_ONE
   case ONE_TO_MANY
   case MANY_TO_MANY
@@ -3066,7 +3068,7 @@ public struct ProfileStatus : Swift.Codable {
 public protocol UserBusyStatusDelegate : AnyObject {
   func didUpdateBusyStatus(status: Swift.Bool, message: Swift.String)
 }
-public struct CallLog {
+public struct CallLog : Swift.Codable {
   public let callLogId: Swift.String
   public let fromUserId: Swift.String
   public let toUserId: Swift.String
@@ -3083,6 +3085,8 @@ public struct CallLog {
   public var isLogSynced: Swift.Bool
   public var isSelected: Swift.Bool
   public var displayName: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class NotificationExtensionSupport : ObjectiveC.NSObject {
   public typealias pushReturnBlock = (UserNotifications.UNMutableNotificationContent?) -> Swift.Void
