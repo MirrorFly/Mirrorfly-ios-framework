@@ -88,7 +88,7 @@ public struct MessageBody : Swift.Codable {
 }
 public struct MediaBody : Swift.Codable {
   public var duration: Swift.Int32?
-  public var file_size: Swift.Int32?
+  public var file_size: Swift.Int64?
   public var file_key: Swift.String?
   public var file_url: Swift.String?
   public var thumb_image: Swift.String?
@@ -252,7 +252,7 @@ public enum CallAction : Swift.String {
     get
   }
 }
-public enum CallState : Swift.String {
+public enum CallState : Swift.String, Swift.Codable {
   case IncomingCall
   case OutgoingCall
   case MissedCall
@@ -356,8 +356,8 @@ extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPConnectionDelegate {
 }
 extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPMessageDelegate {
   public func clearAllCallLogs()
-  public func processAndSaveDataFromPush(messageId: Swift.String, fromJid: Swift.String, toJid: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String = "", isCarbon: Swift.Bool = false, pd: MirrorFlySDK.ProfileDetails? = nil, metaData: Swift.String? = "", topicID: Swift.String? = "", completion: @escaping (Swift.String, MirrorFlySDK.ChatMessage?, Swift.Bool) -> Swift.Void)
-  public func didReciveSingleChatCorbonMessage(messageId: Swift.String, from: Swift.String, to: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
+  public func processAndSaveDataFromPush(messageId: Swift.String, fromJid: Swift.String, toJid: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String = "", isCarbon: Swift.Bool = false, pd: MirrorFlySDK.ProfileDetails? = nil, metaData: Swift.String? = "", topicID: Swift.String? = "", editMessageId: Swift.String? = "", completion: @escaping (Swift.String, MirrorFlySDK.ChatMessage?, Swift.Bool) -> Swift.Void)
+  public func didReciveSingleChatCorbonMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, to: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
   public func setOrUpdateFavourite(messageId: Swift.String, favourite: Swift.Bool, removeAllFavourite: Swift.Bool)
   public func onReceivedMessageStatusUpdated(toJid: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, fromJid: Swift.String)
   public func getMyBusyStatus() -> MirrorFlySDK.BusyStatus
@@ -368,8 +368,8 @@ extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPMessageDelegate {
   public func isBusyStatusEnabled() -> Swift.Bool
   public func getBusyStatusList() -> [MirrorFlySDK.BusyStatus]
   public func deleteBusyStatus(statusId: Swift.String)
-  public func didReceivedSingleChatMessage(messageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String = "", metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
-  public func didReceiveGroupChatMessage(messageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
+  public func didReceivedSingleChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String = "", metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
+  public func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
   public func onSentMessageStatusUpdated(from: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, time: Swift.String?)
   public func getAcknowlegementTime(messageId: Swift.String, userJid: Swift.String) -> Swift.Double
   public func getAcknowlegementTimeForGroup(messageId: Swift.String) -> Swift.Double
@@ -579,7 +579,13 @@ extension MirrorFlySDK.ChatManager {
   public static func getUnreadPrivateChatMessageAndChatCount() -> (Swift.Int, Swift.Int)
 }
 extension MirrorFlySDK.ChatManager {
-  public func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String)
+  public static func getGroupChatCountEligibleForChatSummary() -> Swift.Int
+  public static func fetchChatSummaryForUnReadGroupChat()
+  public static func getChatSummary(groupJid: Swift.String) -> Swift.String
+}
+extension MirrorFlySDK.ChatManager {
+  public func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String, isCarbon: Swift.Bool, isFormPush: Swift.Bool = false)
+  public static func isMessageEditable(messageId: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
 }
 public enum MessageExtension : Swift.String, Swift.CustomStringConvertible {
   case image
@@ -630,10 +636,10 @@ public enum ContactType : Swift.String, Swift.CustomStringConvertible, Swift.Cod
   }
 }
 public protocol XMPPMessageDelegate : ObjectiveC.NSObjectProtocol {
-  func didReciveSingleChatCorbonMessage(messageId: Swift.String, from: Swift.String, to: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
-  func didReceivedSingleChatMessage(messageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
-  func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String)
-  func didReceiveGroupChatMessage(messageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
+  func didReciveSingleChatCorbonMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, to: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
+  func didReceivedSingleChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
+  func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String, isCarbon: Swift.Bool, isFormPush: Swift.Bool)
+  func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
   func onSentMessageStatusUpdated(from: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, time: Swift.String?)
   func onReceivedMessageStatusUpdated(toJid: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, fromJid: Swift.String)
   func onMessagesCleared(toJid: Swift.String?, favourite: Swift.String?, deleteType: Swift.String?, lastmessageId: Swift.String)
@@ -800,11 +806,12 @@ public struct FileMessage : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct EditTextMessage : Swift.Codable {
-  public var editedMessageId: Swift.String!
+public struct EditMessage : Swift.Codable {
+  public var messageId: Swift.String!
   public var editedTextContent: Swift.String!
   public var mentionedUsersIds: [Swift.String]?
-  public init(editedMessageId: Swift.String, editedTextContent: Swift.String, mentionedUsersIds: [Swift.String]? = nil)
+  public init()
+  public init(messageId: Swift.String, editedTextContent: Swift.String, mentionedUsersIds: [Swift.String]? = nil)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -885,6 +892,8 @@ public enum MuteEvent {
   case ACTION_REMOTE_AUDIO_UN_MUTE
   case ACTION_LOCAL_AUDIO_MUTE
   case ACTION_LOCAL_AUDIO_UN_MUTE
+  case ACTION_LOCAL_VIDEO_MUTE
+  case ACTION_LOCAL_VIDEO_UN_MUTE
   public static func == (a: MirrorFlySDK.MuteEvent, b: MirrorFlySDK.MuteEvent) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1058,10 +1067,13 @@ extension MirrorFlySDK.CallManager {
 public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllCallLog()
   func deleteCallLogs(callLogId: Swift.String)
-  func callLogUpdate(calllogId: Swift.String)
+  func onCallLogsUpdated()
 }
 public protocol CallUIDelegate : ObjectiveC.NSObjectProtocol {
   func uiPresented()
+  func callReceived(id: Swift.String)
+  func callAttended(id: Swift.String)
+  func callDisconnected(id: Swift.String)
 }
 public enum FileType : Swift.String {
   case pdf
@@ -1562,7 +1574,6 @@ public struct ErrorCode {
 @objc @_inheritsConvenienceInitializers public class ChatMessage : ObjectiveC.NSObject, Swift.Codable {
   public var messageId: Swift.String
   public var messageTextContent: Swift.String
-  public var editedTextContent: Swift.String
   public var editMessageID: Swift.String
   public var messageSentTime: Swift.Double
   public var senderUserName: Swift.String
@@ -1578,6 +1589,7 @@ public struct ErrorCode {
   public var isMessageDeleted: Swift.Bool
   public var isMessageRecalled: Swift.Bool
   public var isMessageTranslated: Swift.Bool
+  public var isMessageEdited: Swift.Bool
   public var isSavedContact: Swift.Bool
   public var isReplyMessage: Swift.Bool
   public var translatedMessageTextContent: Swift.String
@@ -1761,6 +1773,10 @@ extension MirrorFlySDK.FlyMessenger : AVFoundation.AVCaptureFileOutputRecordingD
 extension MirrorFlySDK.FlyMessenger {
   @objc dynamic public func deleteUnreadMessageSeparatorOfAConversation(jid: Swift.String)
 }
+extension MirrorFlySDK.FlyMessenger {
+  public static func editTextMessage(editMessageParams: MirrorFlySDK.EditMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+  public static func editMediaCaption(editMessageParams: MirrorFlySDK.EditMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+}
 public struct BusyStatus : Swift.Codable {
   public init()
   public var id: Swift.String!
@@ -1803,13 +1819,12 @@ public struct MessageReceipt : Swift.Codable {
   @objc public var mediaFileName: Swift.String
   @objc public var mediaDuration: Swift.Int32
   public var messageType: MirrorFlySDK.MessageType
-  @objc public var mediaFileSize: Swift.Int32
+  @objc public var mediaFileSize: Swift.Int64
   @objc public var mediaFileType: Swift.String
   @objc public var mediaFileUrl: Swift.String
   @objc public var mediaLocalStoragePath: Swift.String
   @objc public var mediaThumbImage: Swift.String
   @objc public var mediaCaptionText: Swift.String
-  @objc public var mediaCaptionEditedText: Swift.String
   @objc public var mediaProgressStatus: Swift.Int
   public var mediaUploadStatus: MirrorFlySDK.MediaUploadStatus
   public var mediaDownloadStatus: MirrorFlySDK.MediaDownloadStatus
@@ -1963,6 +1978,12 @@ public struct BackupRecentModel : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public struct BackupEditMessageModel : Swift.Codable {
+  public var editMessages: MirrorFlySDK.BackupEditMessage
+  public init(editMessages: MirrorFlySDK.BackupEditMessage)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct BackupMessage : Swift.Codable {
   public var messageId: Swift.String
   public var chatUserJid: Swift.String
@@ -1970,11 +1991,13 @@ public struct BackupMessage : Swift.Codable {
   public var chatType: Swift.String
   public var messageTime: Swift.String
   public var replyToMessageId: Swift.String
+  public var editMessageId: Swift.String
   public var isCarbon: Swift.Bool
   public var isSender: Swift.Bool
   public var isStarred: Swift.Bool
   public var isRecalled: Swift.Bool
   public var isDeleted: Swift.Bool
+  public var isEdited: Swift.Bool
   public var textModel: MirrorFlySDK.TextModel?
   public var groupUserSenderJid: Swift.String
   public var contactModel: MirrorFlySDK.ContactChat?
@@ -1986,14 +2009,13 @@ public struct BackupMessage : Swift.Codable {
   public var mentionedUsersIds: [Swift.String]?
   public var metaData: Swift.String
   public var topicId: Swift.String
-  public init(messageId: Swift.String, chatUserJid: Swift.String, messageType: Swift.String, replyToMessageId: Swift.String, chatType: Swift.String, messageTime: Swift.String, isCarbon: Swift.Bool, isSender: Swift.Bool, isStarred: Swift.Bool, isRecalled: Swift.Bool, isDeleted: Swift.Bool, textModel: MirrorFlySDK.TextModel, groupUserSenderJid: Swift.String, messageStatus: Swift.Int, mentionedUsersIds: [Swift.String], metaData: Swift.String = "", topicID: Swift.String = "")
+  public init(messageId: Swift.String, chatUserJid: Swift.String, messageType: Swift.String, replyToMessageId: Swift.String, editMessageId: Swift.String, chatType: Swift.String, messageTime: Swift.String, isCarbon: Swift.Bool, isSender: Swift.Bool, isStarred: Swift.Bool, isRecalled: Swift.Bool, isDeleted: Swift.Bool, isEdited: Swift.Bool, textModel: MirrorFlySDK.TextModel, groupUserSenderJid: Swift.String, messageStatus: Swift.Int, mentionedUsersIds: [Swift.String], metaData: Swift.String = "", topicID: Swift.String = "")
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TextModel : Swift.Codable {
   public var text: Swift.String
-  public var editedText: Swift.String
-  public init(text: Swift.String, editedText: Swift.String)
+  public init(text: Swift.String)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -2032,13 +2054,13 @@ public struct LocationChat : Swift.Codable {
 public struct MediaChat : Swift.Codable {
   public var fileName: Swift.String
   public var duration: Swift.Int32?
-  public var fileSize: Swift.Int32?
+  public var fileSize: Swift.Int64?
   public var fileType: Swift.String?
   public var fileUrl: Swift.String?
   public var localFileName: Swift.String?
   public var thumbImage: Swift.String?
   public var fileKey: Swift.String?
-  public var mediaCaptionText: Swift.String?
+  public var caption: Swift.String?
   public init(fileName: Swift.String)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2061,6 +2083,14 @@ public struct BackupRecentChat : Swift.Codable {
   public var metaData: Swift.String
   public var topicId: Swift.String
   public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool, metaData: Swift.String = "", topicID: Swift.String = "")
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BackupEditMessage : Swift.Codable {
+  public var messageId: Swift.String!
+  public var parentMessageId: Swift.String!
+  public var editedTextContent: Swift.String
+  public var mentionedUsersIds: [Swift.String]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -2628,6 +2658,7 @@ public struct FlyConstants {
   public static var callIceServers: Swift.String
   public static let lastLoginJid: Swift.String
   public static let setLastSeenJids: Swift.String
+  public static let ChatSummary: Swift.String
   public static let unreadMissedCallCount: Swift.String
   public static let deviceType: Swift.String
   public static let backupId: Swift.String
@@ -2636,6 +2667,8 @@ public struct FlyConstants {
   public static let messageEnd: Swift.String
   public static let recentStart: Swift.String
   public static let recentEnd: Swift.String
+  public static let editMessageStart: Swift.String
+  public static let editMessageEnd: Swift.String
   public static let backupVersion: Swift.String
   public static var isLoaclNotificationEnabled: Swift.Bool
   public static var isBackupCompleted: Swift.String
@@ -2725,9 +2758,11 @@ public struct FlyConstants {
     public static let scheduledDateTimeError: Swift.String
     public static let storageNotAvaialbe: Swift.String
     public static let compressionFailed: Swift.String
-    public static let editMessageInvalid: Swift.String
+    public static let messageNotEditable: Swift.String
+    public static let editMessageInvalidCaption: Swift.String
     public static let editMessageIdInvalid: Swift.String
     public static let editMessageIdTime: Swift.String
+    public static let profileAdminBlock: Swift.String
   }
   public struct SuccessMessage {
     public static let profileFetch: Swift.String
@@ -2774,6 +2809,7 @@ public struct FlyConstants {
     public static let backup_count_success: Swift.String
     public static let backup_message_success: Swift.String
     public static let backup_recent_success: Swift.String
+    public static let backup_editMessage_success: Swift.String
     public static let latest_profile_updates_fetched: Swift.String
   }
 }
@@ -2793,7 +2829,7 @@ public enum CallDirection {
     get
   }
 }
-public enum CallType : Swift.String {
+public enum CallType : Swift.String, Swift.Codable {
   case Audio
   case Video
   public init?(rawValue: Swift.String)
@@ -2802,7 +2838,7 @@ public enum CallType : Swift.String {
     get
   }
 }
-public enum CallMode : Swift.String {
+public enum CallMode : Swift.String, Swift.Codable {
   case ONE_TO_ONE
   case ONE_TO_MANY
   case MANY_TO_MANY
@@ -3043,6 +3079,7 @@ public protocol WebLogoutDelegate {
   public var mediaChatMessage: MirrorFlySDK.MediaChatMessage?
   public var meetChatMessage: MirrorFlySDK.MeetChatMessage?
   public var isDeletedUser: Swift.Bool?
+  @objc public var mentionedUsersIds: [Swift.String]
   @objc public init()
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
@@ -3060,7 +3097,7 @@ public struct ProfileStatus : Swift.Codable {
 public protocol UserBusyStatusDelegate : AnyObject {
   func didUpdateBusyStatus(status: Swift.Bool, message: Swift.String)
 }
-public struct CallLog {
+public struct CallLog : Swift.Codable {
   public let callLogId: Swift.String
   public let fromUserId: Swift.String
   public let toUserId: Swift.String
@@ -3077,6 +3114,8 @@ public struct CallLog {
   public var isLogSynced: Swift.Bool
   public var isSelected: Swift.Bool
   public var displayName: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class NotificationExtensionSupport : ObjectiveC.NSObject {
   public typealias pushReturnBlock = (UserNotifications.UNMutableNotificationContent?) -> Swift.Void
@@ -3255,6 +3294,7 @@ public protocol AdminBlockDelegate : ObjectiveC.NSObjectProtocol {
   @objc func setOrUpdateFavourite(messageId: Swift.String, favourite: Swift.Bool, removeAllFavourite: Swift.Bool)
   @objc func onMessageTranslated(message: MirrorFlySDK.ChatMessage, jid: Swift.String)
   @objc func clearAllConversationForSyncedDevice()
+  @objc func onMessageEdited(message: MirrorFlySDK.ChatMessage)
 }
 public struct ChatDataModel {
   public init()
@@ -3363,7 +3403,7 @@ public struct Location : Swift.Codable {
 public struct Media : Swift.Codable {
   public var mid: Swift.String?
   public var duration: Swift.Int32?
-  public var file_size: Swift.Int32
+  public var file_size: Swift.Int64
   public var file_key: Swift.String?
   public var file_type: Swift.String?
   public var file_url: Swift.String
@@ -3381,7 +3421,7 @@ public struct Media : Swift.Codable {
   public var androidHeight: Swift.Int?
   public var audioType: Swift.String?
   public var isLargeFile: Swift.Bool?
-  public init(mid: Swift.String, duration: Swift.Int32, file_size: Swift.Int32, file_key: Swift.String, file_type: Swift.String, file_url: Swift.String, thumb_image: Swift.String, caption: Swift.String, fileName: Swift.String, local_path: Swift.String, mediaDownloadStatus: Swift.Int, mediaUploadStatus: Swift.Int, progressStatus: Swift.Int, is_uploading: Swift.Int, is_downloaded: Swift.Int, webWidth: Swift.Int, webHeight: Swift.Int, androidWidth: Swift.Int, androidHeight: Swift.Int, audioType: Swift.String, isLargeFile: Swift.Bool = false)
+  public init(mid: Swift.String, duration: Swift.Int32, file_size: Swift.Int64, file_key: Swift.String, file_type: Swift.String, file_url: Swift.String, thumb_image: Swift.String, caption: Swift.String, fileName: Swift.String, local_path: Swift.String, mediaDownloadStatus: Swift.Int, mediaUploadStatus: Swift.Int, progressStatus: Swift.Int, is_uploading: Swift.Int, is_downloaded: Swift.Int, webWidth: Swift.Int, webHeight: Swift.Int, androidWidth: Swift.Int, androidHeight: Swift.Int, audioType: Swift.String, isLargeFile: Swift.Bool = false)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
