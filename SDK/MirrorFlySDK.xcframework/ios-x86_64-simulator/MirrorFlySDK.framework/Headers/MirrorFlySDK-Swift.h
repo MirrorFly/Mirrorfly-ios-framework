@@ -653,6 +653,8 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK21MessageEventsDelegate_")
 - (void)onMessageTranslatedWithMessage:(ChatMessage * _Nonnull)message jid:(NSString * _Nonnull)jid;
 /// Called when user cleared all conversations
 - (void)clearAllConversationForSyncedDevice;
+/// Called when user edited message
+- (void)onMessageEditedWithMessage:(ChatMessage * _Nonnull)message;
 @end
 
 typedef SWIFT_ENUM(NSInteger, MessageStatus, open) {
