@@ -2763,6 +2763,7 @@ public struct FlyConstants {
     public static let editMessageIdInvalid: Swift.String
     public static let editMessageIdTime: Swift.String
     public static let profileAdminBlock: Swift.String
+    public static let invalidEmail: Swift.String
   }
   public struct SuccessMessage {
     public static let profileFetch: Swift.String
@@ -3009,6 +3010,9 @@ extension Foundation.Thread {
   public var queueName: Swift.String {
     get
   }
+}
+extension MirrorFlySDK.FlyUtils {
+  public static func isValidEmail(email: Swift.String) -> Swift.Bool
 }
 public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
