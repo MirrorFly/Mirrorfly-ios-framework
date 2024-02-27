@@ -298,11 +298,11 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11CallManager")
 
 
 
-
 @interface CallManager (SWIFT_EXTENSION(MirrorFlySDK))
 + (BOOL)isOngoingCall SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)checkForActiveCall SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 SWIFT_CLASS("_TtC12MirrorFlySDK22CallParticipantsStatus")
@@ -329,6 +329,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initDelegates SWIFT_METHOD_FAMILY(none);
 @end
+
 
 
 
@@ -513,10 +514,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
-
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
+
 
 
 

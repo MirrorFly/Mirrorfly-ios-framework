@@ -1047,6 +1047,7 @@ extension MirrorFlySDK.CallManager {
   public class func getRemoteVideoTrack(jid: Swift.String) -> WebRTC.RTCVideoTrack?
   @objc dynamic public class func isOngoingCall() -> Swift.Bool
   @objc dynamic public class func checkForActiveCall() -> Swift.Bool
+  public class func enableDebugLogs(enable: Swift.Bool)
 }
 extension MirrorFlySDK.CallManager {
   public class func checkAudioPermission()
@@ -1064,6 +1065,7 @@ extension MirrorFlySDK.CallManager {
   public class func isCurrentCallJoinedViaLink() -> Swift.Bool
   public class func isUserJoinedViaLink(userId: Swift.String) -> Swift.Bool
   public class func createMeetLink(completion: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public class func isConnectedToLinkServer() -> Swift.Bool
 }
 public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllCallLog()
@@ -1257,6 +1259,7 @@ public enum OfflineActionType : Swift.String, Swift.CustomStringConvertible {
   case unarchiveChats
   case uploadImageVideo
   case clearCalllog
+  case endCallMessage
   public var description: Swift.String {
     get
   }
@@ -1625,7 +1628,7 @@ public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
 @_hasMissingDesignatedInitializers public class FlyLogWriter {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
-  public var callsLog: Swift.String
+  public var flyLog: Swift.String
   public func writeText(_ str: Swift.String)
   public func writeStatusText(_ str: Swift.String)
   public func getLogFileURL() -> Foundation.URL
@@ -2681,6 +2684,7 @@ public struct FlyConstants {
   public static let aws: Swift.String
   public static let minio: Swift.String
   public static let oracle: Swift.String
+  public static let enableLogs: Swift.String
   public struct ErrorMessage {
     public static let internetNotAvailable: Swift.String
     public static let invalidJid: Swift.String
