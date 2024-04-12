@@ -962,7 +962,6 @@ public protocol MissedCallNotificationDelegate {
   public static var isCallStarted: Swift.Bool
   public static var incomingUserJidArr: [Swift.String]
   @objc override dynamic public init()
-  public class func initCallSDK() throws
   public class func setVideoWidthHeightAdjuster(videoWidthHeightAdjuster: MirrorFlySDK.VideoWidthHeightAdjuster)
   public class func getRoomLink() -> Swift.String
   public class func setMyInfo(name: Swift.String, imageUrl: Swift.String)
@@ -1024,20 +1023,19 @@ public protocol MissedCallNotificationDelegate {
   public class func isVideoCallPermissionsGranted() -> Swift.Bool
   public class func getInvitedUsersList() -> [Swift.String]
   public class func initiateRingingTimer(userID: Swift.String)
-  public class func initiateCallingTimer()
   public func initiateReconnectingTimer()
   @objc public class func receiverSeemsToBeOffline(_ timer: Foundation.Timer)
   @objc public class func callRingingStatusWaiting(_ timer: Foundation.Timer)
   @objc deinit
 }
 extension MirrorFlySDK.CallManager {
-  public class func makeVoiceCall(_ userId: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void) throws
-  public class func makeVideoCall(_ userId: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void) throws
-  public class func makeGroupVoiceCall(_ userIDsList: [Swift.String], groupID: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void) throws
-  public class func makeGroupVideoCall(_ userIDsList: [Swift.String], groupID: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void) throws
+  public class func makeVoiceCall(_ userId: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ flyError: MirrorFlySDK.FlyError?) -> Swift.Void) throws
+  public class func makeVideoCall(_ userId: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ flyError: MirrorFlySDK.FlyError?) -> Swift.Void) throws
+  public class func makeGroupVoiceCall(_ userIDsList: [Swift.String], groupID: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ flyError: MirrorFlySDK.FlyError?) -> Swift.Void) throws
+  public class func makeGroupVideoCall(_ userIDsList: [Swift.String], groupID: Swift.String, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ flyError: MirrorFlySDK.FlyError?) -> Swift.Void) throws
   @available(*, deprecated, message: "Use the CallManager.inviteUsersToOngoingCall(_ userIDsList : [String], onCompletion: @escaping (_ isSuccess: Bool, _ message: String) -> Void) instead")
   public class func inviteUsersToOngoingCall(_ userIDsList: [Swift.String])
-  public class func inviteUsersToOngoingCall(_ userIDsList: [Swift.String], onCompletion: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void)
+  public class func inviteUsersToOngoingCall(_ userIDsList: [Swift.String], onCompletion: @escaping (_ isSuccess: Swift.Bool, _ flyError: MirrorFlySDK.FlyError?) -> Swift.Void)
   public class func muteAudio(_ isMute: Swift.Bool)
   public class func getContactNames(IncomingUserName: [Swift.String])
   public class func muteVideo(_ isMute: Swift.Bool)
@@ -1526,6 +1524,8 @@ public enum FlyError : Swift.Error, Swift.Equatable {
   case call_ended_already(message: Swift.String, code: Swift.Int)
   case max_users_reached(message: Swift.String, code: Swift.Int)
   case internal_server_error(message: Swift.String, code: Swift.Int)
+  case forbidden(message: Swift.String, code: Swift.Int)
+  case connection_error(message: Swift.String, code: Swift.Int)
   public static func == (a: MirrorFlySDK.FlyError, b: MirrorFlySDK.FlyError) -> Swift.Bool
 }
 extension MirrorFlySDK.FlyError : Swift.CustomStringConvertible {
@@ -1574,6 +1574,17 @@ public struct ErrorCode {
   public static let MAX_USERS_REACHED: Swift.Int
   public static let INTERNAL_SERVER_ERROR: Swift.Int
   public static let INVALID_INPUT: Swift.Int
+  public static let IN_ANOTHER_CALL: Swift.Int
+  public static let AUDIO_PERMISSION_DENIED: Swift.Int
+  public static let VIDEO_PERMISSION_DENIED: Swift.Int
+  public static let SIGNAL_CONNECTION_ERROR: Swift.Int
+  public static let XMPP_CALL_PAYLOAD_ERROR: Swift.Int
+  public static let XMPP_CONNECTION_ERROR: Swift.Int
+  public static let CALL_JANUS_ATTACH_FAIL: Swift.Int
+  public static let CALL_JANUS_CREATE_ROOM_FAIL: Swift.Int
+  public static let CALL_JANUS_JOIN_ROOM_FAIL: Swift.Int
+  public static let JANUS_CONNECTION_ERROR: Swift.Int
+  public static let INVITE_USER_NOT_IN_ONGOING_CALL: Swift.Int
 }
 @objc @_inheritsConvenienceInitializers public class ChatMessage : ObjectiveC.NSObject, Swift.Codable {
   public var messageId: Swift.String
@@ -1630,6 +1641,7 @@ public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
   public var flyLog: Swift.String
   public func writeText(_ str: Swift.String)
+  public func writeCallText(_ str: Swift.String)
   public func writeStatusText(_ str: Swift.String)
   public func getLogFileURL() -> Foundation.URL
   public func getVCFFileURL() -> Foundation.URL
@@ -2769,6 +2781,10 @@ public struct FlyConstants {
     public static let editMessageIdTime: Swift.String
     public static let profileAdminBlock: Swift.String
     public static let invalidEmail: Swift.String
+    public static let callProcessError: Swift.String
+    public static let linkProcessError: Swift.String
+    public static let callPermission: Swift.String
+    public static let cantInviteNotValidCall: Swift.String
   }
   public struct SuccessMessage {
     public static let profileFetch: Swift.String
