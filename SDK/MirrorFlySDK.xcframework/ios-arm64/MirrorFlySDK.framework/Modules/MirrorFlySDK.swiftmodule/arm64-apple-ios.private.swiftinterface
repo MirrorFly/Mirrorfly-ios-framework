@@ -3240,19 +3240,25 @@ public enum ARDSignalingChannelState : Swift.Int {
     get
   }
 }
-public struct MetaData {
+public struct MetaData : Swift.Codable {
   public init(key: Swift.String, value: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-public struct MetaDataUserList {
+public struct MetaDataUserList : Swift.Codable {
   public init(key: Swift.String, value: [Swift.String])
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct MessageMetaData : Swift.Codable {
   public init(key: Swift.String, value: Swift.String)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct MetaDataMessageList {
+public struct MetaDataMessageList : Swift.Codable {
   public init(key: Swift.String, value: [Swift.String])
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol XMPPConnectionDelegate : ObjectiveC.NSObjectProtocol {
   func xmppDidConnected()
