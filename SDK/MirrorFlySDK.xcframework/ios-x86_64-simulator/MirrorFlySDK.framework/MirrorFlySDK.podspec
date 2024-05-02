@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "MirrorFlySDK"
-  s.version      = "5.16.3"
+  s.version      = "5.16.4"
   s.summary      = "MirrorFlySDK Summary"
   s.description  = "MirrorFlySDK Description"
   s.authors      = "Vishvanath Eshwer"
@@ -22,12 +22,12 @@ Pod::Spec.new do |s|
   #spec.exclude_files = [AppDelegate, ViewController, SceneDelegate]
   #s.requires_arc = true
   s.dependency 'libPhoneNumber-iOS', '0.9.15'
-  s.dependency 'Alamofire', '5.5'
+  s.dependency 'Alamofire', '5.9.1'
   s.dependency 'XMPPFramework/Swift'
   s.dependency 'SocketRocket'
-  s.dependency 'Socket.IO-Client-Swift', '16.0.1'
-  s.dependency 'Starscream', '4.0.4'
-  s.dependency 'RealmSwift', '~> 10.43.0'
+  s.dependency 'Socket.IO-Client-Swift', '16.1.0'
+  s.dependency 'Starscream', '4.0.8'
+  s.dependency 'RealmSwift', '~> 10.49.2'
   s.dependency 'GoogleWebRTC', '1.1.31999'
   s.dependency 'IDZSwiftCommonCrypto', '~> 0.16'
 end
