@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name         = "MirrorFlySDK"
-  s.version      = "5.16.4"
+  s.version      = "5.16.6"
   s.summary      = "MirrorFlySDK Summary"
   s.description  = "MirrorFlySDK Description"
   s.authors      = "Vishvanath Eshwer"
 
   s.homepage     = "in"
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.platform     = :ios, "12.1"
+  s.platform     = :ios, "13.0"
   s.source       = { :git => "git@bitbucket.org:Apptha/p078-mirrorfly-ios-core-sdk.git" }
   s.source_files  = "MirrorFlySDK/**/*.*{swift, h, m}","MirrorFlySDK/*.h", "MirrorFlySDK/*.m","MirrorFlySDK/Call/*.h", "MirrorFlySDK/Call/*.m"
   s.resources = "MirrorFlySDK/*.xcassets"

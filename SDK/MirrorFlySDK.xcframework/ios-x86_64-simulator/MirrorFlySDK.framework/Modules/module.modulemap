@@ -1,7 +1,7 @@
 framework module MirrorFlySDK {
   umbrella header "MirrorFlySDK.h"
-
   export *
+
   module * { export * }
 }
 

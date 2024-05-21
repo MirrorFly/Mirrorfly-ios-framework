@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     s.author            = { 'Hariram' => 'hariram.c@contus.in' }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
 
-    s.platform          = :ios, "12.1"
+    s.platform          = :ios, "13.0"
     # change the source location
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s } 
 
