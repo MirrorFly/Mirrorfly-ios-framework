@@ -961,6 +961,7 @@ public protocol MissedCallNotificationDelegate {
   public static var callUiDelegate: (any MirrorFlySDK.CallUIDelegate)?
   public static var missedCallNotificationDelegate: (any MirrorFlySDK.MissedCallNotificationDelegate)?
   public static var onCallStatusDelegate: (any MirrorFlySDK.CallStatusContactDelegate)?
+  public static var connectionQuality: (any MirrorFlySDK.ConnectionQualityDelegate)?
   public static var isCallStarted: Swift.Bool
   public static var incomingUserJidArr: [Swift.String]
   @objc override dynamic public init()
@@ -1054,6 +1055,9 @@ extension MirrorFlySDK.CallManager {
   public class func checkVideoPermission()
 }
 extension MirrorFlySDK.CallManager {
+  public class func getCallConnectionQuality() -> MirrorFlySDK.ConnectionQuality
+}
+extension MirrorFlySDK.CallManager {
   public class func setupJoinCallViaLink()
   public class func startVideoCapture()
   public class func endVideoCapture()
@@ -1077,6 +1081,19 @@ public protocol CallUIDelegate : ObjectiveC.NSObjectProtocol {
   func callReceived(id: Swift.String)
   func callAttended(id: Swift.String)
   func callDisconnected(id: Swift.String)
+}
+public enum ConnectionQuality : Swift.String {
+  case good
+  case average
+  case poor
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol ConnectionQualityDelegate : ObjectiveC.NSObjectProtocol {
+  func didQualityUpdated(quality: MirrorFlySDK.ConnectionQuality)
 }
 public enum FileType : Swift.String {
   case pdf
@@ -3554,6 +3571,9 @@ extension MirrorFlySDK.MuteEvent : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Equatable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.RawRepresentable {}
+extension MirrorFlySDK.ConnectionQuality : Swift.Equatable {}
+extension MirrorFlySDK.ConnectionQuality : Swift.Hashable {}
+extension MirrorFlySDK.ConnectionQuality : Swift.RawRepresentable {}
 extension MirrorFlySDK.FileType : Swift.Equatable {}
 extension MirrorFlySDK.FileType : Swift.Hashable {}
 extension MirrorFlySDK.FileType : Swift.RawRepresentable {}
