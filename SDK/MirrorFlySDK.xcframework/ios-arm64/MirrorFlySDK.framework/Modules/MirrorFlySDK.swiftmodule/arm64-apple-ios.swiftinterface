@@ -856,7 +856,9 @@ public struct RecentChatListParams {
   public init()
   public var limit: Swift.Int
   public var pageNumber: Swift.Int
-  public init(limit: Swift.Int = 40)
+  public var totalPageNumber: Swift.Int
+  public var totalRecords: Swift.Int
+  public init(limit: Swift.Int = 20)
 }
 public struct TopicChatListParams {
   public init()
@@ -1509,7 +1511,7 @@ public enum AudioType : Swift.String, Swift.Codable {
   public func reloadRecentChats(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func changeLimit(limit: Swift.Int)
   public func getAllRecentChatForSearch(searchTerm: Swift.String) -> [MirrorFlySDK.RecentChat]
-  public func getRecentChatFromApi(page: Swift.Int, size: Swift.Int, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public func getRecentChatFromApi(page: Swift.Int, size: Swift.Int, lastMessageTime: Swift.Double, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   @objc deinit
 }
 public enum FlyError : Swift.Error, Swift.Equatable {
@@ -2638,6 +2640,9 @@ public struct FlyConstants {
   public static let autoDownloadEnable: Swift.String
   public static let chatHistoryEnable: Swift.String
   public static let isFirstchatHistory: Swift.String
+  public static let hasNextPageDataIntAPI: Swift.String
+  public static let fetchedPageNumber: Swift.String
+  public static let totalPageNumber: Swift.String
   public static let autoDownloadMobile: Swift.String
   public static let autoDownloadWifi: Swift.String
   public static let autoDownloadLastEnabledTime: Swift.String
