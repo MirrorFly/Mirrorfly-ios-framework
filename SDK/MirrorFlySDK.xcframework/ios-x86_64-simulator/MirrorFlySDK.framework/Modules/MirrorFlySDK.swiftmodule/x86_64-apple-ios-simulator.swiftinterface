@@ -590,6 +590,10 @@ extension MirrorFlySDK.ChatManager {
   public func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String, isCarbon: Swift.Bool, isFormPush: Swift.Bool = false)
   public static func isMessageEditable(messageId: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
 }
+extension MirrorFlySDK.ChatManager {
+  public static func enablePrivateStorage(enable: Swift.Bool = false)
+  public static func isPrivateStorageEnabled() -> Swift.Bool
+}
 public enum MessageExtension : Swift.String, Swift.CustomStringConvertible {
   case image
   case video
