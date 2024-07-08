@@ -975,7 +975,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) VOIPManager * _Nonnull
 + (void)setSharedInstance:(VOIPManager * _Nonnull)value;
 /// It is used to process VOIP call
 /// @param userInfo call of that VOIP notification
-- (void)processPayload:(NSDictionary * _Nullable)userInfo;
+- (void)processPayload:(NSDictionary * _Nonnull)userInfo displayName:(NSString * _Nonnull)displayName;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
