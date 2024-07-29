@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0GCi2caq/USHfwyrOJ0ZacEPrKM=
+		IgWYKZMVmpdW1VFEiwi+x5NVx9U=
 		</data>
 		<key>Jenkinsfile</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>MirrorFlySDK.podspec</key>
 		<data>
-		5pr6INCTHD4O2JrQ01rKFD7aEgQ=
+		4ZCJPmLY30CrZPBy6ctIVTUkVDc=
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		MLsPbxcisqj+5i1MXnXvxEUuYSk=
+		MxK40lQ70OL9470vTzu66K9/CrA=
 		</data>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>build.properties</key>
 		<data>
-		Rg+rBjTZs27nbrWs6UFx4IXnFvo=
+		KwvcGiWpCjDHgt6U5H7rO1SUcyo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -146,14 +146,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qaNbeAdR8HVJcxYx27m3gwGDShydhvJnQfj3uUuvK18=
+			w4E7yS629/E3zyztdmzX+3l85IfwLQ3kbidubnYD3Pg=
 			</data>
 		</dict>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5GuDshNYHXTBoblr3if1+e5Mwu513BGsf6S5A7S2ghU=
+			4ezK8Iq/EHwWQCggRuRH8TyqI6A6TcPOl6P/78RHpYs=
 			</data>
 		</dict>
 		<key>Modules/MirrorFlySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -195,7 +195,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T/UO+FR2+QqHRUJhevG9NxqZ6EPL6VJp8Yg35dY5Bwk=
+			IwU6tmM+C7hjsBHJ2yP51QCD1SiCBwD6dIoRrjwlN4s=
 			</data>
 		</dict>
 	</dict>
