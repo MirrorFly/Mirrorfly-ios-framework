@@ -2739,6 +2739,7 @@ public struct FlyConstants {
   public static let minio: Swift.String
   public static let oracle: Swift.String
   public static let enableLogs: Swift.String
+  public static let profileSyncedDate: Swift.String
   public struct ErrorMessage {
     public static let internetNotAvailable: Swift.String
     public static let invalidJid: Swift.String
@@ -2827,6 +2828,7 @@ public struct FlyConstants {
     public static let linkProcessError: Swift.String
     public static let callPermission: Swift.String
     public static let cantInviteNotValidCall: Swift.String
+    public static let clearChatFailure: Swift.String
     public static let metadataError: Swift.String
   }
   public struct SuccessMessage {
@@ -2843,6 +2845,7 @@ public struct FlyConstants {
     public static let recentChatList: Swift.String
     public static let archivedChatList: Swift.String
     public static let clearMessage: Swift.String
+    public static let clearChatSuccess: Swift.String
     public static let clearCallLog: Swift.String
     public static let blockedListFetched: Swift.String
     public static let blockedMeListFetched: Swift.String
@@ -3077,6 +3080,7 @@ extension Foundation.Thread {
 }
 extension MirrorFlySDK.FlyUtils {
   public static func isValidEmail(email: Swift.String) -> Swift.Bool
+  public static func isValidBase64(input: Swift.String) -> Swift.Bool
 }
 public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
