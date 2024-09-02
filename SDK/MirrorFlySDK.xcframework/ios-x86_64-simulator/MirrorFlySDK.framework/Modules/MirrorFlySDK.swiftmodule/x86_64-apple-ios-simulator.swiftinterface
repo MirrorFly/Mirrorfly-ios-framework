@@ -68,6 +68,8 @@ import _SwiftConcurrencyShims
   @objc public var mentionedUsersIds: [Swift.String]
   public var metaData: [MirrorFlySDK.MessageMetaData]
   @objc public var topicID: Swift.String
+  @objc public var unReadMessageID: Swift.String
+  @objc public var serverUnreadMessageCount: Swift.Int
   @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -275,6 +277,7 @@ public enum CallState : Swift.String, Swift.Codable {
   public var localNotificationDelegate: (any MirrorFlySDK.LocalNotificationDelegate)?
   public var userBusyStatusDelegate: (any MirrorFlySDK.UserBusyStatusDelegate)?
   public static var onGoingChatUserJid: Swift.String
+  public static var markAsReadLastMessageID: Swift.String
   public static func initializeSDK(licenseKey: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   @objc public func initDelegates()
   public static let shared: MirrorFlySDK.ChatManager
@@ -371,7 +374,7 @@ extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPMessageDelegate {
   public func getBusyStatusList() -> [MirrorFlySDK.BusyStatus]
   public func deleteBusyStatus(statusId: Swift.String)
   public func didReceivedSingleChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String = "", metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
-  public func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
+  public func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String)
   public func onSentMessageStatusUpdated(from: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, time: Swift.String?)
   public func getAcknowlegementTime(messageId: Swift.String, userJid: Swift.String) -> Swift.Double
   public func getAcknowlegementTimeForGroup(messageId: Swift.String) -> Swift.Double
@@ -387,7 +390,7 @@ extension MirrorFlySDK.ChatManager {
   public static func updateMetaData(metaData: [MirrorFlySDK.MetaData]? = nil, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func enableDisableHideLastSeen(EnableLastSeen: Swift.Bool, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func getUserLastSeen(for Jid: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
-  public static func markConversationAsRead(for jids: [Swift.String])
+  public static func markConversationAsRead(for jids: [Swift.String], fullMarkAsRead: Swift.Bool = false)
   public static func markConversationAsUnread(for jids: [Swift.String])
   public static func forwardMessages(messageIdList: [Swift.String], toJidList: [Swift.String], chatType: MirrorFlySDK.ChatType, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
 }
@@ -397,6 +400,7 @@ extension MirrorFlySDK.ChatManager {
   public static func sendTypingGoneStatus(to jid: Swift.String, chatType: MirrorFlySDK.ChatType)
   public static func getMessageOfId(messageId: Swift.String) -> MirrorFlySDK.ChatMessage?
   public static func getLastMessageId(jid: Swift.String) -> Swift.String
+  public static func updateUnReadCountUI(messageId: Swift.String, notificationText: Swift.String)
   public static func saveProfileStatus(statusText: Swift.String, currentStatus: Swift.Bool)
   public static func deleteStatus(statusId: Swift.String) -> (status: Swift.Bool, statusMessge: Swift.String)
   public static func getAllStatus() -> [MirrorFlySDK.ProfileStatus]
@@ -496,11 +500,14 @@ extension MirrorFlySDK.ChatManager : MirrorFlySDK.FeaturesDelegate {
   public func validateAvailableFeature() -> MirrorFlySDK.AvailableFeaturesModel
 }
 extension MirrorFlySDK.ChatManager {
+  public func createUnreadNotificationMessage(fromJid: Swift.String, messageTime: Swift.String, unreadCount: Swift.Int? = nil)
   public func updateUnreadMessageCount(fromJid: Swift.String)
+  public func updateUnreadMessageCountFromServer(fromJid: Swift.String, messageTime: Swift.Double, newUnReadCount: Swift.Int)
   public func updateUnreadMessageCountFromHistory(fromJid: Swift.String, time: Swift.Double)
   public func checkUnreadNotificationMessage(chatUserJid: Swift.String) -> Swift.Bool
   public func getUnreadNotificationMessageId(chatUserJid: Swift.String) -> Swift.String
   public func getUnreadMessages(toJid: Swift.String, messageId: Swift.String) -> [Swift.String]
+  public func getUnreadMessagesWithoutUserStatus(toJid: Swift.String, messageId: Swift.String) -> [MirrorFlySDK.ChatMessage]
 }
 extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPArchiveDelegate {
   public func updateArchiveUnArchiveChats(toUser: Swift.String, archiveStatus: Swift.Bool)
@@ -594,6 +601,9 @@ extension MirrorFlySDK.ChatManager {
   public static func enablePrivateStorage(enable: Swift.Bool = false)
   public static func isPrivateStorageEnabled() -> Swift.Bool
 }
+extension MirrorFlySDK.ChatManager {
+  public static func getChatSummaryIntervalTime() -> Swift.Int64
+}
 public enum MessageExtension : Swift.String, Swift.CustomStringConvertible {
   case image
   case video
@@ -646,7 +656,7 @@ public protocol XMPPMessageDelegate : ObjectiveC.NSObjectProtocol {
   func didReciveSingleChatCorbonMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, to: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
   func didReceivedSingleChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, body: Swift.String, time: Swift.String, groupJid: Swift.String, metaData: Swift.String, topicID: Swift.String, messageType: Swift.String) -> Swift.String
   func didReceivedEditedMessage(messageId: Swift.String, editedMessageId: Swift.String, body: Swift.String, from: Swift.String, time: Swift.String, groupJid: Swift.String, isCarbon: Swift.Bool, isFormPush: Swift.Bool)
-  func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String)
+  func didReceiveGroupChatMessage(messageId: Swift.String, editedMessageId: Swift.String, from: Swift.String, groupJid: Swift.String, body: Swift.String, time: Swift.String, metaData: Swift.String)
   func onSentMessageStatusUpdated(from: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, time: Swift.String?)
   func onReceivedMessageStatusUpdated(toJid: Swift.String, messageId: Swift.String, updateType: MirrorFlySDK.MessageStatus, fromJid: Swift.String)
   func onMessagesCleared(toJid: Swift.String?, favourite: Swift.String?, deleteType: Swift.String?, lastmessageId: Swift.String)
@@ -1063,6 +1073,7 @@ extension MirrorFlySDK.CallManager {
 }
 extension MirrorFlySDK.CallManager {
   public class func getCallConnectionQuality() -> MirrorFlySDK.ConnectionQuality
+  public class func getCallReconnectionTimeOut() -> Swift.Int
 }
 extension MirrorFlySDK.CallManager {
   public class func setupJoinCallViaLink()
@@ -1196,9 +1207,8 @@ public struct FetchMessageListParams {
   public var exclude: Swift.Bool
   public var limit: Swift.Int
   public var ascendingOrder: Swift.Bool
-  public var metaData: MirrorFlySDK.MetaDataMessageList?
   public var topicID: Swift.String
-  public init(chatJid: Swift.String, messageId: Swift.String = emptyString(), messageTime: Swift.Double = 0.0, exclude: Swift.Bool = true, limit: Swift.Int = 50, ascendingOrder: Swift.Bool = true, metaData: MirrorFlySDK.MetaDataMessageList? = nil, topicID: Swift.String = emptyString())
+  public init(chatJid: Swift.String, messageId: Swift.String = emptyString(), messageTime: Swift.Double = 0.0, exclude: Swift.Bool = true, limit: Swift.Int = 50, ascendingOrder: Swift.Bool = true, topicID: Swift.String = emptyString())
 }
 public protocol FlyMediaDelegate : ObjectiveC.NSObjectProtocol {
   func uploadingProgress(percent: Swift.Float, message: MirrorFlySDK.ChatMessage)
@@ -1262,7 +1272,7 @@ public enum ChatType : Swift.String, Swift.CustomStringConvertible, Swift.Codabl
 }
 @objc public class FetchMessageListQuery : ObjectiveC.NSObject {
   public init(fetchMessageListParams: MirrorFlySDK.FetchMessageListParams)
-  public func loadMessages(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public func loadMessages(isMessageForMe: Swift.Bool = false, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func loadNextMessages(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func loadPreviousMessages(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func setLastMessage(messageId: Swift.String)
@@ -1270,7 +1280,7 @@ public enum ChatType : Swift.String, Swift.CustomStringConvertible, Swift.Codabl
   public func hasPreviousMessages() -> Swift.Bool
   public func hasNextMessages() -> Swift.Bool
   public func isFetchingInProgress() -> Swift.Bool
-  public func getMessagesFromAPI(chatType: MirrorFlySDK.ChatType, participantJID: Swift.String?, size: Swift.Int, messageID: Swift.String, metaData: MirrorFlySDK.MetaDataMessageList? = nil, topicID: Swift.String = "", completion: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public func getMessagesFromAPI(chatType: MirrorFlySDK.ChatType, participantJID: Swift.String?, size: Swift.Int, messageID: Swift.String, metaData: MirrorFlySDK.MetaDataMessageList? = nil, topicID: Swift.String = "", direction: Swift.String = "", completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   @objc deinit
 }
 public struct WebLoginInfo {

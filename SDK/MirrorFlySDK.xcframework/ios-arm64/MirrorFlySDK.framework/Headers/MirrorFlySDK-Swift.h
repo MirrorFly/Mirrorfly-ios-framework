@@ -405,6 +405,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 
 
 
+
 @class ProfileDetails;
 @class ChatMessage;
 
@@ -561,10 +562,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
+
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
-
 
 
 
@@ -941,6 +942,8 @@ SWIFT_CLASS("_TtC12MirrorFlySDK10RecentChat")
 /// To check whether the user mentioned
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull mentionedUsersIds;
 @property (nonatomic, copy) NSString * _Nonnull topicID;
+@property (nonatomic, copy) NSString * _Nonnull unReadMessageID;
+@property (nonatomic) NSInteger serverUnreadMessageCount;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
