@@ -836,11 +836,15 @@ public struct EditMessage : Swift.Codable {
   public class func shared() -> MirrorFlySDK.AudioManager
   public func autoReRoute()
   public var audioManagerDelegate: (any MirrorFlySDK.AudioManagerDelegate)?
+  public func initialize()
   public func setCategoryAndMode()
   public func routeToAvailableDevice(preferredDevice: MirrorFlySDK.OutputType? = nil)
   public func getCurrentAudioInput()
   public func getAllAvailableAudioInput() -> [MirrorFlySDK.AudioDevice]
   public func routeAudioTo(device: MirrorFlySDK.OutputType, force: Swift.Bool = false)
+  public func routeToSpeaker()
+  public func currentAudioOutput() -> (MirrorFlySDK.OutputType, Swift.String)
+  public func playReconnectingTone()
   public func stopPlayingTone()
   @objc deinit
 }
@@ -968,7 +972,7 @@ public protocol FeaturesDelegate {
   func validateAvailableFeature() -> MirrorFlySDK.AvailableFeaturesModel
 }
 public protocol MissedCallNotificationDelegate {
-  func onMissedCall(isOneToOneCall: Swift.Bool, userJid: Swift.String, groupId: Swift.String?, callType: Swift.String, userList: [Swift.String], metaData: [MirrorFlySDK.CallMetadata])
+  func onMissedCall(isOneToOneCall: Swift.Bool, userJid: Swift.String, groupId: Swift.String?, callType: Swift.String, userList: [Swift.String], metaData: [MirrorFlySDK.CallMetadata], permissionDenied: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers public class CallManager : ObjectiveC.NSObject {
   public static var delegate: (any MirrorFlySDK.CallManagerDelegate)?
@@ -999,7 +1003,7 @@ public protocol MissedCallNotificationDelegate {
   public class func switchCamera(completion: @escaping () -> Swift.Void)
   public class func requestVideoCallSwitch(onCompletion: @escaping (Swift.Bool) -> Swift.Void)
   public class func checkIsUserCanceled() -> Swift.Bool
-  public class func cancelVideoCallSwitch()
+  public class func cancelVideoCallSwitch() -> Swift.Bool
   public class func isCallConversionRequestAvailable() -> Swift.Bool
   public class func disableVideo()
   public class func acceptVideoCallSwitchRequest()
@@ -1114,6 +1118,8 @@ public protocol ConnectionQualityDelegate : ObjectiveC.NSObjectProtocol {
   func didQualityUpdated(quality: MirrorFlySDK.ConnectionQuality)
 }
 public struct CallMetadata : Swift.Codable {
+  public var key: Swift.String
+  public var value: Swift.String
   public init(key: Swift.String, value: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -1122,6 +1128,10 @@ public struct CallDataMessageList : Swift.Codable {
   public init(key: Swift.String, value: [Swift.String])
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+}
+extension MirrorFlySDK.CallManager {
+  public func startAttendedTimer(for JID: Swift.String)
+  public func stopAttendedTimer(for JID: Swift.String)
 }
 public enum FileType : Swift.String {
   case pdf
@@ -2660,6 +2670,7 @@ public struct FlyConstants {
   public static let audio: Swift.String
   public static let document: Swift.String
   public static let profileImage: Swift.String
+  public static let myJid: Swift.String
   public static let oneMBInBytes: Swift.Int
   public static let signalServer: Swift.String
   public static let offlineParam: Swift.String

@@ -348,6 +348,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11CallManager")
 
 
 
+
 @interface CallManager (SWIFT_EXTENSION(MirrorFlySDK))
 + (BOOL)isOngoingCall SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)checkForActiveCall SWIFT_WARN_UNUSED_RESULT;
@@ -566,10 +567,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
-
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
+
 
 
 
