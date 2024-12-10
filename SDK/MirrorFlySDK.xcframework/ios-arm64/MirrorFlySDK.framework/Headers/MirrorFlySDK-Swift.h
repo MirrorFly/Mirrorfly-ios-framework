@@ -563,7 +563,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 ///
 /// \param message content of the unsent message
 ///
-+ (void)saveUnsentMessageWithId:(NSString * _Nonnull)id message:(NSString * _Nonnull)message mentionedUsers:(NSArray<NSString *> * _Nullable)mentionedUsers mentionSearch:(NSArray<NSString *> * _Nullable)mentionSearch mentionLocation:(NSArray<NSNumber *> * _Nullable)mentionLocation mentionLength:(NSArray<NSNumber *> * _Nullable)mentionLength;
++ (void)saveUnsentMessageWithId:(NSString * _Nonnull)id message:(NSString * _Nonnull)message mentionedUsers:(NSArray<NSString *> * _Nullable)mentionedUsers mentionSearch:(NSArray<NSString *> * _Nullable)mentionSearch;
 @end
 
 
