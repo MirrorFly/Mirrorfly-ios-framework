@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MirrorFlySDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFAudio
@@ -276,6 +276,7 @@ public enum CallState : Swift.String, Swift.Codable {
   public var archiveEventsDelegate: (any MirrorFlySDK.ArchiveEventsDelegate)?
   public var localNotificationDelegate: (any MirrorFlySDK.LocalNotificationDelegate)?
   public var userBusyStatusDelegate: (any MirrorFlySDK.UserBusyStatusDelegate)?
+  public var muteEventDelegate: (any MirrorFlySDK.MuteEventDelegate)?
   public static var onGoingChatUserJid: Swift.String
   public static var markAsReadLastMessageID: Swift.String
   public static func initializeSDK(licenseKey: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
@@ -333,6 +334,7 @@ extension MirrorFlySDK.ChatManager {
   public static func getArchivedChatList(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func updateRecentChatPinStatus(jid: Swift.String, pinRecentChat: Swift.Bool)
   public static func recentChatPinnedCount() -> Swift.Int
+  @available(*, deprecated, message: "Use updateChatMuteStatus(jidList : [String], mute : Bool) instead.")
   public static func updateChatMuteStatus(jid: Swift.String, muteStatus: Swift.Bool)
   public static func deleteRecentChats(jids: [Swift.String], completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func clearChat(toJid: Swift.String, chatType: MirrorFlySDK.ChatType, clearChatExceptStarred: Swift.Bool, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
@@ -401,10 +403,10 @@ extension MirrorFlySDK.ChatManager {
   public static func getMessageOfId(messageId: Swift.String) -> MirrorFlySDK.ChatMessage?
   public static func getLastMessageId(jid: Swift.String) -> Swift.String
   public static func updateUnReadCountUI(messageId: Swift.String, notificationText: Swift.String)
-  public static func saveProfileStatus(statusText: Swift.String, currentStatus: Swift.Bool)
+  public static func saveProfileStatus(statusText: Swift.String, currentStatus: Swift.Bool, completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func deleteStatus(statusId: Swift.String) -> (status: Swift.Bool, statusMessge: Swift.String)
   public static func getAllStatus() -> [MirrorFlySDK.ProfileStatus]
-  public static func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false) -> (status: Swift.Bool, statusMessage: Swift.String)
+  public static func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false, completion: @escaping MirrorFlySDK.FlyCompletionHandler) -> (status: Swift.Bool, statusMessage: Swift.String)
   public static func getStatusById(statusId: Swift.String) -> MirrorFlySDK.ProfileStatus?
   public static func sendNotAcknowledgeMessages()
   public static func getSingleChatMessageSeenReceipt(messageId: Swift.String) -> MirrorFlySDK.MessageReceipt?
@@ -603,7 +605,18 @@ extension MirrorFlySDK.ChatManager {
   public static func isPrivateStorageEnabled() -> Swift.Bool
 }
 extension MirrorFlySDK.ChatManager {
+  public static func updateMuteSettingStatus(muteStatus: Swift.Bool)
+  public static func updateChatMuteStatus(jidList: [Swift.String], mute: Swift.Bool)
+  public static func deleteMuteAcknowledgmentOfflineAction(actionType: MirrorFlySDK.OfflineActionType)
+}
+extension MirrorFlySDK.ChatManager {
+  public static func sendMuteUserAcknowledgement(muteId: Swift.String)
+}
+extension MirrorFlySDK.ChatManager {
   public static func getChatSummaryIntervalTime() -> Swift.Int64
+}
+extension MirrorFlySDK.ChatManager : MirrorFlySDK.XMPPMessageAcknowledgementDelegate {
+  public func messageReceived(stanzaID: Swift.String)
 }
 public enum MessageExtension : Swift.String, Swift.CustomStringConvertible {
   case image
@@ -668,6 +681,9 @@ public protocol XMPPMessageDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllConversationForSyncedDevice()
   func clearAllCallLogs()
 }
+public protocol XMPPMessageAcknowledgementDelegate : ObjectiveC.NSObjectProtocol {
+  func messageReceived(stanzaID: Swift.String)
+}
 @objc public class TopicChatListBuilder : ObjectiveC.NSObject {
   public init(topicChatListParams: MirrorFlySDK.TopicChatListParams)
   public func loadTopicBasedChatList(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
@@ -727,8 +743,9 @@ public protocol XMPPGroupDelegate : ObjectiveC.NSObjectProtocol {
   func didReceiveParticipantMessage(participantDetails: [MirrorFlySDK.ProfileDetails], groupDetails: MirrorFlySDK.GroupModel)
   func didGetParticipant(participantDetails: [MirrorFlySDK.ProfileDetails], groupDetails: MirrorFlySDK.GroupModel)
   func didReceiveParticipantForGroupId(groupJid: Swift.String)
-  func didGroupCreate(message: Swift.String)
+  func didGroupCreate(groupId: Swift.String)
   func didGetGroups(groups: [MirrorFlySDK.ProfileDetails], message: Swift.String)
+  func didUpdateChannelStatus(groupJid: Swift.String, action: Swift.String)
 }
 @objcMembers public class LocationChatMessage : Swift.Codable {
   @objc public var messageId: Swift.String
@@ -1094,6 +1111,7 @@ extension MirrorFlySDK.CallManager {
   public class func isUserJoinedViaLink(userId: Swift.String) -> Swift.Bool
   public class func createMeetLink(completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   public class func isConnectedToLinkServer() -> Swift.Bool
+  public class func userCallLinkViaJoined() -> Swift.Bool
 }
 public protocol CallLogDelegate : ObjectiveC.NSObjectProtocol {
   func clearAllCallLog()
@@ -1316,6 +1334,9 @@ public enum OfflineActionType : Swift.String, Swift.CustomStringConvertible {
   case uploadImageVideo
   case clearCalllog
   case endCallMessage
+  case chatMuteStatus
+  case settingMuteStatus
+  case muteStatusAcknowledgment
   public var description: Swift.String {
     get
   }
@@ -1470,13 +1491,13 @@ extension MirrorFlySDK.GroupManager {
   public func isSyncNeeded(groupJid: Swift.String) -> Swift.Bool
 }
 extension MirrorFlySDK.GroupManager : MirrorFlySDK.XMPPGroupDelegate {
+  public func didUpdateChannelStatus(groupJid: Swift.String, action: Swift.String)
   public func didGetGroups(groups: [MirrorFlySDK.ProfileDetails], message: Swift.String)
   public func didGetParticipant(participantDetails: [MirrorFlySDK.ProfileDetails], groupDetails: MirrorFlySDK.GroupModel)
-  public func didGroupCreate(message: Swift.String)
+  public func didGroupCreate(groupId: Swift.String)
   public func didReceiveParticipantForGroupId(groupJid: Swift.String)
   public func didGroupDeleteLocally(groupJid: Swift.String)
   public func didGroupProfileFetch(groupJid: Swift.String)
-  public func didGroupCreatedSuccessMessage(groupMessage: Swift.String)
   public func didAddParticipantSuccessMessage(addParticipantmessage: Swift.String)
   public func didAdminRemoveParticipant(message: Swift.String)
   public func didGroupUserProfileFetch(for jid: Swift.String, groupInfoDetails groupProfileDetails: MirrorFlySDK.GroupModel?)
@@ -1550,6 +1571,27 @@ public enum AudioType : Swift.String, Swift.Codable {
   public func getAllRecentChatForSearch(searchTerm: Swift.String) -> [MirrorFlySDK.RecentChat]
   public func getRecentChatFromApi(page: Swift.Int, size: Swift.Int, lastMessageTime: Swift.Double, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChatListBuilder {
+  public static let shared: MirrorFlySDK.ChatListBuilder
+  public func fetchChatList(params: MirrorFlySDK.ChatListParams, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
+  @objc deinit
+}
+public struct ChatListParams {
+  public var chatListType: MirrorFlySDK.ChatListType
+  public var lastMessageTime: Swift.Double
+  public var limit: Swift.Int
+  public init(chatListType: MirrorFlySDK.ChatListType, lastMessageTime: Swift.Double, limit: Swift.Int)
+}
+public enum ChatListType : Swift.String {
+  case single
+  case group
+  case archived
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public enum FlyError : Swift.Error, Swift.Equatable {
   case invalid_jid(message: Swift.String, code: Swift.Int)
@@ -1850,6 +1892,7 @@ extension MirrorFlySDK.FlyMessenger {
 extension MirrorFlySDK.FlyMessenger {
   public static func editTextMessage(editMessageParams: MirrorFlySDK.EditMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   public static func editMediaCaption(editMessageParams: MirrorFlySDK.EditMessage, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+  public func getUnreadMessagesCount(for chatType: MirrorFlySDK.ChatType) -> Swift.Int
 }
 public struct BusyStatus : Swift.Codable {
   public init()
@@ -2002,11 +2045,10 @@ public enum ContactSyncState : Swift.String {
   public var backupDelegate: (any MirrorFlySDK.BackupEventDelegate)?
   public var restoreDelegate: (any MirrorFlySDK.RestoreEventDelegate)?
   public static let shared: MirrorFlySDK.BackupManager
-  public func startBackup()
+  public func startBackup(enableEncryption: Swift.Bool = false)
   public func removeAllMessages()
   public func restoreMessages(url: Foundation.URL)
   public func cancelBackup()
-  public func calculatePercentage(value: Swift.Int, percentageVal: Swift.Int) -> Swift.Double
   public func calculateProgress(value: Swift.Int, percentageVal: Swift.Int) -> Swift.Double
   public func getBackupFilePath() -> Foundation.URL?
   public func checkIfMessageAvailable() -> Swift.Bool
@@ -2157,7 +2199,11 @@ public struct BackupRecentChat : Swift.Codable {
   public var isPinned: Swift.Bool
   public var metaData: Swift.String
   public var topicId: Swift.String
-  public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool, metaData: Swift.String = "", topicID: Swift.String = "")
+  public var unReadCount: Swift.Int?
+  public var unreadStatus: Swift.Bool?
+  public var unReadMessageID: Swift.String?
+  public var serverUnreadMessageCount: Swift.Int?
+  public init(jid: Swift.String, messageId: Swift.String, messageTime: Swift.String, isArchived: Swift.Bool, isMuted: Swift.Bool, isPinned: Swift.Bool, metaData: Swift.String = "", topicID: Swift.String = "", unreadCount: Swift.Int = 0, unreadStatus: Swift.Bool = false, unReadMessageID: Swift.String = "", serverUnreadMessageCount: Swift.Int = 0)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2312,6 +2358,13 @@ public struct FlyProfile : Swift.Codable {
   @objc public var isSyncNeeded: Swift.Bool
   @objc public var isBlockedByAdmin: Swift.Bool
   public var contactType: MirrorFlySDK.ContactType
+  @objc public var messageMode: Swift.Int
+  @objc public var accessMode: Swift.Int
+  @objc public var history: Swift.Int
+  @objc public var groupDescription: Swift.String
+  @objc public var customFeatures: Swift.String
+  @objc public var channelStatus: Swift.Int
+  @objc public var inviteURI: Swift.String
   @objc public init(jid: Swift.String)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -2382,6 +2435,10 @@ public enum FlyProgress : Swift.String {
 public struct UploadInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+}
+public protocol MuteEventDelegate {
+  func onMuteStatusUpdated(isSuccess: Swift.Bool, message: Swift.String, jidList: [Swift.String])
+  func didUpdateMuteSettings(isSuccess: Swift.Bool, message: Swift.String, isMuteStatus: Swift.Bool)
 }
 public class CommonDefaults {
   public init()
@@ -2853,6 +2910,9 @@ public struct FlyConstants {
     public static let editMessageIdTime: Swift.String
     public static let profileAdminBlock: Swift.String
     public static let invalidEmail: Swift.String
+    public static let nameCannotbeEmpty: Swift.String
+    public static let statusCannotbeEmpty: Swift.String
+    public static let statusTextCannotBeLongerThan: Swift.String
     public static let callProcessError: Swift.String
     public static let linkProcessError: Swift.String
     public static let callPermission: Swift.String
@@ -2940,6 +3000,7 @@ public enum CallMode : Swift.String, Swift.Codable {
   case ONE_TO_MANY
   case MANY_TO_MANY
   case MEET
+  case none
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -2992,6 +3053,7 @@ public enum CallMode : Swift.String, Swift.Codable {
 }
 public struct FlyUtils {
   public static let bufferSize: Swift.Int
+  public static let backUpBufferSize: Swift.Int
   public static let replyMessageId: Swift.String
   public static let downloadedVideoAlbum: Swift.String
   public static let uploadedImageVideoAlbum: Swift.String
@@ -3112,6 +3174,7 @@ extension Foundation.Thread {
 extension MirrorFlySDK.FlyUtils {
   public static func isValidEmail(email: Swift.String) -> Swift.Bool
   public static func isValidBase64(input: Swift.String) -> Swift.Bool
+  public static func getLengthWithEmoji(_ name: Swift.String) -> Swift.Int
 }
 public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
@@ -3158,6 +3221,13 @@ public protocol WebLogoutDelegate {
   @objc public var groupName: Swift.String
   @objc public var groupAffiliation: Swift.String
   @objc public var groupItemId: Swift.String
+  @objc public var messageMode: Swift.Int
+  @objc public var accessMode: Swift.Int
+  @objc public var history: Swift.Int
+  @objc public var groupDescription: Swift.String
+  @objc public var customFeatures: Swift.String
+  @objc public var channelStatus: Swift.Int
+  @objc public var inviteURI: Swift.String
   @objc public init(groupId: Swift.String)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3270,8 +3340,9 @@ extension MirrorFlySDK.ContactManager {
   @available(*, deprecated, message: "Use the ContactManager.updateMyProfile(for: FlyProfile, completionHandler : @escaping FlyCompletionHandler) instead")
   public func updateMyProfile(for myProfile: MirrorFlySDK.FlyProfile, isFromLocal: Swift.Bool, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func updateMyProfile(for myProfile: MirrorFlySDK.FlyProfile, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
+  public func updateMyProfileStatus(for myProfile: MirrorFlySDK.FlyProfile, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func updateMyProfileImage(image: Swift.String, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
-  public func updateProfileDetails(_ statusText: Swift.String)
+  public func updateProfileDetails(_ statusText: Swift.String, completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func getRegisteredUsers(fromServer: Swift.Bool, completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   public func getNonChatUsers() -> [MirrorFlySDK.ProfileDetails]
   public func removeProfileImage(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
@@ -3357,6 +3428,13 @@ public protocol XMPPConnectionDelegate : ObjectiveC.NSObjectProtocol {
   @objc public var groupName: Swift.String
   @objc public var newAdmin: Swift.String
   @objc public var doneBy: Swift.String
+  @objc public var messageMode: Swift.Int
+  @objc public var accessMode: Swift.Int
+  @objc public var history: Swift.Int
+  @objc public var groupDescription: Swift.String
+  @objc public var customFeatures: Swift.String
+  @objc public var channelStatus: Swift.Int
+  @objc public var inviteURI: Swift.String
   @objc public init(jid: Swift.String)
   @objc deinit
 }
@@ -3471,6 +3549,14 @@ public protocol XMPPProfileDelegate : ObjectiveC.NSObjectProtocol {
   @objc public var isAdminMember: Swift.Bool
   @objc public var displayName: Swift.String
   @objc public var profileDetail: MirrorFlySDK.ProfileDetails?
+  @objc public var isFromPush: Swift.Bool
+  @objc public var messageMode: Swift.Int
+  @objc public var accessMode: Swift.Int
+  @objc public var history: Swift.Int
+  @objc public var groupDescription: Swift.String
+  @objc public var customFeatures: Swift.String
+  @objc public var channelStatus: Swift.Int
+  @objc public var inviteURI: Swift.String
   @objc public init(groupMemberId: Swift.String)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3653,6 +3739,9 @@ extension MirrorFlySDK.OfflineActionType : Swift.RawRepresentable {}
 extension MirrorFlySDK.AudioType : Swift.Equatable {}
 extension MirrorFlySDK.AudioType : Swift.Hashable {}
 extension MirrorFlySDK.AudioType : Swift.RawRepresentable {}
+extension MirrorFlySDK.ChatListType : Swift.Equatable {}
+extension MirrorFlySDK.ChatListType : Swift.Hashable {}
+extension MirrorFlySDK.ChatListType : Swift.RawRepresentable {}
 extension MirrorFlySDK.MessageType : Swift.Equatable {}
 extension MirrorFlySDK.MessageType : Swift.Hashable {}
 extension MirrorFlySDK.MessageType : Swift.RawRepresentable {}
