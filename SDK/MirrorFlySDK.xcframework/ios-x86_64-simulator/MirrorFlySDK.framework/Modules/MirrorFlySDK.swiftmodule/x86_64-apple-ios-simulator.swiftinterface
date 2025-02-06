@@ -713,6 +713,7 @@ public protocol XMPPWebLogoutDelegate : ObjectiveC.NSObjectProtocol {
   @objc public static var sharedInstance: MirrorFlySDK.VOIPManager
   public func savePushToken(token: Swift.String)
   public func saveVOIPToken(token: Swift.String)
+  public func newUpdateDeviceToken(apnsToken: Swift.String = "", voipToken: Swift.String = "")
   public func updateDeviceToken()
   public func refreshToken(onCompletion: @escaping (_ isSuccess: Swift.Bool) -> Swift.Void)
   @objc public func processPayload(_ userInfo: [Swift.AnyHashable : Any], displayName: Swift.String = "")
@@ -2619,6 +2620,8 @@ public struct UserData {
 @objc @_inheritsConvenienceInitializers public class FlyCallUtils : ObjectiveC.NSObject {
   public static let klExistingTokenAPNS: Swift.String
   public static let klExistingTokenVOIP: Swift.String
+  public static let klUpdatedTokenAPNS: Swift.String
+  public static let klUpdatedTokenVOIP: Swift.String
   public static var sharedInstance: MirrorFlySDK.FlyCallUtils
   public static func generateTimestamp() -> Swift.String
   public static func convertStringToMetaDataArray(metaDataString: Swift.String) -> [MirrorFlySDK.CallMetadata]
