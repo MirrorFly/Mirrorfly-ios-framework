@@ -406,7 +406,7 @@ extension MirrorFlySDK.ChatManager {
   public static func saveProfileStatus(statusText: Swift.String, currentStatus: Swift.Bool, completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func deleteStatus(statusId: Swift.String) -> (status: Swift.Bool, statusMessge: Swift.String)
   public static func getAllStatus() -> [MirrorFlySDK.ProfileStatus]
-  public static func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false, completion: @escaping MirrorFlySDK.FlyCompletionHandler) -> (status: Swift.Bool, statusMessage: Swift.String)
+  public static func updateStatus(statusId: Swift.String, statusText: Swift.String, currentStatus: Swift.Bool? = false, completion: @escaping MirrorFlySDK.FlyCompletionHandler)
   public static func getStatusById(statusId: Swift.String) -> MirrorFlySDK.ProfileStatus?
   public static func sendNotAcknowledgeMessages()
   public static func getSingleChatMessageSeenReceipt(messageId: Swift.String) -> MirrorFlySDK.MessageReceipt?
