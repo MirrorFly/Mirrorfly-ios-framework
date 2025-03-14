@@ -1055,6 +1055,7 @@ public protocol MissedCallNotificationDelegate {
   public class func isAlreadyOnAnotherCall() -> Swift.Bool
   public class func connectCallServers()
   public class func disconnectCallServers()
+  public class func getOngoingCallSocketId() -> Swift.String
   public class func getLocalUserId() -> Swift.String?
   public class func isCallOnHold() -> Swift.Bool
   public class func setIsCallOnHold(isCallOnHold: Swift.Bool)
@@ -1725,6 +1726,30 @@ public struct ErrorCode {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum ChatClearType : Swift.Int, Swift.CustomStringConvertible, Swift.Codable {
+  case clearChat = 1
+  case deleteChat = 0
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MessageDeleteType : Swift.Int, Swift.CustomStringConvertible, Swift.Codable {
+  case deleteForMe = 0
+  case deleteForEveryone = 1
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public protocol ConnectionEventDelegate : ObjectiveC.NSObjectProtocol {
   func onConnected()
@@ -2438,7 +2463,7 @@ public struct UploadInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public protocol MuteEventDelegate {
-  func onMuteStatusUpdated(isSuccess: Swift.Bool, message: Swift.String, jidList: [Swift.String])
+  func onMuteStatusUpdated(isSuccess: Swift.Bool, message: Swift.String, jidList: [Swift.String], muteStatus: Swift.Bool)
   func didUpdateMuteSettings(isSuccess: Swift.Bool, message: Swift.String, isMuteStatus: Swift.Bool)
 }
 public class CommonDefaults {
@@ -3476,14 +3501,21 @@ public protocol AdminBlockDelegate : ObjectiveC.NSObjectProtocol {
   @objc func onMediaStatusUpdated(message: MirrorFlySDK.ChatMessage)
   @objc func onMediaStatusFailed(error: Swift.String, messageId: Swift.String, errorCode: Swift.Int)
   @objc func onMediaProgressChanged(message: MirrorFlySDK.ChatMessage, progressPercentage: Swift.Float)
-  @objc func onMessagesClearedOrDeleted(messageIds: Swift.Array<Swift.String>)
-  @objc func onMessagesDeletedforEveryone(messageIds: Swift.Array<Swift.String>)
+  @objc @available(*, deprecated, message: "Use onMessageDeleted(toJid: String, messageIds: [String], messageDeleteType: MessageDeleteType) instead. This method will be removed in a future")
+  func onMessagesClearedOrDeleted(messageIds: Swift.Array<Swift.String>)
+  @objc @available(*, deprecated, message: "Use onMessageDeleted(toJid: String, messageIds: [String], messageDeleteType: MessageDeleteType) instead. This method will be removed in a future")
+  func onMessagesDeletedforEveryone(messageIds: Swift.Array<Swift.String>)
   @objc func showOrUpdateOrCancelNotification()
-  @objc func onMessagesCleared(toJid: Swift.String, deleteType: Swift.String?)
+  @objc @available(*, deprecated, message: "Use onChatCleared(toJid: String, chatClearType: ChatClearType) instead. This method will be removed in a future")
+  func onMessagesCleared(toJid: Swift.String, deleteType: Swift.String?)
   @objc func setOrUpdateFavourite(messageId: Swift.String, favourite: Swift.Bool, removeAllFavourite: Swift.Bool)
   @objc func onMessageTranslated(message: MirrorFlySDK.ChatMessage, jid: Swift.String)
-  @objc func clearAllConversationForSyncedDevice()
+  @objc @available(*, deprecated, message: "Use onAllChatsCleared() instead. This method will be removed in a future")
+  func clearAllConversationForSyncedDevice()
   @objc func onMessageEdited(message: MirrorFlySDK.ChatMessage)
+  @objc func onChatCleared(toJid: Swift.String, chatClearType: MirrorFlySDK.ChatClearType)
+  @objc func onMessageDeleted(toJid: Swift.String, messageIds: [Swift.String], messageDeleteType: MirrorFlySDK.MessageDeleteType)
+  @objc func onAllChatsCleared()
 }
 public struct ChatDataModel {
   public init()
@@ -3745,6 +3777,12 @@ extension MirrorFlySDK.AudioType : Swift.RawRepresentable {}
 extension MirrorFlySDK.ChatListType : Swift.Equatable {}
 extension MirrorFlySDK.ChatListType : Swift.Hashable {}
 extension MirrorFlySDK.ChatListType : Swift.RawRepresentable {}
+extension MirrorFlySDK.ChatClearType : Swift.Equatable {}
+extension MirrorFlySDK.ChatClearType : Swift.Hashable {}
+extension MirrorFlySDK.ChatClearType : Swift.RawRepresentable {}
+extension MirrorFlySDK.MessageDeleteType : Swift.Equatable {}
+extension MirrorFlySDK.MessageDeleteType : Swift.Hashable {}
+extension MirrorFlySDK.MessageDeleteType : Swift.RawRepresentable {}
 extension MirrorFlySDK.MessageType : Swift.Equatable {}
 extension MirrorFlySDK.MessageType : Swift.Hashable {}
 extension MirrorFlySDK.MessageType : Swift.RawRepresentable {}
