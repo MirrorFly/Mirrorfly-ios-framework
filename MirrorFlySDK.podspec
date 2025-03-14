@@ -6,7 +6,6 @@ Pod::Spec.new do |s|
     s.author            = { 'Vishvanath' => 'vishvanatheshwer.v@contus.in','Vanitha' => 'vanitha.g@contus.in', }
     s.license      = { :type => 'Commercial', :file => 'LICENSE' }
     s.platform          = :ios, 13.0
-    s.resources = 'MirrorFlySDK/*.xcassets'
     s.source            = { :git => 'https://github.com/MirrorFly/Mirrorfly-ios-framework.git', :tag => s.version.to_s }
 #    s.screenshots       = '','',''
 #    s.social_media_url = ''
