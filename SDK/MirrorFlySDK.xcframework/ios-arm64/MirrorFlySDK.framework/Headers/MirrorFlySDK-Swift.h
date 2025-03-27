@@ -419,7 +419,6 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 
 
 
-
 @class ProfileDetails;
 @class ChatMessage;
 
@@ -463,6 +462,7 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 - (void)didCreateGroupWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didFetchGroupsWithGroups:(NSArray<ProfileDetails *> * _Nonnull)groups;
 @end
+
 
 
 
@@ -577,10 +577,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 @end
 
 
-
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
 - (void)deleteUnreadMessageSeparatorOfAConversationWithJid:(NSString * _Nonnull)jid;
 @end
+
 
 
 
@@ -1043,8 +1043,6 @@ SWIFT_CLASS("_TtC12MirrorFlySDK20TopicChatListBuilder")
 
 
 
-
-
 SWIFT_CLASS("_TtC12MirrorFlySDK11VOIPManager")
 @interface VOIPManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) VOIPManager * _Nonnull sharedInstance;)
@@ -1062,6 +1060,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK16WebLoginsManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "MirrorFlySDK"
-  s.version      = "5.18.8"
+  s.version      = "5.18.9"
   s.summary      = "MirrorFlySDK Summary"
   s.description  = "MirrorFlySDK Description"
   s.authors      = "Vishvanath Eshwer"

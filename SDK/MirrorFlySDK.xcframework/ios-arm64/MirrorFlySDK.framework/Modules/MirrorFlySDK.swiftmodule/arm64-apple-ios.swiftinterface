@@ -10,7 +10,6 @@ import CallKit
 import CommonCrypto
 import Contacts
 import CoreAudioTypes
-import DeveloperToolsSupport
 import Foundation
 import IDZSwiftCommonCrypto
 @_exported import MirrorFlySDK
@@ -606,6 +605,7 @@ extension MirrorFlySDK.ChatManager {
   public static func isPrivateStorageEnabled() -> Swift.Bool
 }
 extension MirrorFlySDK.ChatManager {
+  public static func isNotificationMuted() -> Swift.Bool
   public static func updateMuteSettingStatus(muteStatus: Swift.Bool)
   public static func updateChatMuteStatus(jidList: [Swift.String], mute: Swift.Bool)
   public static func deleteMuteAcknowledgmentOfflineAction(actionType: MirrorFlySDK.OfflineActionType)
@@ -708,7 +708,7 @@ extension MirrorFlySDK.CallLogManager {
   public static func resetUnreadMissedCallCount()
 }
 public protocol XMPPWebLogoutDelegate : ObjectiveC.NSObjectProtocol {
-  func didLogoutWeb(socketId: Swift.String)
+  func didLogoutWeb(socketIds: [Swift.String])
 }
 @objc @_inheritsConvenienceInitializers public class VOIPManager : ObjectiveC.NSObject {
   @objc public static var sharedInstance: MirrorFlySDK.VOIPManager
@@ -1825,19 +1825,7 @@ extension Swift.Double {
   public func roundTo1f() -> Swift.String
   public func roundTo2f() -> Swift.String
 }
-public protocol SocketDelegate {
-  func didConnect()
-  func onError()
-  func didDisconnect()
-  func onReconnecting()
-}
-public protocol WebLoginDelegate {
-  func didGetSocketId(data: [Any])
-  func didLogin(data: [Any])
-}
 @objc @_inheritsConvenienceInitializers public class SocketConnection : ObjectiveC.NSObject {
-  public var connectionDelegate: (any MirrorFlySDK.SocketDelegate)?
-  public var webLoginDelegate: (any MirrorFlySDK.WebLoginDelegate)?
   @objc override dynamic public init()
   public func emit(eventName: Swift.String, data: Swift.String)
   public func disConnectFor(eventName: Swift.String)
@@ -2075,6 +2063,7 @@ public enum ContactSyncState : Swift.String {
   public func startBackup(enableEncryption: Swift.Bool = false)
   public func removeAllMessages()
   public func restoreMessages(url: Foundation.URL)
+  public func cancelRestore()
   public func cancelBackup()
   public func calculateProgress(value: Swift.Int, percentageVal: Swift.Int) -> Swift.Double
   public func getBackupFilePath() -> Foundation.URL?
@@ -2205,6 +2194,7 @@ public struct MediaChat : Swift.Codable {
   public var thumbImage: Swift.String?
   public var fileKey: Swift.String?
   public var caption: Swift.String?
+  public var isLargeFile: Swift.Bool
   public init(fileName: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2252,21 +2242,23 @@ public protocol VideoWidthHeightAdjuster {
   public func handleQrCodeData(qrCodeString: Swift.String, completionHandler: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void)
   public func getSocketId(completionHandler: @escaping (_ isSuccess: Swift.Bool, _ message: Swift.String) -> Swift.Void)
   public func reset()
+  @available(*, deprecated, message: "Use logoutWebSessions(completionHandler:) instead.")
   public func logoutFromDevices()
+  public func logoutWebSessions(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
   @objc deinit
 }
-extension MirrorFlySDK.WebLoginsManager : MirrorFlySDK.WebLoginDelegate {
+extension MirrorFlySDK.WebLoginsManager {
   public func didGetSocketId(data: [Any])
   public func didLogin(data: [Any])
 }
-extension MirrorFlySDK.WebLoginsManager : MirrorFlySDK.SocketDelegate {
+extension MirrorFlySDK.WebLoginsManager {
   public func didConnect()
   public func onError()
   public func didDisconnect()
   public func onReconnecting()
 }
 extension MirrorFlySDK.WebLoginsManager : MirrorFlySDK.XMPPWebLogoutDelegate {
-  public func didLogoutWeb(socketId: Swift.String)
+  public func didLogoutWeb(socketIds: [Swift.String])
 }
 extension MirrorFlySDK.WebLoginsManager {
   public func saveWebLogin(qrData: Swift.String)
@@ -2948,6 +2940,7 @@ public struct FlyConstants {
     public static let cantInviteNotValidCall: Swift.String
     public static let clearChatFailure: Swift.String
     public static let metadataError: Swift.String
+    public static let restoreCancelled: Swift.String
   }
   public struct SuccessMessage {
     public static let profileFetch: Swift.String
@@ -3204,6 +3197,7 @@ extension MirrorFlySDK.FlyUtils {
   public static func isValidEmail(email: Swift.String) -> Swift.Bool
   public static func isValidBase64(input: Swift.String) -> Swift.Bool
   public static func getLengthWithEmoji(_ name: Swift.String) -> Swift.Int
+  public static func getTimeInMillisForWebLogin() -> Swift.Double
 }
 public protocol FlyCommonControllerDelegate : ObjectiveC.NSObjectProtocol {
 }
@@ -3240,7 +3234,7 @@ public protocol XMPPArchiveDelegate : ObjectiveC.NSObjectProtocol {
 @objc public protocol ikDelegate {
 }
 public protocol WebLogoutDelegate {
-  func didLogoutWeb(socketId: Swift.String)
+  func didLogoutWeb(socketIds: [Swift.String])
 }
 @objc @objcMembers public class GroupModel : ObjectiveC.NSObject, Swift.Codable {
   @objc public var groupId: Swift.String!
