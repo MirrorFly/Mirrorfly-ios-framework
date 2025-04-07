@@ -374,6 +374,11 @@ SWIFT_CLASS("_TtC12MirrorFlySDK14CallUsersModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, ChatClearType, open) {
+  ChatClearTypeClearChat = 1,
+  ChatClearTypeDeleteChat = 0,
+};
+
 
 SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 @interface ChatManager : NSObject
@@ -381,6 +386,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initDelegates SWIFT_METHOD_FAMILY(none);
 @end
+
 
 
 
@@ -457,6 +463,7 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 - (void)didCreateGroupWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didFetchGroupsWithGroups:(NSArray<ProfileDetails *> * _Nonnull)groups;
 @end
+
 
 
 
@@ -704,6 +711,11 @@ SWIFT_CLASS("_TtC12MirrorFlySDK12MediaManager")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, MessageDeleteType, open) {
+  MessageDeleteTypeDeleteForMe = 0,
+  MessageDeleteTypeDeleteForEveryone = 1,
+};
+
 enum MessageStatus : NSInteger;
 
 /// Message related event delegate for all chat related activities
@@ -720,21 +732,27 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK21MessageEventsDelegate_")
 /// Called when the progress of upload or download of a media file is changed
 - (void)onMediaProgressChangedWithMessage:(ChatMessage * _Nonnull)message progressPercentage:(float)progressPercentage;
 /// Called when the message/conversation deleted for the chat user.
-- (void)onMessagesClearedOrDeletedWithMessageIds:(NSArray<NSString *> * _Nonnull)messageIds;
+- (void)onMessagesClearedOrDeletedWithMessageIds:(NSArray<NSString *> * _Nonnull)messageIds SWIFT_DEPRECATED_MSG("Use onMessageDeleted(toJid: String, messageIds: [String], messageDeleteType: MessageDeleteType) instead. This method will be removed in a future");
 /// Called when the message/conversation deleted for everyone.
-- (void)onMessagesDeletedforEveryoneWithMessageIds:(NSArray<NSString *> * _Nonnull)messageIds;
+- (void)onMessagesDeletedforEveryoneWithMessageIds:(NSArray<NSString *> * _Nonnull)messageIds SWIFT_DEPRECATED_MSG("Use onMessageDeleted(toJid: String, messageIds: [String], messageDeleteType: MessageDeleteType) instead. This method will be removed in a future");
 /// Called whenever a notification needed to be shown or updated or cancelled
 - (void)showOrUpdateOrCancelNotification;
 /// Called whenever messages are cleared
-- (void)onMessagesClearedToJid:(NSString * _Nonnull)toJid deleteType:(NSString * _Nullable)deleteType;
+- (void)onMessagesClearedToJid:(NSString * _Nonnull)toJid deleteType:(NSString * _Nullable)deleteType SWIFT_DEPRECATED_MSG("Use onChatCleared(toJid: String, chatClearType: ChatClearType) instead. This method will be removed in a future");
 /// Called on set or update or remove all favourite messages
 - (void)setOrUpdateFavouriteWithMessageId:(NSString * _Nonnull)messageId favourite:(BOOL)favourite removeAllFavourite:(BOOL)removeAllFavourite;
 /// Called when an incoming message is being translated
 - (void)onMessageTranslatedWithMessage:(ChatMessage * _Nonnull)message jid:(NSString * _Nonnull)jid;
 /// Called when user cleared all conversations
-- (void)clearAllConversationForSyncedDevice;
+- (void)clearAllConversationForSyncedDevice SWIFT_DEPRECATED_MSG("Use onAllChatsCleared() instead. This method will be removed in a future");
 /// Called when user edited message
 - (void)onMessageEditedWithMessage:(ChatMessage * _Nonnull)message;
+/// Called when a chat is cleared between two users or in a group conversation.
+- (void)onChatClearedToJid:(NSString * _Nonnull)toJid chatClearType:(enum ChatClearType)chatClearType;
+/// Called when specific messages are deleted in a conversation.
+- (void)onMessageDeletedToJid:(NSString * _Nonnull)toJid messageIds:(NSArray<NSString *> * _Nonnull)messageIds messageDeleteType:(enum MessageDeleteType)messageDeleteType;
+/// Called when all chats are cleared by the user.
+- (void)onAllChatsCleared;
 @end
 
 typedef SWIFT_ENUM(NSInteger, MessageStatus, open) {
@@ -1043,6 +1061,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK16WebLoginsManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
