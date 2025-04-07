@@ -419,6 +419,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 
 
 
+
 @class ProfileDetails;
 @class ChatMessage;
 

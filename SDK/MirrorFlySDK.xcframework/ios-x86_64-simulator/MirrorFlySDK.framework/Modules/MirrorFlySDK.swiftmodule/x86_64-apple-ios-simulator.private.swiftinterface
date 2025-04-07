@@ -1318,11 +1318,11 @@ public enum ChatType : Swift.String, Swift.CustomStringConvertible, Swift.Codabl
 }
 public struct WebLoginInfo {
   public init()
-  public var browser: Swift.String!
-  public var platform: Swift.String!
-  public var token: Swift.String!
+  public var browser: Swift.String
+  public var platform: Swift.String
+  public var token: Swift.String
   public var loginTime: Swift.Double?
-  public init(browser: Swift.String, platform: Swift.String, token: Swift.String)
+  public init(browser: Swift.String, platform: Swift.String, token: Swift.String, loginTime: Swift.Double? = nil)
 }
 public enum OfflineActionType : Swift.String, Swift.CustomStringConvertible {
   case clearMessage
