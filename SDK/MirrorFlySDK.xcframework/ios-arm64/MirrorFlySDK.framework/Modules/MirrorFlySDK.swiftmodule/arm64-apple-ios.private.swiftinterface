@@ -2194,7 +2194,7 @@ public struct MediaChat : Swift.Codable {
   public var thumbImage: Swift.String?
   public var fileKey: Swift.String?
   public var caption: Swift.String?
-  public var isLargeFile: Swift.Bool
+  public var isLargeFile: Swift.Bool?
   public init(fileName: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
