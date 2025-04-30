@@ -967,6 +967,15 @@ public enum CALLSTATUS : Swift.String {
     get
   }
 }
+public enum CameraPosition : Swift.String {
+  case frontCamera
+  case backCamera
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public protocol MobileCallActionDelegate {
   func whileIncoming()
   func didCallAnswered()
@@ -1022,6 +1031,7 @@ public protocol MissedCallNotificationDelegate {
   public class func isRemoteAudioMuted(_ userId: Swift.String) -> Swift.Bool
   public class func isRemoteVideoMuted(_ userId: Swift.String) -> Swift.Bool
   public class func switchCamera(completion: @escaping () -> Swift.Void)
+  public class func getCurrentCameraPosition() -> MirrorFlySDK.CameraPosition?
   public class func requestVideoCallSwitch(onCompletion: @escaping (Swift.Bool) -> Swift.Void)
   public class func checkIsUserCanceled() -> Swift.Bool
   public class func cancelVideoCallSwitch() -> Swift.Bool
@@ -3745,6 +3755,9 @@ extension MirrorFlySDK.MuteEvent : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Equatable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.RawRepresentable {}
+extension MirrorFlySDK.CameraPosition : Swift.Equatable {}
+extension MirrorFlySDK.CameraPosition : Swift.Hashable {}
+extension MirrorFlySDK.CameraPosition : Swift.RawRepresentable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.Equatable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.Hashable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.RawRepresentable {}
