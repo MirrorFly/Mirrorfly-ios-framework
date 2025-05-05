@@ -448,6 +448,7 @@ extension MirrorFlySDK.ChatManager {
   public func searchMessage(text: Swift.String) -> [MirrorFlySDK.SearchMessage]
 }
 extension MirrorFlySDK.ChatManager : MirrorFlySDK.GroupEventsDelegate {
+  @objc dynamic public func didSuperAdminDeleteGroup(groupJid: Swift.String, groupName: Swift.String)
   @objc dynamic public func didFetchGroupMembers(groupJid: Swift.String)
   @objc dynamic public func didReceiveGroupNotificationMessage(message: MirrorFlySDK.ChatMessage)
   @objc dynamic public func didAddNewMemeberToGroup(groupJid: Swift.String, newMemberJid: Swift.String, addedByMemberJid: Swift.String)
@@ -748,6 +749,7 @@ public protocol XMPPGroupDelegate : ObjectiveC.NSObjectProtocol {
   func didGroupCreate(groupId: Swift.String)
   func didGetGroups(groups: [MirrorFlySDK.ProfileDetails], message: Swift.String)
   func didUpdateChannelStatus(groupJid: Swift.String, action: Swift.String)
+  func didSuperAdminDeleteGroups(groupInfo: [(groupId: Swift.String, name: Swift.String)])
 }
 @objcMembers public class LocationChatMessage : Swift.Codable {
   @objc public var messageId: Swift.String
@@ -967,6 +969,15 @@ public enum CALLSTATUS : Swift.String {
     get
   }
 }
+public enum CameraPosition : Swift.String {
+  case frontCamera
+  case backCamera
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public protocol MobileCallActionDelegate {
   func whileIncoming()
   func didCallAnswered()
@@ -1022,6 +1033,7 @@ public protocol MissedCallNotificationDelegate {
   public class func isRemoteAudioMuted(_ userId: Swift.String) -> Swift.Bool
   public class func isRemoteVideoMuted(_ userId: Swift.String) -> Swift.Bool
   public class func switchCamera(completion: @escaping () -> Swift.Void)
+  public class func getCurrentCameraPosition() -> MirrorFlySDK.CameraPosition?
   public class func requestVideoCallSwitch(onCompletion: @escaping (Swift.Bool) -> Swift.Void)
   public class func checkIsUserCanceled() -> Swift.Bool
   public class func cancelVideoCallSwitch() -> Swift.Bool
@@ -1494,6 +1506,7 @@ extension MirrorFlySDK.GroupManager {
   public func isSyncNeeded(groupJid: Swift.String) -> Swift.Bool
 }
 extension MirrorFlySDK.GroupManager : MirrorFlySDK.XMPPGroupDelegate {
+  public func didSuperAdminDeleteGroups(groupInfo: [(groupId: Swift.String, name: Swift.String)])
   public func didUpdateChannelStatus(groupJid: Swift.String, action: Swift.String)
   public func didGetGroups(groups: [MirrorFlySDK.ProfileDetails], message: Swift.String)
   public func didGetParticipant(participantDetails: [MirrorFlySDK.ProfileDetails], groupDetails: MirrorFlySDK.GroupModel)
@@ -3712,6 +3725,7 @@ public enum MessageNotificationStatus : Swift.Int, Swift.Codable {
   @objc func didFetchGroups(groups: [MirrorFlySDK.ProfileDetails])
   @objc func didFetchGroupMembers(groupJid: Swift.String)
   @objc func didReceiveGroupNotificationMessage(message: MirrorFlySDK.ChatMessage)
+  @objc func didSuperAdminDeleteGroup(groupJid: Swift.String, groupName: Swift.String)
 }
 extension MirrorFlySDK.MediaType : Swift.Equatable {}
 extension MirrorFlySDK.MediaType : Swift.Hashable {}
@@ -3745,6 +3759,9 @@ extension MirrorFlySDK.MuteEvent : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Equatable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.Hashable {}
 extension MirrorFlySDK.CALLSTATUS : Swift.RawRepresentable {}
+extension MirrorFlySDK.CameraPosition : Swift.Equatable {}
+extension MirrorFlySDK.CameraPosition : Swift.Hashable {}
+extension MirrorFlySDK.CameraPosition : Swift.RawRepresentable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.Equatable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.Hashable {}
 extension MirrorFlySDK.ConnectionQuality : Swift.RawRepresentable {}

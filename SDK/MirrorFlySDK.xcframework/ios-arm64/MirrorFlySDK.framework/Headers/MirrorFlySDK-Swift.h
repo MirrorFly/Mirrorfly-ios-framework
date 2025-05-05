@@ -420,6 +420,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 
 
 
+
 @class ProfileDetails;
 @class ChatMessage;
 
@@ -446,10 +447,12 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 - (void)didFetchGroupsWithGroups:(NSArray<ProfileDetails *> * _Nonnull)groups;
 - (void)didFetchGroupMembersWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didReceiveGroupNotificationMessageWithMessage:(ChatMessage * _Nonnull)message;
+- (void)didSuperAdminDeleteGroupWithGroupJid:(NSString * _Nonnull)groupJid groupName:(NSString * _Nonnull)groupName;
 @end
 
 
 @interface ChatManager (SWIFT_EXTENSION(MirrorFlySDK)) <GroupEventsDelegate>
+- (void)didSuperAdminDeleteGroupWithGroupJid:(NSString * _Nonnull)groupJid groupName:(NSString * _Nonnull)groupName;
 - (void)didFetchGroupMembersWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didReceiveGroupNotificationMessageWithMessage:(ChatMessage * _Nonnull)message;
 - (void)didAddNewMemeberToGroupWithGroupJid:(NSString * _Nonnull)groupJid newMemberJid:(NSString * _Nonnull)newMemberJid addedByMemberJid:(NSString * _Nonnull)addedByMemberJid;
@@ -463,7 +466,6 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK19GroupEventsDelegate_")
 - (void)didCreateGroupWithGroupJid:(NSString * _Nonnull)groupJid;
 - (void)didFetchGroupsWithGroups:(NSArray<ProfileDetails *> * _Nonnull)groups;
 @end
-
 
 
 
@@ -633,6 +635,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK12GroupManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
