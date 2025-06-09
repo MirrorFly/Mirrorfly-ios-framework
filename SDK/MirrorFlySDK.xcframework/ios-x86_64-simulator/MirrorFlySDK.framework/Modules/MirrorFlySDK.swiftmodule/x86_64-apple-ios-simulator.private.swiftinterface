@@ -856,6 +856,7 @@ public struct EditMessage : Swift.Codable {
 }
 @_hasMissingDesignatedInitializers public class AudioManager {
   public class func shared() -> MirrorFlySDK.AudioManager
+  public var uiSelection: MirrorFlySDK.OutputType
   public func autoReRoute()
   public var audioManagerDelegate: (any MirrorFlySDK.AudioManagerDelegate)?
   public func initialize()
