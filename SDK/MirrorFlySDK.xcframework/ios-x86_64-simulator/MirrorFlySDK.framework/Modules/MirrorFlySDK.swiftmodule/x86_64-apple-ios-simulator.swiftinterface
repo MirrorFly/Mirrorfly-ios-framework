@@ -856,6 +856,7 @@ public struct EditMessage : Swift.Codable {
 }
 @_hasMissingDesignatedInitializers public class AudioManager {
   public class func shared() -> MirrorFlySDK.AudioManager
+  public var uiSelection: MirrorFlySDK.OutputType
   public func autoReRoute()
   public var audioManagerDelegate: (any MirrorFlySDK.AudioManagerDelegate)?
   public func initialize()
@@ -1780,7 +1781,9 @@ public protocol FlyXmppControllerDelegate : ObjectiveC.NSObjectProtocol {
 @_hasMissingDesignatedInitializers public class FlyLogWriter {
   public static var sharedInstance: MirrorFlySDK.FlyLogWriter
   public var flyLog: Swift.String
+  public var flyGroupLog: Swift.String
   public func writeText(_ str: Swift.String)
+  public func groupLogsText(_ str: Swift.String)
   public func writeCallText(_ str: Swift.String)
   public func writeStatusText(_ str: Swift.String)
   public func getLogFileURL() -> Foundation.URL
@@ -2619,6 +2622,11 @@ public class CommonDefaults {
     set
     _modify
   }
+  @MirrorFlySDK.SDKDefaults public static var isProfileFetcehdFromServer: Swift.Bool {
+    get
+    set
+    _modify
+  }
   @objc deinit
 }
 @propertyWrapper public struct SDKDefaults<T> where T : Swift.Decodable, T : Swift.Encodable {
@@ -2777,6 +2785,7 @@ public struct FlyConstants {
   public static let autoDownloadEnable: Swift.String
   public static let chatHistoryEnable: Swift.String
   public static let emailLoginEnable: Swift.String
+  public static let isProfileFetcehdFromServer: Swift.String
   public static let isFirstchatHistory: Swift.String
   public static let hasNextPageDataIntAPI: Swift.String
   public static let fetchedPageNumber: Swift.String
@@ -3172,7 +3181,7 @@ extension MirrorFlySDK.FlyUtils {
   public static func getGroupUserName(profile: MirrorFlySDK.ProfileDetails) -> Swift.String
   public static func getUnknownUserName(jid: Swift.String, name: Swift.String, nickName: Swift.String, contactType: MirrorFlySDK.ContactType) -> Swift.String
   public static func mobileNumberParse(phoneNo: Swift.String) -> Swift.String
-  public static func convertUserName(name: Swift.String, nickName: Swift.String, phone: Swift.String) -> Swift.String
+  public static func convertUserName(jid: Swift.String, name: Swift.String? = nil, nickName: Swift.String? = nil) -> Swift.String
   public static func getFormattedMobileNumber(mobileNumber: Swift.String) -> Swift.String
   public static func getEncryptedFileName(path: Swift.String?) -> Swift.String?
   public static func setAppName(appName: Swift.String)
