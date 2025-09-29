@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "MirrorFlySDK"
-  s.version      = "5.18.18"
+  s.version      = "5.18.20"
   s.summary      = "MirrorFlySDK Summary"
   s.description  = "MirrorFlySDK Description"
   s.authors      = "Vishvanath Eshwer"
@@ -17,8 +17,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.platform     = :ios, "13.0"
   s.source       = { :git => "git@bitbucket.org:Apptha/p078-mirrorfly-ios-core-sdk.git" }
-  s.source_files  = "MirrorFlySDK/**/*.*{swift, h, m}","MirrorFlySDK/*.h", "MirrorFlySDK/*.m","MirrorFlySDK/Call/*.h", "MirrorFlySDK/Call/*.m"
-  s.resources = "MirrorFlySDK/*.xcassets"
+  s.source_files  = "MirrorFlySDK/**/*.*{swift,h,m}","MirrorFlySDK/*.h", "MirrorFlySDK/*.m","MirrorFlySDK/Call/*.h", "MirrorFlySDK/Call/*.m"
   #spec.exclude_files = [AppDelegate, ViewController, SceneDelegate]
   #s.requires_arc = true
   s.dependency 'libPhoneNumber-iOS', '0.9.15'

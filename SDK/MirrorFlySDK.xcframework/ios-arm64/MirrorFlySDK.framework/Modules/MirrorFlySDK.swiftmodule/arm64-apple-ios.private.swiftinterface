@@ -717,6 +717,7 @@ public protocol XMPPWebLogoutDelegate : ObjectiveC.NSObjectProtocol {
   public func saveVOIPToken(token: Swift.String)
   public func newUpdateDeviceToken(apnsToken: Swift.String = "", voipToken: Swift.String = "")
   public func updateDeviceToken()
+  public func updateDeviceToken(isForceUpdate: Swift.Bool = false, onCompletion: @escaping (_ isSuccess: Swift.Bool, _ updatedVOIPToken: Swift.String, _ updatedDeviceToken: Swift.String, _ tokenError: Swift.String?) -> Swift.Void)
   public func refreshToken(onCompletion: @escaping (_ isSuccess: Swift.Bool) -> Swift.Void)
   @objc public func processPayload(_ userInfo: [Swift.AnyHashable : Any], displayName: Swift.String = "")
   @objc override dynamic public init()
@@ -2050,6 +2051,11 @@ public struct ChatTagsModel : Swift.Equatable, Swift.Codable {
   public static let shared: MirrorFlySDK.ContactSyncManager
   @objc override dynamic public init()
   @objc deinit
+}
+extension Contacts.CNAuthorizationStatus {
+  public var isAuthorizedOrLimited: Swift.Bool {
+    get
+  }
 }
 extension MirrorFlySDK.ContactSyncManager {
   public func isContactPermissionChanged() -> Swift.Bool
