@@ -2052,6 +2052,11 @@ public struct ChatTagsModel : Swift.Equatable, Swift.Codable {
   @objc override dynamic public init()
   @objc deinit
 }
+extension Contacts.CNAuthorizationStatus {
+  public var isAuthorizedOrLimited: Swift.Bool {
+    get
+  }
+}
 extension MirrorFlySDK.ContactSyncManager {
   public func isContactPermissionChanged() -> Swift.Bool
   public func syncContacts(completionHandler: @escaping MirrorFlySDK.FlyCompletionHandler)
