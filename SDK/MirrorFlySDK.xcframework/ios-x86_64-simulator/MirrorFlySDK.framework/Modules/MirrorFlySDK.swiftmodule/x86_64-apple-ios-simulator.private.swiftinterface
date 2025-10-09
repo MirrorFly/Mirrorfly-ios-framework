@@ -75,63 +75,6 @@ import _SwiftConcurrencyShims
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-public struct MessageBody : Swift.Codable {
-  public var message: Swift.String?
-  public var message_type: Swift.String?
-  public var replyTo: Swift.String?
-  public var nickName: Swift.String?
-  public var mentionedUsersIds: [Swift.String]?
-  public var location: MirrorFlySDK.LocationBody?
-  public var contact: MirrorFlySDK.ContactBody?
-  public var media: MirrorFlySDK.MediaBody?
-  public var meet: MirrorFlySDK.MeetingBody?
-  public init()
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public struct MediaBody : Swift.Codable {
-  public var duration: Swift.Int32?
-  public var file_size: Swift.Int64?
-  public var file_key: Swift.String?
-  public var file_url: Swift.String?
-  public var thumb_image: Swift.String?
-  public var caption: Swift.String?
-  public var fileName: Swift.String?
-  public var local_path: Swift.String?
-  public var webWidth: Swift.Int?
-  public var webHeight: Swift.Int?
-  public var androidWidth: Swift.Int?
-  public var androidHeight: Swift.Int?
-  public var audioType: Swift.String?
-  public var isLargeFile: Swift.Bool?
-  public init()
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public struct LocationBody : Swift.Codable {
-  public var latitude: Swift.Double
-  public var longitude: Swift.Double
-  public init(latitude: Swift.Double, longitude: Swift.Double)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public struct ContactBody : Swift.Codable {
-  public var name: Swift.String
-  public var phone_number: [Swift.String]
-  public var active_status: [Swift.String]
-  public init(name: Swift.String?, phone_number: [Swift.String], active_status: [Swift.String])
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public struct MeetingBody : Swift.Codable {
-  public var mid: Swift.String?
-  public var title: Swift.String?
-  public var link: Swift.String
-  public var scheduledDateTime: Swift.Int
-  public init(mid: Swift.String, title: Swift.String, link: Swift.String, scheduledDateTime: Swift.Int)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
 public struct CountryInfo : Swift.Codable {
   public var name: Swift.String?
   public var dial_code: Swift.String?
@@ -756,6 +699,7 @@ public protocol XMPPGroupDelegate : ObjectiveC.NSObjectProtocol {
   @objc public var messageId: Swift.String
   @objc public var latitude: Swift.Double
   @objc public var longitude: Swift.Double
+  @objc public var address: Swift.String
   @objc public var mapLocationUrl: Swift.String
   @objc public init()
   @objc deinit
@@ -779,8 +723,9 @@ public protocol XMPPGroupDelegate : ObjectiveC.NSObjectProtocol {
 public struct LocationMessageParams : Swift.Codable {
   public var latitude: Swift.Double!
   public var longitude: Swift.Double!
+  public var address: Swift.String
   public init()
-  public init(latitude: Swift.Double, longitude: Swift.Double)
+  public init(latitude: Swift.Double, longitude: Swift.Double, address: Swift.String = "")
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1861,7 +1806,7 @@ public typealias FlySendMessageListener = (_ isSuccess: Swift.Bool, _ error: Mir
   @available(*, deprecated, message: "Use the ChatManager.sendTextMessage(messageParams: TextMessageParams) instead.")
   public static func sendTextMessage(toJid: Swift.String, message: Swift.String, replyMessageId: Swift.String? = nil, mentionedUsersIds: [Swift.String], metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", messageType: MirrorFlySDK.MessageType = .text, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
-  public static func sendLocationMessage(toJid: Swift.String, latitude: Swift.Double, longitude: Swift.Double, replyMessageId: Swift.String? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+  public static func sendLocationMessage(toJid: Swift.String, latitude: Swift.Double, longitude: Swift.Double, address: Swift.String, message: Swift.String? = nil, replyMessageId: Swift.String? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
   public static func sendContactMessage(toJid: Swift.String, contactName: Swift.String, contactNumbers: [Swift.String], replyMessageId: Swift.String? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @objc public static func encryptDecryptMessageContent(message: Swift.String, messageId: Swift.String, isEncrypt: Swift.Bool) -> Swift.String?
@@ -1885,7 +1830,7 @@ public typealias FlySendMessageListener = (_ isSuccess: Swift.Bool, _ error: Mir
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
   public static func sendVideoMessage(toJid: Swift.String, mediaData: MirrorFlySDK.MediaData, replyMessageId: Swift.String? = nil, mentionedUsersIds: [Swift.String], metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
-  public static func sendDocumentMessage(toJid: Swift.String, mediaData: MirrorFlySDK.MediaData, replyMessageId: Swift.String? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
+  public static func sendDocumentMessage(toJid: Swift.String, mediaData: MirrorFlySDK.MediaData, replyMessageId: Swift.String? = nil, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", mediaCaption: Swift.String, sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @available(*, deprecated, message: "Use ChatManager.sendFileMessage(messageParams: FileMessage) method instead.")
   public static func sendAudioMessage(toJid: Swift.String, mediaData: MirrorFlySDK.MediaData, replyMessageId: Swift.String? = nil, isRecorded: Swift.Bool, metaData: [MirrorFlySDK.MessageMetaData]? = [], topicID: Swift.String? = "", sendMessageListener: @escaping (_ isSuccess: Swift.Bool, _ error: MirrorFlySDK.FlyError?, _ chatMessage: MirrorFlySDK.ChatMessage?) -> Swift.Void)
   @objc public static func saveUnsentMessage(id: Swift.String, message: Swift.String, mentionedUsers: [Swift.String]? = [], mentionSearch: [Swift.String]? = [])
@@ -2202,7 +2147,8 @@ public struct PhoneModel : Swift.Codable {
 public struct LocationChat : Swift.Codable {
   public var latitude: Swift.Double
   public var longitude: Swift.Double
-  public init(latitude: Swift.Double, longitude: Swift.Double)
+  public var address: Swift.String
+  public init(latitude: Swift.Double, longitude: Swift.Double, address: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2424,6 +2370,7 @@ public enum OutputType {
   case speaker
   case headset
   case bluetooth
+  case none
   public static func == (a: MirrorFlySDK.OutputType, b: MirrorFlySDK.OutputType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -3648,7 +3595,8 @@ public struct Location : Swift.Codable {
   public var mid: Swift.String?
   public var latitude: Swift.Double
   public var longitude: Swift.Double
-  public init(mid: Swift.String, latitude: Swift.Double, longitude: Swift.Double)
+  public var address: Swift.String
+  public init(mid: Swift.String, latitude: Swift.Double, longitude: Swift.Double, address: Swift.String)
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
