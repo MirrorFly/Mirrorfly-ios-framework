@@ -369,6 +369,13 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11CallPayload")
 @end
 
 
+SWIFT_CLASS("_TtC12MirrorFlySDK20CallRecordingManager")
+@interface CallRecordingManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 SWIFT_CLASS("_TtC12MirrorFlySDK14CallUsersModel")
 @interface CallUsersModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -386,6 +393,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK11ChatManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initDelegates SWIFT_METHOD_FAMILY(none);
 @end
+
 
 
 
@@ -489,6 +497,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK14ContactManager")
 
 
 
+
 SWIFT_CLASS("_TtC12MirrorFlySDK18ContactSyncManager")
 @interface ContactSyncManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -508,6 +517,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK21FetchMessageListQuery")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -578,6 +588,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FlyMessenger
 ///
 + (void)saveUnsentMessageWithId:(NSString * _Nonnull)id message:(NSString * _Nonnull)message mentionedUsers:(NSArray<NSString *> * _Nullable)mentionedUsers mentionSearch:(NSArray<NSString *> * _Nullable)mentionSearch;
 @end
+
+
 
 
 @interface FlyMessenger (SWIFT_EXTENSION(MirrorFlySDK))
@@ -709,6 +721,17 @@ SWIFT_CLASS("_TtC12MirrorFlySDK22GroupParticipantDetail")
 @end
 
 
+/// Singleton configuration manager for setting up and accessing MFChannel
+SWIFT_CLASS("_TtC12MirrorFlySDK22MFChannelConfiguration")
+@interface MFChannelConfiguration : NSObject
+/// Private initializer to enforce singleton usage
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
 SWIFT_CLASS("_TtC12MirrorFlySDK12MediaManager")
 @interface MediaManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -785,6 +808,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK26NotificationMessageSupport")
 - (void)didReceiveNotificationRequest:(UNMutableNotificationContent * _Nullable)bestContent appName:(NSString * _Nonnull)appName onCompletion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nullable, ChatMessage * _Nullable))onCompletion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -867,6 +891,8 @@ SWIFT_CLASS("_TtC12MirrorFlySDK14ProfileDetails")
 @property (nonatomic, copy) NSString * _Nonnull name;
 /// Nickname of the user
 @property (nonatomic, copy) NSString * _Nonnull nickName;
+/// syncedName of the user
+@property (nonatomic, copy) NSString * _Nonnull syncedContactName;
 /// Image url of the user
 @property (nonatomic, copy) NSString * _Nonnull image;
 /// Thumbnail Image url of the user
@@ -964,6 +990,7 @@ SWIFT_PROTOCOL("_TtP12MirrorFlySDK21ProfileEventsDelegate_")
 @end
 
 
+
 SWIFT_CLASS("_TtC12MirrorFlySDK10RecentChat")
 @interface RecentChat : NSObject
 /// Jid of the user/group/broadcast
@@ -972,6 +999,8 @@ SWIFT_CLASS("_TtC12MirrorFlySDK10RecentChat")
 @property (nonatomic, copy) NSString * _Nonnull nickName;
 /// Image url endpoint of this recent chat profile
 @property (nonatomic, copy) NSString * _Nonnull profileName;
+/// syncedName of the user
+@property (nonatomic, copy) NSString * _Nonnull syncedContactName;
 /// Check whether the entity belongs to a single chat user or a group
 @property (nonatomic) BOOL isGroup;
 /// Check whether the entity belongs to a single chat user or a broadcast
@@ -987,6 +1016,8 @@ SWIFT_CLASS("_TtC12MirrorFlySDK10RecentChat")
 @property (nonatomic, copy) NSString * _Nullable profileThumbImage;
 /// Id of the last Message sent/received between us and this recent chat profile
 @property (nonatomic, copy) NSString * _Nonnull lastMessageId;
+/// last Sent Message as ChatMessage
+@property (nonatomic, strong) ChatMessage * _Nullable lastSentMessage;
 /// Data of the last message(text message | image caption) sent/received between us and the user/group
 @property (nonatomic, copy) NSString * _Nonnull lastMessageContent;
 /// Time in milliseconds of the last message sent/received between us and the user/group
@@ -1031,6 +1062,8 @@ SWIFT_CLASS("_TtC12MirrorFlySDK21RecentChatListBuilder")
 @end
 
 
+
+
 SWIFT_CLASS("_TtC12MirrorFlySDK16SocketConnection")
 @interface SocketConnection : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1043,6 +1076,7 @@ SWIFT_CLASS("_TtC12MirrorFlySDK20TopicChatListBuilder")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
